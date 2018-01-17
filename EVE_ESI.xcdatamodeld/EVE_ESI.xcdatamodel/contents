@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EVESSOToken" representedClassName="EVESSOToken" syncable="YES" codeGenerationType="class">
+        <attribute name="access_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="character_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expires" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refresh_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scopes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token_type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="category_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="group_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="group" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="Type" representedClassName="Type" syncable="YES" codeGenerationType="class">
+        <attribute name="type_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="types" inverseEntity="Group" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="EVESSOToken" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Group" positionX="-63" positionY="27" width="128" height="120"/>
+        <element name="Type" positionX="-54" positionY="54" width="128" height="75"/>
+    </elements>
+</model>

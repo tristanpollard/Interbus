@@ -1,0 +1,1244 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24119049C2D52BB10C8DF03C /* AssetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119F0E9995E793D219563B /* AssetLocationViewController.swift */; };
+		2411904F47AA2A90C93363BA /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119965F18F3FCBCF991914 /* URL.swift */; };
+		241190828AAF23446E954E4A /* ESIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A7DA9C765264B9CAA38 /* ESIContext.swift */; };
+		24119099B1B418137F17AA60 /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193981E2A2FD33F97FD8C /* ContractViewController.swift */; };
+		2411912D5E19842C9317275E /* EvePlayerOwned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241198C160BD0C671D2E9A41 /* EvePlayerOwned.swift */; };
+		2411913B47B1EB89AFDBCE4C /* EveAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411952687B67526FA857156 /* EveAsset.swift */; };
+		2411919098CB3B75BAD17DD9 /* ReturnSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */; };
+		241191E14FF894A55FEEE508 /* EveMarketOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411940BECF8758D93CF25FD /* EveMarketOrder.swift */; };
+		241191E284CA4F98518F8391 /* ContractHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119BE0220F035169A097DE /* ContractHeaderCell.swift */; };
+		2411922C0569E40CAF12BD2C /* SkillQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411931DE56E716C89058500 /* SkillQueueViewController.swift */; };
+		24119272717A449625969508 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411936BC6A4250586C5018E /* ContactViewController.swift */; };
+		2411927C413EF151DB26CFF5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241197F6534C453DE242FAD3 /* StatsViewController.swift */; };
+		241192815DC4540600127F6F /* MailRecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EA99AE89153C19EAD23 /* MailRecipientCell.swift */; };
+		241192E5D72BA96AC107998E /* MailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */; };
+		24119303C96CC3E5106547C5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241190B2EC5C485A9888E5C2 /* BalloonMarker.swift */; };
+		2411936438A040EF4DA455A6 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241191A562A9ACC3C5C820D8 /* JournalViewController.swift */; };
+		2411938510BEC9FAE6D7CF22 /* EveSkillQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A037CC6A4D650A19ADA /* EveSkillQueue.swift */; };
+		24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */; };
+		2411939EF77DB24A0536CEC4 /* ReturnContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A3CBB29469F8497C99E /* ReturnContactViewController.swift */; };
+		241193A575CEBD250C24C0BF /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E79D09DADDDDBF904DC /* EveMail.swift */; };
+		241193ACD335EF8C0DAF2126 /* ContractListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119C764840D6F3A62BD158 /* ContractListViewController.swift */; };
+		24119454780052B344C56B04 /* EveMailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241192F459921F333EDD91DC /* EveMailLabel.swift */; };
+		241194669881947CCE97E200 /* CorporationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119FE0E608699F0C7520E6 /* CorporationViewController.swift */; };
+		241194ACAB1EA1079FFBA6BB /* EveClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DD6CE8AA247173AC912 /* EveClone.swift */; };
+		241194CD502FA19083264B4E /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411994F5B51D7250EE4DBF7 /* TransformDate.swift */; };
+		24119502A3A857AC70E5038D /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119244F7251393481662A4 /* CharacterViewController.swift */; };
+		24119546D71A308A68E04D0C /* EveAuthCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */; };
+		24119578DAFDAFBA6190F152 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241194036EEC532D92965EBD /* OrdersViewController.swift */; };
+		24119592D8AD0F5278B0CDE7 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241198C9ACFC9C6127313E21 /* Array.swift */; };
+		241195B3272781E1AB9C4AE7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241196A58D4A1902BFF600C3 /* UIColor.swift */; };
+		2411960CF0A4F462433DEF2E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D0539BD98E8F07FBCDA /* SearchResult.swift */; };
+		241196B1EB51A50D6C2018B3 /* ReturnContactFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411910DDD7F1EE72D129307 /* ReturnContactFormViewController.swift */; };
+		24119710B49B3F5ECC12B7A6 /* EveCorporation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241191FAA83FC98A6C2206E9 /* EveCorporation.swift */; };
+		241197201FE2DFFA2DF2849B /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119135CED2E38C3AA0ADA8 /* MailViewController.swift */; };
+		241197D83295C450D465CBB8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241198E5F99CADDB0825149A /* SearchViewController.swift */; };
+		241197E3890D75D746B00BB7 /* EveContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241190114752DFEFA3F3CB61 /* EveContact.swift */; };
+		24119826611F2BD2C33D41C4 /* EveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119BDFDF51714A214F5E96 /* EveSkill.swift */; };
+		2411982AE0266306499B550B /* EveAssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DFB96FA05C2684154E3 /* EveAssetList.swift */; };
+		2411985E7198F0C4087F19FA /* EveNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119634B626DBB5E416A223 /* EveNotification.swift */; };
+		241198DDE27881A51908ECD9 /* EveMiningLedgerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119CE5A915FD341D9C9454 /* EveMiningLedgerEntry.swift */; };
+		24119909FEAA57C167BAAADB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411932E78504F6669418108 /* String.swift */; };
+		2411993963C3EBD92C7055B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E276C08226C30C75F34 /* MainViewController.swift */; };
+		24119944BEA246353B08D5DE /* ClonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119CA455B2CABF33D5EAD5 /* ClonesViewController.swift */; };
+		2411998F49B7D6E6788090ED /* AllianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D1AE3BB4FE91CE399E4 /* AllianceViewController.swift */; };
+		24119991FCDFDA54C08CB90C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119906E83865F048AC454A /* UIImage.swift */; };
+		241199D43B41B8C62AA3EADC /* EveContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241196EAEE7B4C2BE38EDC12 /* EveContract.swift */; };
+		241199D65778E1FA836ACCFE /* EveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D16383B908A657C6961 /* EveCharacter.swift */; };
+		241199DA07A22191D3522981 /* EveMiningLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119CEA490A7E3FC99E551C /* EveMiningLedger.swift */; };
+		241199F17AA2EB2A02106F00 /* EveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E28B91C0180F5E9B943 /* EveItem.swift */; };
+		24119A129C5F1A7093C92C66 /* EveAlliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EE7D698869D2119AB3C /* EveAlliance.swift */; };
+		24119A37EB2CE02A7260065D /* EveJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411952597C3A39B3CD76BA6 /* EveJournalEntry.swift */; };
+		24119B08E60D6A444DADD9C8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EE835488AAEC495BBC0 /* Dictionary.swift */; };
+		24119B293AE9D7877FFBBE4C /* ReturnResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E34F12D8DC1880D305A /* ReturnResultCell.swift */; };
+		24119B9892E308CA32238C24 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241190E93A956194AE6F9648 /* SkillsViewController.swift */; };
+		24119BA200608E9189CC4CA1 /* SSOToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E5417D0C31C67806374 /* SSOToken.swift */; };
+		24119CCDAE433939F78F0D25 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B5C8E1864DB4D457C4B /* Nameable.swift */; };
+		24119CFCB93AE193EACD3ADF /* EveContactLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241199AD3972E13F79C7BDDF /* EveContactLabel.swift */; };
+		24119D0B9F7BD18B37A46E21 /* UICharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411982C6DDD3DC011EA97EC /* UICharacterViewController.swift */; };
+		24119D20FB51E76FE627DDDC /* SendMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241194A40371B264981B856C /* SendMailViewController.swift */; };
+		24119D369FD4945B6C669B59 /* MiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119F94C28D18B0DDE1C9FE /* MiningViewController.swift */; };
+		24119D944B966B5E5EC2304B /* StatsYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EAC342084A98D2567BA /* StatsYearViewController.swift */; };
+		24119E2DF6922F2AE65E90D5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A78CB52AE11DB0177EF /* UIViewController.swift */; };
+		24119E63CAB9AA1139C6A50A /* ESIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119BAE4E371321EA057DF2 /* ESIResponse.swift */; };
+		24119F0DCC75542F70BD37B7 /* EveSendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B29FCF98169D67D033F /* EveSendMail.swift */; };
+		24119F0EB923693B454ED1C3 /* ReadMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */; };
+		24119F2E2E5AEEC09A387B07 /* AuthCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */; };
+		24119FCC5918FF4C74D9D85A /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119170E0EC2B606F71D566 /* AssetsViewController.swift */; };
+		24119FDAA6418CA1FA52E44F /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411959522CF00E7389457CF /* JournalTableViewCell.swift */; };
+		24119FDE37C6E783BEC40AD9 /* GroupLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411937A437BB7B3650D7E6E /* GroupLoader.swift */; };
+		370CAEA36378750FE9D0E66D /* Pods_EVE_ESITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8B93C48F5275E316265EAE /* Pods_EVE_ESITests.framework */; };
+		55E721F492CFCFD5246FF96D /* Pods_EVE_ESIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBFF5ACFF45D8CEC49B7B9 /* Pods_EVE_ESIUITests.framework */; };
+		6A0032C31FE65B5300D8241E /* SearchPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A0032C21FE65B5300D8241E /* SearchPopupController.xib */; };
+		6A0032C51FE65BB100D8241E /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A0032C41FE65BB100D8241E /* RatingViewController.xib */; };
+		6A0032C71FE65C6600D8241E /* SearchPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0032C61FE65C6600D8241E /* SearchPopupViewController.swift */; };
+		6A10CAA61F7A05BA003106E2 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A10CAA51F7A05BA003106E2 /* MainView.storyboard */; };
+		6A10CAA91F7A084E003106E2 /* ESIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10CAA81F7A084E003106E2 /* ESIClient.swift */; };
+		6A246BFC1F8F31F40025A1A2 /* EVE_ESI.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6A246BFA1F8F2E760025A1A2 /* EVE_ESI.xcdatamodeld */; };
+		6A2FE58D1F86D4FE000D3454 /* MailSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FE58C1F86D4FE000D3454 /* MailSearchCell.xib */; };
+		6A2FE5911F87658B000D3454 /* ReturnContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */; };
+		6A5156531F8F37A100D5C29E /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */; };
+		6A5156541F8F37A100D5C29E /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */; };
+		6A5156551F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */; };
+		6A5156571F8F37A100D5C29E /* Type+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */; };
+		6A5156581F8F37A100D5C29E /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */; };
+		6A8020941F80B6B800236B8E /* Authenticated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8020931F80B6B800236B8E /* Authenticated.storyboard */; };
+		6A9D3E1F1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */; };
+		6AA0D0C31F77878E008DC078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0D0C21F77878E008DC078 /* AppDelegate.swift */; };
+		6AA0D0CD1F77878E008DC078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0D0CC1F77878E008DC078 /* Assets.xcassets */; };
+		6AA0D0DB1F77878E008DC078 /* EVE_ESITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0D0DA1F77878E008DC078 /* EVE_ESITests.swift */; };
+		6AA0D0E61F77878E008DC078 /* EVE_ESIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0D0E51F77878E008DC078 /* EVE_ESIUITests.swift */; };
+		6AC36B401F7DC3B200EF2B4E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC36B421F7DC3B200EF2B4E /* Alamofire.framework */; };
+		6AC36B411F7DC3B200EF2B4E /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC36B431F7DC3B200EF2B4E /* AlamofireImage.framework */; };
+		6AC4102F1F81FCD000A422F7 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC410311F81FCD000A422F7 /* AlamofireObjectMapper.framework */; };
+		6AC410301F81FCD000A422F7 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC410321F81FCD000A422F7 /* ObjectMapper.framework */; };
+		6AC74AB41F882FF900A01C6D /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB71F882FF900A01C6D /* Eureka.framework */; };
+		6AC74AB51F882FF900A01C6D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */; };
+		6AC74AB61F882FF900A01C6D /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB91F882FF900A01C6D /* PopupDialog.framework */; };
+		6AFA23FF1F7C231B00B635BE /* alliancePlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23ED1F7C210800B635BE /* alliancePlaceholder32.png */; };
+		6AFA24001F7C231B00B635BE /* alliancePlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23F01F7C210900B635BE /* alliancePlaceholder64.png */; };
+		6AFA24011F7C231B00B635BE /* alliancePlaceholder128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23E91F7C210800B635BE /* alliancePlaceholder128.png */; };
+		6AFA24021F7C231B00B635BE /* characterPlaceholder32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23EB1F7C210800B635BE /* characterPlaceholder32.jpg */; };
+		6AFA24031F7C231B00B635BE /* characterPlaceholder128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23F31F7C210900B635BE /* characterPlaceholder128.jpg */; };
+		6AFA24041F7C231B00B635BE /* characterPlaceholder256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23EC1F7C210800B635BE /* characterPlaceholder256.jpg */; };
+		6AFA24051F7C231B00B635BE /* characterPlaceholder512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23EE1F7C210800B635BE /* characterPlaceholder512.jpg */; };
+		6AFA24061F7C231B00B635BE /* corporationPlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23F11F7C210900B635BE /* corporationPlaceholder32.png */; };
+		6AFA24071F7C231B00B635BE /* corporationPlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23EA1F7C210800B635BE /* corporationPlaceholder64.png */; };
+		6AFA24081F7C231B00B635BE /* corporationPlaceholder128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23F21F7C210900B635BE /* corporationPlaceholder128.png */; };
+		6AFA24091F7C231B00B635BE /* corporationPlaceholder256.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23EF1F7C210900B635BE /* corporationPlaceholder256.png */; };
+		6AFA240A1F7C231B00B635BE /* characterPlaceholder64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 241195B4D6E215A92D7CDB44 /* characterPlaceholder64.jpg */; };
+		FEA1B54862BA73D5FBE758A9 /* Pods_EVE_ESI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA9A0998587B664D7F61B4A /* Pods_EVE_ESI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AA0D0D71F77878E008DC078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA0D0B71F77878E008DC078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AA0D0BE1F77878E008DC078;
+			remoteInfo = "EVE ESI";
+		};
+		6AA0D0E21F77878E008DC078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA0D0B71F77878E008DC078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AA0D0BE1F77878E008DC078;
+			remoteInfo = "EVE ESI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0256C02D761EAAC5D453AE57 /* Pods-EVE ESIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESIUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESIUITests/Pods-EVE ESIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0EA9A0998587B664D7F61B4A /* Pods_EVE_ESI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVE_ESI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13F4DCE7DFABB40D4F6A5C72 /* Pods-EVE ESIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESIUITests/Pods-EVE ESIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		241190114752DFEFA3F3CB61 /* EveContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContact.swift; sourceTree = "<group>"; };
+		241190B2EC5C485A9888E5C2 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		241190E93A956194AE6F9648 /* SkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
+		2411910DDD7F1EE72D129307 /* ReturnContactFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnContactFormViewController.swift; sourceTree = "<group>"; };
+		24119135CED2E38C3AA0ADA8 /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
+		24119170E0EC2B606F71D566 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		241191A562A9ACC3C5C820D8 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		241191FAA83FC98A6C2206E9 /* EveCorporation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCorporation.swift; sourceTree = "<group>"; };
+		24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCharacterViewController.swift; sourceTree = "<group>"; };
+		24119244F7251393481662A4 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		241192F459921F333EDD91DC /* EveMailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailLabel.swift; sourceTree = "<group>"; };
+		2411931DE56E716C89058500 /* SkillQueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillQueueViewController.swift; sourceTree = "<group>"; };
+		2411932E78504F6669418108 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2411936BC6A4250586C5018E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2411937A437BB7B3650D7E6E /* GroupLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupLoader.swift; sourceTree = "<group>"; };
+		241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSearchViewController.swift; sourceTree = "<group>"; };
+		241193981E2A2FD33F97FD8C /* ContractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		241194036EEC532D92965EBD /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		2411940BECF8758D93CF25FD /* EveMarketOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMarketOrder.swift; sourceTree = "<group>"; };
+		241194A40371B264981B856C /* SendMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailViewController.swift; sourceTree = "<group>"; };
+		2411952597C3A39B3CD76BA6 /* EveJournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveJournalEntry.swift; sourceTree = "<group>"; };
+		2411952687B67526FA857156 /* EveAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAsset.swift; sourceTree = "<group>"; };
+		2411959522CF00E7389457CF /* JournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
+		241195B4D6E215A92D7CDB44 /* characterPlaceholder64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder64.jpg; sourceTree = "<group>"; };
+		24119634B626DBB5E416A223 /* EveNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveNotification.swift; sourceTree = "<group>"; };
+		241196A58D4A1902BFF600C3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		241196EAEE7B4C2BE38EDC12 /* EveContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContract.swift; sourceTree = "<group>"; };
+		241197F6534C453DE242FAD3 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		2411982C6DDD3DC011EA97EC /* UICharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICharacterViewController.swift; sourceTree = "<group>"; };
+		241198C160BD0C671D2E9A41 /* EvePlayerOwned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvePlayerOwned.swift; sourceTree = "<group>"; };
+		241198C9ACFC9C6127313E21 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		241198E5F99CADDB0825149A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		24119906E83865F048AC454A /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		2411994F5B51D7250EE4DBF7 /* TransformDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
+		24119965F18F3FCBCF991914 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		241199AD3972E13F79C7BDDF /* EveContactLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactLabel.swift; sourceTree = "<group>"; };
+		24119A037CC6A4D650A19ADA /* EveSkillQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSkillQueue.swift; sourceTree = "<group>"; };
+		24119A3CBB29469F8497C99E /* ReturnContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnContactViewController.swift; sourceTree = "<group>"; };
+		24119A78CB52AE11DB0177EF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		24119A7DA9C765264B9CAA38 /* ESIContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIContext.swift; sourceTree = "<group>"; };
+		24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailHeaderCell.swift; sourceTree = "<group>"; };
+		24119B29FCF98169D67D033F /* EveSendMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSendMail.swift; sourceTree = "<group>"; };
+		24119B5C8E1864DB4D457C4B /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		24119BAE4E371321EA057DF2 /* ESIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIResponse.swift; sourceTree = "<group>"; };
+		24119BDFDF51714A214F5E96 /* EveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSkill.swift; sourceTree = "<group>"; };
+		24119BE0220F035169A097DE /* ContractHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractHeaderCell.swift; sourceTree = "<group>"; };
+		24119C764840D6F3A62BD158 /* ContractListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractListViewController.swift; sourceTree = "<group>"; };
+		24119CA455B2CABF33D5EAD5 /* ClonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClonesViewController.swift; sourceTree = "<group>"; };
+		24119CE5A915FD341D9C9454 /* EveMiningLedgerEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMiningLedgerEntry.swift; sourceTree = "<group>"; };
+		24119CEA490A7E3FC99E551C /* EveMiningLedger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMiningLedger.swift; sourceTree = "<group>"; };
+		24119D0539BD98E8F07FBCDA /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		24119D16383B908A657C6961 /* EveCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacter.swift; sourceTree = "<group>"; };
+		24119D1AE3BB4FE91CE399E4 /* AllianceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllianceViewController.swift; sourceTree = "<group>"; };
+		24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAuthCharacter.swift; sourceTree = "<group>"; };
+		24119DD6CE8AA247173AC912 /* EveClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveClone.swift; sourceTree = "<group>"; };
+		24119DFB96FA05C2684154E3 /* EveAssetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssetList.swift; sourceTree = "<group>"; };
+		24119E276C08226C30C75F34 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		24119E28B91C0180F5E9B943 /* EveItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveItem.swift; sourceTree = "<group>"; };
+		24119E34F12D8DC1880D305A /* ReturnResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnResultCell.swift; sourceTree = "<group>"; };
+		24119E5417D0C31C67806374 /* SSOToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSOToken.swift; sourceTree = "<group>"; };
+		24119E79D09DADDDDBF904DC /* EveMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMail.swift; sourceTree = "<group>"; };
+		24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSet.swift; sourceTree = "<group>"; };
+		24119EA99AE89153C19EAD23 /* MailRecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRecipientCell.swift; sourceTree = "<group>"; };
+		24119EAC342084A98D2567BA /* StatsYearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsYearViewController.swift; sourceTree = "<group>"; };
+		24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMailViewController.swift; sourceTree = "<group>"; };
+		24119EE7D698869D2119AB3C /* EveAlliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAlliance.swift; sourceTree = "<group>"; };
+		24119EE835488AAEC495BBC0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		24119F0E9995E793D219563B /* AssetLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetLocationViewController.swift; sourceTree = "<group>"; };
+		24119F94C28D18B0DDE1C9FE /* MiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiningViewController.swift; sourceTree = "<group>"; };
+		24119FE0E608699F0C7520E6 /* CorporationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorporationViewController.swift; sourceTree = "<group>"; };
+		6A0032C21FE65B5300D8241E /* SearchPopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPopupController.xib; sourceTree = "<group>"; };
+		6A0032C41FE65BB100D8241E /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		6A0032C61FE65C6600D8241E /* SearchPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPopupViewController.swift; sourceTree = "<group>"; };
+		6A10CAA51F7A05BA003106E2 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		6A10CAA81F7A084E003106E2 /* ESIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESIClient.swift; sourceTree = "<group>"; };
+		6A246BFB1F8F2E760025A1A2 /* EVE_ESI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EVE_ESI.xcdatamodel; sourceTree = "<group>"; };
+		6A2FE58C1F86D4FE000D3454 /* MailSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MailSearchCell.xib; sourceTree = "<group>"; };
+		6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnContactCell.xib; sourceTree = "<group>"; };
+		6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EVESSOToken+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A8020931F80B6B800236B8E /* Authenticated.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticated.storyboard; sourceTree = "<group>"; };
+		6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EVESSOToken+CoreDataProperties.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		6AA0D0BF1F77878E008DC078 /* EVE ESI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EVE ESI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA0D0C21F77878E008DC078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AA0D0CC1F77878E008DC078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AA0D0D11F77878E008DC078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA0D0D61F77878E008DC078 /* EVE ESITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EVE ESITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA0D0DA1F77878E008DC078 /* EVE_ESITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVE_ESITests.swift; sourceTree = "<group>"; };
+		6AA0D0DC1F77878E008DC078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA0D0E11F77878E008DC078 /* EVE ESIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EVE ESIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA0D0E51F77878E008DC078 /* EVE_ESIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVE_ESIUITests.swift; sourceTree = "<group>"; };
+		6AA0D0E71F77878E008DC078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA0D0F31F77895F008DC078 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		6AC36B421F7DC3B200EF2B4E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC36B431F7DC3B200EF2B4E /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC410311F81FCD000A422F7 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC410321F81FCD000A422F7 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC74AB71F882FF900A01C6D /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC74AB91F882FF900A01C6D /* PopupDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PopupDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AFA23E91F7C210800B635BE /* alliancePlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder128.png; sourceTree = "<group>"; };
+		6AFA23EA1F7C210800B635BE /* corporationPlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder64.png; sourceTree = "<group>"; };
+		6AFA23EB1F7C210800B635BE /* characterPlaceholder32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder32.jpg; sourceTree = "<group>"; };
+		6AFA23EC1F7C210800B635BE /* characterPlaceholder256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder256.jpg; sourceTree = "<group>"; };
+		6AFA23ED1F7C210800B635BE /* alliancePlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder32.png; sourceTree = "<group>"; };
+		6AFA23EE1F7C210800B635BE /* characterPlaceholder512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder512.jpg; sourceTree = "<group>"; };
+		6AFA23EF1F7C210900B635BE /* corporationPlaceholder256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder256.png; sourceTree = "<group>"; };
+		6AFA23F01F7C210900B635BE /* alliancePlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder64.png; sourceTree = "<group>"; };
+		6AFA23F11F7C210900B635BE /* corporationPlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder32.png; sourceTree = "<group>"; };
+		6AFA23F21F7C210900B635BE /* corporationPlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder128.png; sourceTree = "<group>"; };
+		6AFA23F31F7C210900B635BE /* characterPlaceholder128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder128.jpg; sourceTree = "<group>"; };
+		8FB4E2046059215E7B63724D /* Pods-EVE ESI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESI.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESI/Pods-EVE ESI.release.xcconfig"; sourceTree = "<group>"; };
+		B5BAA855B48239AA7AC74464 /* Pods-EVE ESI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESI/Pods-EVE ESI.debug.xcconfig"; sourceTree = "<group>"; };
+		B94D837EA3ECC8FF899DCC8C /* Pods-EVE ESITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESITests/Pods-EVE ESITests.release.xcconfig"; sourceTree = "<group>"; };
+		C4BBFF5ACFF45D8CEC49B7B9 /* Pods_EVE_ESIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVE_ESIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C64E52E79F65F2FFE0C6FF95 /* Pods-EVE ESITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVE ESITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVE ESITests/Pods-EVE ESITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED8B93C48F5275E316265EAE /* Pods_EVE_ESITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVE_ESITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AA0D0BC1F77878E008DC078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AC74AB41F882FF900A01C6D /* Eureka.framework in Frameworks */,
+				6AC74AB51F882FF900A01C6D /* NVActivityIndicatorView.framework in Frameworks */,
+				6AC74AB61F882FF900A01C6D /* PopupDialog.framework in Frameworks */,
+				6AC4102F1F81FCD000A422F7 /* AlamofireObjectMapper.framework in Frameworks */,
+				6AC410301F81FCD000A422F7 /* ObjectMapper.framework in Frameworks */,
+				6AC36B401F7DC3B200EF2B4E /* Alamofire.framework in Frameworks */,
+				6AC36B411F7DC3B200EF2B4E /* AlamofireImage.framework in Frameworks */,
+				FEA1B54862BA73D5FBE758A9 /* Pods_EVE_ESI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0D31F77878E008DC078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370CAEA36378750FE9D0E66D /* Pods_EVE_ESITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0DE1F77878E008DC078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E721F492CFCFD5246FF96D /* Pods_EVE_ESIUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24119251EA5CA3774E5FBC89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24119906E83865F048AC454A /* UIImage.swift */,
+				241198C9ACFC9C6127313E21 /* Array.swift */,
+				24119965F18F3FCBCF991914 /* URL.swift */,
+				2411932E78504F6669418108 /* String.swift */,
+				2411994F5B51D7250EE4DBF7 /* TransformDate.swift */,
+				24119EE835488AAEC495BBC0 /* Dictionary.swift */,
+				24119A7DA9C765264B9CAA38 /* ESIContext.swift */,
+				24119A78CB52AE11DB0177EF /* UIViewController.swift */,
+				241196A58D4A1902BFF600C3 /* UIColor.swift */,
+				241190B2EC5C485A9888E5C2 /* BalloonMarker.swift */,
+				24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		24119613BB33A2814AA07D85 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				24119EA99AE89153C19EAD23 /* MailRecipientCell.swift */,
+				24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */,
+				24119E34F12D8DC1880D305A /* ReturnResultCell.swift */,
+				24119BE0220F035169A097DE /* ContractHeaderCell.swift */,
+				2411959522CF00E7389457CF /* JournalTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		24119792F8D052D9FB02B9D8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA23ED1F7C210800B635BE /* alliancePlaceholder32.png */,
+				6AFA23F01F7C210900B635BE /* alliancePlaceholder64.png */,
+				6AFA23E91F7C210800B635BE /* alliancePlaceholder128.png */,
+				6AFA23EB1F7C210800B635BE /* characterPlaceholder32.jpg */,
+				6AFA23F31F7C210900B635BE /* characterPlaceholder128.jpg */,
+				6AFA23EC1F7C210800B635BE /* characterPlaceholder256.jpg */,
+				6AFA23EE1F7C210800B635BE /* characterPlaceholder512.jpg */,
+				6AFA23F11F7C210900B635BE /* corporationPlaceholder32.png */,
+				6AFA23EA1F7C210800B635BE /* corporationPlaceholder64.png */,
+				6AFA23F21F7C210900B635BE /* corporationPlaceholder128.png */,
+				6AFA23EF1F7C210900B635BE /* corporationPlaceholder256.png */,
+				241195B4D6E215A92D7CDB44 /* characterPlaceholder64.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2411985924606CD920DF28FC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				241198E5F99CADDB0825149A /* SearchViewController.swift */,
+				24119244F7251393481662A4 /* CharacterViewController.swift */,
+				24119E276C08226C30C75F34 /* MainViewController.swift */,
+				24119FE0E608699F0C7520E6 /* CorporationViewController.swift */,
+				24119D1AE3BB4FE91CE399E4 /* AllianceViewController.swift */,
+				24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */,
+				2411936BC6A4250586C5018E /* ContactViewController.swift */,
+				241191A562A9ACC3C5C820D8 /* JournalViewController.swift */,
+				24119135CED2E38C3AA0ADA8 /* MailViewController.swift */,
+				24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */,
+				241194A40371B264981B856C /* SendMailViewController.swift */,
+				241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */,
+				24119A3CBB29469F8497C99E /* ReturnContactViewController.swift */,
+				2411910DDD7F1EE72D129307 /* ReturnContactFormViewController.swift */,
+				24119C764840D6F3A62BD158 /* ContractListViewController.swift */,
+				241193981E2A2FD33F97FD8C /* ContractViewController.swift */,
+				241190E93A956194AE6F9648 /* SkillsViewController.swift */,
+				2411931DE56E716C89058500 /* SkillQueueViewController.swift */,
+				24119CA455B2CABF33D5EAD5 /* ClonesViewController.swift */,
+				241194036EEC532D92965EBD /* OrdersViewController.swift */,
+				6A0032C61FE65C6600D8241E /* SearchPopupViewController.swift */,
+				241197F6534C453DE242FAD3 /* StatsViewController.swift */,
+				24119F94C28D18B0DDE1C9FE /* MiningViewController.swift */,
+				2411982C6DDD3DC011EA97EC /* UICharacterViewController.swift */,
+				24119170E0EC2B606F71D566 /* AssetsViewController.swift */,
+				24119F0E9995E793D219563B /* AssetLocationViewController.swift */,
+				24119EAC342084A98D2567BA /* StatsYearViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		24119A785F07BCE780DCA1EC /* EVE */ = {
+			isa = PBXGroup;
+			children = (
+				24119D16383B908A657C6961 /* EveCharacter.swift */,
+				241191FAA83FC98A6C2206E9 /* EveCorporation.swift */,
+				24119EE7D698869D2119AB3C /* EveAlliance.swift */,
+				24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */,
+				24119634B626DBB5E416A223 /* EveNotification.swift */,
+				24119DD6CE8AA247173AC912 /* EveClone.swift */,
+				241196EAEE7B4C2BE38EDC12 /* EveContract.swift */,
+				241198C160BD0C671D2E9A41 /* EvePlayerOwned.swift */,
+				241190114752DFEFA3F3CB61 /* EveContact.swift */,
+				2411952597C3A39B3CD76BA6 /* EveJournalEntry.swift */,
+				24119E79D09DADDDDBF904DC /* EveMail.swift */,
+				24119B29FCF98169D67D033F /* EveSendMail.swift */,
+				241192F459921F333EDD91DC /* EveMailLabel.swift */,
+				241199AD3972E13F79C7BDDF /* EveContactLabel.swift */,
+				24119E28B91C0180F5E9B943 /* EveItem.swift */,
+				24119BDFDF51714A214F5E96 /* EveSkill.swift */,
+				24119A037CC6A4D650A19ADA /* EveSkillQueue.swift */,
+				2411940BECF8758D93CF25FD /* EveMarketOrder.swift */,
+				24119CE5A915FD341D9C9454 /* EveMiningLedgerEntry.swift */,
+				24119CEA490A7E3FC99E551C /* EveMiningLedger.swift */,
+				2411952687B67526FA857156 /* EveAsset.swift */,
+				24119DFB96FA05C2684154E3 /* EveAssetList.swift */,
+			);
+			path = EVE;
+			sourceTree = "<group>";
+		};
+		24119FD193C3AB693705EDE3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24119B5C8E1864DB4D457C4B /* Nameable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		52109CEE6A720915266C462C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AC74AB71F882FF900A01C6D /* Eureka.framework */,
+				6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */,
+				6AC74AB91F882FF900A01C6D /* PopupDialog.framework */,
+				6AC410311F81FCD000A422F7 /* AlamofireObjectMapper.framework */,
+				6AC410321F81FCD000A422F7 /* ObjectMapper.framework */,
+				6AC36B421F7DC3B200EF2B4E /* Alamofire.framework */,
+				6AC36B431F7DC3B200EF2B4E /* AlamofireImage.framework */,
+				0EA9A0998587B664D7F61B4A /* Pods_EVE_ESI.framework */,
+				ED8B93C48F5275E316265EAE /* Pods_EVE_ESITests.framework */,
+				C4BBFF5ACFF45D8CEC49B7B9 /* Pods_EVE_ESIUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A10CAA71F7A07E3003106E2 /* ESI */ = {
+			isa = PBXGroup;
+			children = (
+				6A10CAA81F7A084E003106E2 /* ESIClient.swift */,
+				24119BAE4E371321EA057DF2 /* ESIResponse.swift */,
+				24119E5417D0C31C67806374 /* SSOToken.swift */,
+			);
+			path = ESI;
+			sourceTree = "<group>";
+		};
+		6A5156461F8F371000D5C29E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */,
+				6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */,
+				6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */,
+				6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */,
+				6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */,
+				6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6AA0D0B61F77878E008DC078 = {
+			isa = PBXGroup;
+			children = (
+				6A246BFA1F8F2E760025A1A2 /* EVE_ESI.xcdatamodeld */,
+				6AA0D0F31F77895F008DC078 /* Podfile */,
+				6AA0D0C11F77878E008DC078 /* EVE ESI */,
+				6AA0D0D91F77878E008DC078 /* EVE ESITests */,
+				6AA0D0E41F77878E008DC078 /* EVE ESIUITests */,
+				6AA0D0C01F77878E008DC078 /* Products */,
+				A9A8312D2D78F52022752E81 /* Pods */,
+				52109CEE6A720915266C462C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6AA0D0C01F77878E008DC078 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AA0D0BF1F77878E008DC078 /* EVE ESI.app */,
+				6AA0D0D61F77878E008DC078 /* EVE ESITests.xctest */,
+				6AA0D0E11F77878E008DC078 /* EVE ESIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AA0D0C11F77878E008DC078 /* EVE ESI */ = {
+			isa = PBXGroup;
+			children = (
+				6A0032C41FE65BB100D8241E /* RatingViewController.xib */,
+				6A5156461F8F371000D5C29E /* CoreData */,
+				6A10CAA71F7A07E3003106E2 /* ESI */,
+				6AA0D0C21F77878E008DC078 /* AppDelegate.swift */,
+				6AA0D0CC1F77878E008DC078 /* Assets.xcassets */,
+				6AA0D0D11F77878E008DC078 /* Info.plist */,
+				6A10CAA51F7A05BA003106E2 /* MainView.storyboard */,
+				6A8020931F80B6B800236B8E /* Authenticated.storyboard */,
+				24119D0539BD98E8F07FBCDA /* SearchResult.swift */,
+				24119A785F07BCE780DCA1EC /* EVE */,
+				24119792F8D052D9FB02B9D8 /* Images */,
+				2411985924606CD920DF28FC /* ViewController */,
+				24119251EA5CA3774E5FBC89 /* Extensions */,
+				24119FD193C3AB693705EDE3 /* Protocols */,
+				6A2FE58C1F86D4FE000D3454 /* MailSearchCell.xib */,
+				24119613BB33A2814AA07D85 /* Cells */,
+				6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */,
+				2411937A437BB7B3650D7E6E /* GroupLoader.swift */,
+				6A0032C21FE65B5300D8241E /* SearchPopupController.xib */,
+			);
+			path = "EVE ESI";
+			sourceTree = "<group>";
+		};
+		6AA0D0D91F77878E008DC078 /* EVE ESITests */ = {
+			isa = PBXGroup;
+			children = (
+				6AA0D0DA1F77878E008DC078 /* EVE_ESITests.swift */,
+				6AA0D0DC1F77878E008DC078 /* Info.plist */,
+			);
+			path = "EVE ESITests";
+			sourceTree = "<group>";
+		};
+		6AA0D0E41F77878E008DC078 /* EVE ESIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6AA0D0E51F77878E008DC078 /* EVE_ESIUITests.swift */,
+				6AA0D0E71F77878E008DC078 /* Info.plist */,
+			);
+			path = "EVE ESIUITests";
+			sourceTree = "<group>";
+		};
+		A9A8312D2D78F52022752E81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5BAA855B48239AA7AC74464 /* Pods-EVE ESI.debug.xcconfig */,
+				8FB4E2046059215E7B63724D /* Pods-EVE ESI.release.xcconfig */,
+				C64E52E79F65F2FFE0C6FF95 /* Pods-EVE ESITests.debug.xcconfig */,
+				B94D837EA3ECC8FF899DCC8C /* Pods-EVE ESITests.release.xcconfig */,
+				0256C02D761EAAC5D453AE57 /* Pods-EVE ESIUITests.debug.xcconfig */,
+				13F4DCE7DFABB40D4F6A5C72 /* Pods-EVE ESIUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AA0D0BE1F77878E008DC078 /* EVE ESI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA0D0EA1F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESI" */;
+			buildPhases = (
+				37290CE43A7F4A3F12987E4C /* [CP] Check Pods Manifest.lock */,
+				6AA0D0BB1F77878E008DC078 /* Sources */,
+				6AA0D0BC1F77878E008DC078 /* Frameworks */,
+				6AA0D0BD1F77878E008DC078 /* Resources */,
+				166A02BFD6DA8DDED058E3B1 /* [CP] Embed Pods Frameworks */,
+				90574481747BAECE65D015EF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EVE ESI";
+			productName = "EVE ESI";
+			productReference = 6AA0D0BF1F77878E008DC078 /* EVE ESI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AA0D0D51F77878E008DC078 /* EVE ESITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA0D0ED1F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESITests" */;
+			buildPhases = (
+				BE058BD353F20707C2B09EDF /* [CP] Check Pods Manifest.lock */,
+				6AA0D0D21F77878E008DC078 /* Sources */,
+				6AA0D0D31F77878E008DC078 /* Frameworks */,
+				6AA0D0D41F77878E008DC078 /* Resources */,
+				B59B6B76E9278B49AAC013AD /* [CP] Embed Pods Frameworks */,
+				B6659AD25B05D2839D150BCA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AA0D0D81F77878E008DC078 /* PBXTargetDependency */,
+			);
+			name = "EVE ESITests";
+			productName = "EVE ESITests";
+			productReference = 6AA0D0D61F77878E008DC078 /* EVE ESITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6AA0D0E01F77878E008DC078 /* EVE ESIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA0D0F01F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESIUITests" */;
+			buildPhases = (
+				86B6062DF67A30676FD03664 /* [CP] Check Pods Manifest.lock */,
+				6AA0D0DD1F77878E008DC078 /* Sources */,
+				6AA0D0DE1F77878E008DC078 /* Frameworks */,
+				6AA0D0DF1F77878E008DC078 /* Resources */,
+				6940C91FB10BD10161274AD9 /* [CP] Embed Pods Frameworks */,
+				E56AB9F8A8F2CC0C0FDD75DF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AA0D0E31F77878E008DC078 /* PBXTargetDependency */,
+			);
+			name = "EVE ESIUITests";
+			productName = "EVE ESIUITests";
+			productReference = 6AA0D0E11F77878E008DC078 /* EVE ESIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AA0D0B71F77878E008DC078 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Sumo;
+				TargetAttributes = {
+					6AA0D0BE1F77878E008DC078 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					6AA0D0D51F77878E008DC078 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6AA0D0BE1F77878E008DC078;
+					};
+					6AA0D0E01F77878E008DC078 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6AA0D0BE1F77878E008DC078;
+					};
+				};
+			};
+			buildConfigurationList = 6AA0D0BA1F77878E008DC078 /* Build configuration list for PBXProject "EVE ESI" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AA0D0B61F77878E008DC078;
+			productRefGroup = 6AA0D0C01F77878E008DC078 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AA0D0BE1F77878E008DC078 /* EVE ESI */,
+				6AA0D0D51F77878E008DC078 /* EVE ESITests */,
+				6AA0D0E01F77878E008DC078 /* EVE ESIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AA0D0BD1F77878E008DC078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A246BFC1F8F31F40025A1A2 /* EVE_ESI.xcdatamodeld in Resources */,
+				6AFA24091F7C231B00B635BE /* corporationPlaceholder256.png in Resources */,
+				6AA0D0CD1F77878E008DC078 /* Assets.xcassets in Resources */,
+				6AFA24061F7C231B00B635BE /* corporationPlaceholder32.png in Resources */,
+				6AFA24081F7C231B00B635BE /* corporationPlaceholder128.png in Resources */,
+				6A10CAA61F7A05BA003106E2 /* MainView.storyboard in Resources */,
+				6AFA24021F7C231B00B635BE /* characterPlaceholder32.jpg in Resources */,
+				6A2FE5911F87658B000D3454 /* ReturnContactCell.xib in Resources */,
+				6AFA24011F7C231B00B635BE /* alliancePlaceholder128.png in Resources */,
+				6A0032C51FE65BB100D8241E /* RatingViewController.xib in Resources */,
+				6AFA24001F7C231B00B635BE /* alliancePlaceholder64.png in Resources */,
+				6A8020941F80B6B800236B8E /* Authenticated.storyboard in Resources */,
+				6AFA24071F7C231B00B635BE /* corporationPlaceholder64.png in Resources */,
+				6AFA24031F7C231B00B635BE /* characterPlaceholder128.jpg in Resources */,
+				6A0032C31FE65B5300D8241E /* SearchPopupController.xib in Resources */,
+				6AFA24051F7C231B00B635BE /* characterPlaceholder512.jpg in Resources */,
+				6A2FE58D1F86D4FE000D3454 /* MailSearchCell.xib in Resources */,
+				6AFA23FF1F7C231B00B635BE /* alliancePlaceholder32.png in Resources */,
+				6AFA24041F7C231B00B635BE /* characterPlaceholder256.jpg in Resources */,
+				6AFA240A1F7C231B00B635BE /* characterPlaceholder64.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0D41F77878E008DC078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0DF1F77878E008DC078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		166A02BFD6DA8DDED058E3B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESI/Pods-EVE ESI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESI/Pods-EVE ESI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37290CE43A7F4A3F12987E4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EVE ESI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6940C91FB10BD10161274AD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESIUITests/Pods-EVE ESIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86B6062DF67A30676FD03664 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EVE ESIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90574481747BAECE65D015EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESI/Pods-EVE ESI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B59B6B76E9278B49AAC013AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESITests/Pods-EVE ESITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6659AD25B05D2839D150BCA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESITests/Pods-EVE ESITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE058BD353F20707C2B09EDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EVE ESITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E56AB9F8A8F2CC0C0FDD75DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVE ESIUITests/Pods-EVE ESIUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AA0D0BB1F77878E008DC078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A10CAA91F7A084E003106E2 /* ESIClient.swift in Sources */,
+				6AA0D0C31F77878E008DC078 /* AppDelegate.swift in Sources */,
+				2411960CF0A4F462433DEF2E /* SearchResult.swift in Sources */,
+				24119E63CAB9AA1139C6A50A /* ESIResponse.swift in Sources */,
+				241199D65778E1FA836ACCFE /* EveCharacter.swift in Sources */,
+				24119710B49B3F5ECC12B7A6 /* EveCorporation.swift in Sources */,
+				24119A129C5F1A7093C92C66 /* EveAlliance.swift in Sources */,
+				241197D83295C450D465CBB8 /* SearchViewController.swift in Sources */,
+				24119502A3A857AC70E5038D /* CharacterViewController.swift in Sources */,
+				2411993963C3EBD92C7055B4 /* MainViewController.swift in Sources */,
+				241194669881947CCE97E200 /* CorporationViewController.swift in Sources */,
+				24119991FCDFDA54C08CB90C /* UIImage.swift in Sources */,
+				24119592D8AD0F5278B0CDE7 /* Array.swift in Sources */,
+				2411998F49B7D6E6788090ED /* AllianceViewController.swift in Sources */,
+				2411904F47AA2A90C93363BA /* URL.swift in Sources */,
+				24119909FEAA57C167BAAADB /* String.swift in Sources */,
+				24119BA200608E9189CC4CA1 /* SSOToken.swift in Sources */,
+				24119F2E2E5AEEC09A387B07 /* AuthCharacterViewController.swift in Sources */,
+				24119546D71A308A68E04D0C /* EveAuthCharacter.swift in Sources */,
+				2411985E7198F0C4087F19FA /* EveNotification.swift in Sources */,
+				241194ACAB1EA1079FFBA6BB /* EveClone.swift in Sources */,
+				241199D43B41B8C62AA3EADC /* EveContract.swift in Sources */,
+				24119272717A449625969508 /* ContactViewController.swift in Sources */,
+				2411912D5E19842C9317275E /* EvePlayerOwned.swift in Sources */,
+				241197E3890D75D746B00BB7 /* EveContact.swift in Sources */,
+				24119A37EB2CE02A7260065D /* EveJournalEntry.swift in Sources */,
+				241194CD502FA19083264B4E /* TransformDate.swift in Sources */,
+				2411936438A040EF4DA455A6 /* JournalViewController.swift in Sources */,
+				24119B08E60D6A444DADD9C8 /* Dictionary.swift in Sources */,
+				241197201FE2DFFA2DF2849B /* MailViewController.swift in Sources */,
+				241193A575CEBD250C24C0BF /* EveMail.swift in Sources */,
+				24119F0EB923693B454ED1C3 /* ReadMailViewController.swift in Sources */,
+				24119D20FB51E76FE627DDDC /* SendMailViewController.swift in Sources */,
+				24119F0DCC75542F70BD37B7 /* EveSendMail.swift in Sources */,
+				6A5156581F8F37A100D5C29E /* Type+CoreDataProperties.swift in Sources */,
+				6A5156531F8F37A100D5C29E /* Group+CoreDataClass.swift in Sources */,
+				6A5156571F8F37A100D5C29E /* Type+CoreDataClass.swift in Sources */,
+				241190828AAF23446E954E4A /* ESIContext.swift in Sources */,
+				6A9D3E1F1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift in Sources */,
+				2411919098CB3B75BAD17DD9 /* ReturnSearchViewController.swift in Sources */,
+				241192815DC4540600127F6F /* MailRecipientCell.swift in Sources */,
+				241192E5D72BA96AC107998E /* MailHeaderCell.swift in Sources */,
+				2411939EF77DB24A0536CEC4 /* ReturnContactViewController.swift in Sources */,
+				241196B1EB51A50D6C2018B3 /* ReturnContactFormViewController.swift in Sources */,
+				24119B293AE9D7877FFBBE4C /* ReturnResultCell.swift in Sources */,
+				24119E2DF6922F2AE65E90D5 /* UIViewController.swift in Sources */,
+				24119454780052B344C56B04 /* EveMailLabel.swift in Sources */,
+				24119CFCB93AE193EACD3ADF /* EveContactLabel.swift in Sources */,
+				6A5156551F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift in Sources */,
+				241193ACD335EF8C0DAF2126 /* ContractListViewController.swift in Sources */,
+				24119099B1B418137F17AA60 /* ContractViewController.swift in Sources */,
+				6A5156541F8F37A100D5C29E /* Group+CoreDataProperties.swift in Sources */,
+				241199F17AA2EB2A02106F00 /* EveItem.swift in Sources */,
+				241191E284CA4F98518F8391 /* ContractHeaderCell.swift in Sources */,
+				241195B3272781E1AB9C4AE7 /* UIColor.swift in Sources */,
+				24119FDAA6418CA1FA52E44F /* JournalTableViewCell.swift in Sources */,
+				24119826611F2BD2C33D41C4 /* EveSkill.swift in Sources */,
+				6A0032C71FE65C6600D8241E /* SearchPopupViewController.swift in Sources */,
+				2411938510BEC9FAE6D7CF22 /* EveSkillQueue.swift in Sources */,
+				24119B9892E308CA32238C24 /* SkillsViewController.swift in Sources */,
+				24119CCDAE433939F78F0D25 /* Nameable.swift in Sources */,
+				2411922C0569E40CAF12BD2C /* SkillQueueViewController.swift in Sources */,
+				24119FDE37C6E783BEC40AD9 /* GroupLoader.swift in Sources */,
+				24119944BEA246353B08D5DE /* ClonesViewController.swift in Sources */,
+				24119578DAFDAFBA6190F152 /* OrdersViewController.swift in Sources */,
+				241191E14FF894A55FEEE508 /* EveMarketOrder.swift in Sources */,
+				2411927C413EF151DB26CFF5 /* StatsViewController.swift in Sources */,
+				24119D369FD4945B6C669B59 /* MiningViewController.swift in Sources */,
+				241198DDE27881A51908ECD9 /* EveMiningLedgerEntry.swift in Sources */,
+				241199DA07A22191D3522981 /* EveMiningLedger.swift in Sources */,
+				24119D0B9F7BD18B37A46E21 /* UICharacterViewController.swift in Sources */,
+				24119FCC5918FF4C74D9D85A /* AssetsViewController.swift in Sources */,
+				2411913B47B1EB89AFDBCE4C /* EveAsset.swift in Sources */,
+				2411982AE0266306499B550B /* EveAssetList.swift in Sources */,
+				24119049C2D52BB10C8DF03C /* AssetLocationViewController.swift in Sources */,
+				24119D944B966B5E5EC2304B /* StatsYearViewController.swift in Sources */,
+				24119303C96CC3E5106547C5 /* BalloonMarker.swift in Sources */,
+				24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0D21F77878E008DC078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA0D0DB1F77878E008DC078 /* EVE_ESITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA0D0DD1F77878E008DC078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA0D0E61F77878E008DC078 /* EVE_ESIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AA0D0D81F77878E008DC078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AA0D0BE1F77878E008DC078 /* EVE ESI */;
+			targetProxy = 6AA0D0D71F77878E008DC078 /* PBXContainerItemProxy */;
+		};
+		6AA0D0E31F77878E008DC078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AA0D0BE1F77878E008DC078 /* EVE ESI */;
+			targetProxy = 6AA0D0E21F77878E008DC078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6AA0D0E81F77878E008DC078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6AA0D0E91F77878E008DC078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AA0D0EB1F77878E008DC078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5BAA855B48239AA7AC74464 /* Pods-EVE ESI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6AA0D0EC1F77878E008DC078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FB4E2046059215E7B63724D /* Pods-EVE ESI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6AA0D0EE1F77878E008DC078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C64E52E79F65F2FFE0C6FF95 /* Pods-EVE ESITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE ESI.app/EVE ESI";
+			};
+			name = Debug;
+		};
+		6AA0D0EF1F77878E008DC078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B94D837EA3ECC8FF899DCC8C /* Pods-EVE ESITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE ESI.app/EVE ESI";
+			};
+			name = Release;
+		};
+		6AA0D0F11F77878E008DC078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0256C02D761EAAC5D453AE57 /* Pods-EVE ESIUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESIUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EVE ESI";
+			};
+			name = Debug;
+		};
+		6AA0D0F21F77878E008DC078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13F4DCE7DFABB40D4F6A5C72 /* Pods-EVE ESIUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V47ZWAFXTU;
+				INFOPLIST_FILE = "EVE ESIUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sumo.EVE-ESIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EVE ESI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AA0D0BA1F77878E008DC078 /* Build configuration list for PBXProject "EVE ESI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA0D0E81F77878E008DC078 /* Debug */,
+				6AA0D0E91F77878E008DC078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA0D0EA1F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA0D0EB1F77878E008DC078 /* Debug */,
+				6AA0D0EC1F77878E008DC078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA0D0ED1F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA0D0EE1F77878E008DC078 /* Debug */,
+				6AA0D0EF1F77878E008DC078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA0D0F01F77878E008DC078 /* Build configuration list for PBXNativeTarget "EVE ESIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA0D0F11F77878E008DC078 /* Debug */,
+				6AA0D0F21F77878E008DC078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A246BFA1F8F2E760025A1A2 /* EVE_ESI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A246BFB1F8F2E760025A1A2 /* EVE_ESI.xcdatamodel */,
+			);
+			currentVersion = 6A246BFB1F8F2E760025A1A2 /* EVE_ESI.xcdatamodel */;
+			path = EVE_ESI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6AA0D0B71F77878E008DC078 /* Project object */;
+}

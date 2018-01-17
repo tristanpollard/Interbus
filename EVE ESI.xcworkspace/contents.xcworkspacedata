@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:EVE ESI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

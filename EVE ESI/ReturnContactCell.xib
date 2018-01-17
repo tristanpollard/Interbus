@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AO1-YZ-nCU" customClass="ReturnResultCell" customModule="EVE_ESI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AO1-YZ-nCU" id="rHu-zf-VBq">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nxx-91-fRV">
+                        <rect key="frame" x="8" y="0.0" width="43" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="43" id="F7D-PO-TsI"/>
+                            <constraint firstAttribute="height" constant="43" id="niQ-JN-mGe"/>
+                            <constraint firstAttribute="width" secondItem="Nxx-91-fRV" secondAttribute="height" multiplier="1:1" id="sRB-O0-lLh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pty-am-Ud6">
+                        <rect key="frame" x="59" y="11" width="308" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pty-am-Ud6" firstAttribute="centerY" secondItem="rHu-zf-VBq" secondAttribute="centerY" id="44E-Uo-OaS"/>
+                    <constraint firstAttribute="trailing" secondItem="pty-am-Ud6" secondAttribute="trailing" constant="8" id="X2c-ap-oVx"/>
+                    <constraint firstItem="Nxx-91-fRV" firstAttribute="leading" secondItem="rHu-zf-VBq" secondAttribute="leading" constant="8" id="X3U-Qt-NdU"/>
+                    <constraint firstItem="Nxx-91-fRV" firstAttribute="centerY" secondItem="rHu-zf-VBq" secondAttribute="centerY" id="oh9-zt-AQH"/>
+                    <constraint firstItem="pty-am-Ud6" firstAttribute="leading" secondItem="Nxx-91-fRV" secondAttribute="trailing" constant="8" id="w6u-gl-FqQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="resultImageView" destination="Nxx-91-fRV" id="J5C-kV-orb"/>
+                <outlet property="resultLabel" destination="pty-am-Ud6" id="6bq-I3-1WW"/>
+            </connections>
+            <point key="canvasLocation" x="-36.5" y="70"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - Eureka (4.0.0)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
+  - ObjectMapper (3.0.0)
+  - PopupDialog (0.6.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.3)
+  - AlamofireObjectMapper (from `https://github.com/tristanhimmelman/AlamofireObjectMapper.git`, branch `swift-4`)
+  - Charts
+  - Eureka
+  - NVActivityIndicatorView
+  - PopupDialog (~> 0.6)
+
+EXTERNAL SOURCES:
+  AlamofireObjectMapper:
+    :branch: swift-4
+    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
+
+CHECKOUT OPTIONS:
+  AlamofireObjectMapper:
+    :commit: 8899a3df674cfd71edb121765ebcbe0762a92519
+    :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AlamofireObjectMapper: e1ff207b71715478ab69f12ca85112f37b139de8
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Eureka: c0b55d2aec82050c1400c7d65960b700be8d10ef
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  PopupDialog: 687af43af0f7b89948cd411ac701865f931bd6dc
+
+PODFILE CHECKSUM: 28a6e05b2d0fa86f616e53d258c75f666d003af3
+
+COCOAPODS: 1.3.1

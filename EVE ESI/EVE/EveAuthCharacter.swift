@@ -75,8 +75,9 @@ class EveAuthCharacter : EveCharacter{
     var skills = [EveSkill]()
     var skillQueue = [EveSkillQueue]()
     var total_sp : Int?
+    var unallocated_sp : Int?
 
-    var stats = [[String:Int64]]()
+    var stats = [[String:Any]]()
 
     init(token: SSOToken){
         self.token = token
@@ -98,9 +99,6 @@ class EveAuthCharacter : EveCharacter{
 
     func loadAssets(completionHandler: @escaping() -> ()){
         self.assets.loadAllAssetsForCharacter(){
-            print("Loaded assets")
-            debugPrint(self.assets.assetList.count)
-
             completionHandler()
         }
     }
@@ -153,7 +151,6 @@ class EveAuthCharacter : EveCharacter{
 
     func loadFatigue(completionHandler: @escaping() -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/fatigue/", token: self.token) { response in
-            debugPrint(response.rawResponse)
             if let fatigue = response.result as? [String:String]{
 
             }
@@ -214,12 +211,16 @@ class EveAuthCharacter : EveCharacter{
 
     func loadSkills(completionHandler: @escaping() -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/skills/", token: self.token){ response in
+
             if let skillJson = response.result as? [String:Any]{
                 if let skills = skillJson["skills"] as? [[String:Any]]{
                     self.skills = Mapper<EveSkill>().mapArray(JSONArray: skills)
                 }
                 if let totalsp = skillJson["total_sp"] as? Int{
                     self.total_sp = totalsp
+                }
+                if let unallocated = skillJson["unallocated_sp"] as? Int{
+                    self.unallocated_sp = unallocated
                 }
             }
             self.skills.loadNames() {
@@ -315,12 +316,11 @@ class EveAuthCharacter : EveCharacter{
 
         esi.invoke(endPoint: "/characters/\(self.id)/stats/", token: self.token){ response in
 
-            if let stats = response.result as? [[String:Int64]]{
+            if let stats = response.result as? [[String:Any]]{
                 self.stats = stats
             }
 
             completionHandler()
-
         }
     }
 

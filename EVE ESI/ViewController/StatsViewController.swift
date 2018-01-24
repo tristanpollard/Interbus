@@ -47,7 +47,6 @@ extension StatsViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "statsCell", for: indexPath)
 
-
         if let year = self.character.stats[indexPath.row]["year"] as? Int64{
             cell.textLabel?.text = String(year)
         }

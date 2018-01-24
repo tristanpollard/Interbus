@@ -27,10 +27,11 @@ class SkillsViewController : UICharacterViewController, NVActivityIndicatorViewa
 
     func groupSkills(){
 
-        groupedSkills = self.groupsForSkills()
+        self.groupedSkills = self.groupsForSkills()
         for (key, value) in self.groupedSkills {
             self.groupedSkills[key] = value.sorted(by: {$0.name < $1.name})
         }
+
         self.sortedKeys = self.groupedSkills.keys.sorted(by: {$0 < $1})
     }
 
@@ -88,7 +89,7 @@ extension SkillsViewController : UITableViewDelegate, UITableViewDataSource{
 
         let skill = groupedSkills[sortedKeys[indexPath.section]]![indexPath.row]
         cell.textLabel?.text = skill.name
-        cell.detailTextLabel?.text = String(skill.current_skill_level!)
+        cell.detailTextLabel?.text = String(skill.trained_skill_level!)
 
 
         return cell

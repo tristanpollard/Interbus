@@ -68,14 +68,18 @@ extension Array where Element == EveClone{
 
     func loadImplantNames(completionHandler: @escaping() -> ()){
 
-        let ids : [Int64] = self.map({$0.implant_ids!}).flatMap({$0})
-        ids.loadNames(){ names in
-            for name in names{
+        let group = DispatchGroup()
 
-            }
+        self.map({
+            group.enter()
+            $0.implants.loadNames{
+                group.leave()
+            }})
+
+        group.notify(queue: .main){
+            completionHandler()
         }
 
-        completionHandler()
     }
 }
 

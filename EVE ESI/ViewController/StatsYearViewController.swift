@@ -9,7 +9,7 @@ import Charts
 class StatsYearViewController : UICharacterViewController{
 
     var year : Int64!
-    var yearStats = [String:Int64]()
+    var yearStats = [String:Any]()
     var sortedKeys = [String]()
 //    @IBOutlet weak var statsTable: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -26,9 +26,10 @@ class StatsYearViewController : UICharacterViewController{
         debugPrint(scrollView.contentSize)
 
         self.title = String(year)
-        self.yearStats = self.character.stats.first(where: {$0["year"] == year})!
+        self.yearStats = self.character.stats.first(where: {$0["year"] as! Int64 == year})!
         self.sortedKeys = Array(self.yearStats.keys).sorted(by: {$0 < $1})
-        debugPrint(yearStats)
+        debugPrint(self.sortedKeys)
+        debugPrint(self.yearStats)
 
         var miningEntries = [PieChartDataEntry]()
 
@@ -37,31 +38,40 @@ class StatsYearViewController : UICharacterViewController{
         var capEntries = [BarChartDataEntry]()
 
         var dmgDoneEntries = [RadarChartDataEntry]()
-        
-        for key in self.sortedKeys {
-            if key.range(of: "mining_ore_") != nil { //mining
-                let entry = PieChartDataEntry(value: Double(self.yearStats[key]!), label: key)
-                miningEntries.append(entry)
+
+
+        if let mining = self.yearStats["mining"] as? [String:Double]{
+
+
+            for key in mining.keys.sorted(by: {$0 < $1}) {
+                if key.range(of: "ore_") != nil { //mining
+                    let entry = PieChartDataEntry(value: mining[key]!, label: key)
+                    miningEntries.append(entry)
+                }
             }
         }
 
-        armorEntries.append(BarChartDataEntry(x: 0, yValues: [statForKey("combat_repair_armor_by_remote_amount")], label: "Armor Received"))
-        shieldEntries.append(BarChartDataEntry(x: 0, yValues: [statForKey("combat_repair_shield_by_remote_amount")], label: "Shield Received"))
-        capEntries.append(BarChartDataEntry(x: 0, yValues: [statForKey("combat_repair_capacitor_by_remote_amount")], label: "Cap Received"))
+        if let combat = self.yearStats["combat"] as? [String:Double] {
 
-        armorEntries.append(BarChartDataEntry(x: 1, yValues: [statForKey("combat_repair_armor_remote_amount")], label: "Armor Sent"))
-        shieldEntries.append(BarChartDataEntry(x: 1, yValues: [statForKey("combat_repair_shield_remote_amount")], label: "Shield Sent"))
-        capEntries.append(BarChartDataEntry(x: 1, yValues: [statForKey("combat_repair_capacitor_remote_amount")], label: "Cap Sent"))
+            armorEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_armor_by_remote_amount"]!], label: "Armor Received"))
+            shieldEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_shield_by_remote_amount"]!], label: "Shield Received"))
+            capEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_capacitor_by_remote_amount"]!], label: "Cap Received"))
 
-        armorEntries.append(BarChartDataEntry(x: 2, yValues: [statForKey("combat_repair_armor_self_amount")], label: "Local armor"))
-        shieldEntries.append(BarChartDataEntry(x: 2, yValues: [statForKey("combat_repair_shield_self_amount")], label: "Local Shield"))
-        capEntries.append(BarChartDataEntry(x: 2, yValues: [statForKey("combat_repair_capacitor_self_amount")], label: "Cap Boosted"))
+            armorEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_armor_remote_amount"]!], label: "Armor Sent"))
+            shieldEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_shield_remote_amount"]!], label: "Shield Sent"))
+            capEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_capacitor_remote_amount"]!], label: "Cap Sent"))
 
-        dmgDoneEntries.append(RadarChartDataEntry(value: statForKey("combat_damage_to_players_energy_amount")))
-        dmgDoneEntries.append(RadarChartDataEntry(value: statForKey("combat_damage_to_players_projectile_amount")))
-        dmgDoneEntries.append(RadarChartDataEntry(value: statForKey("combat_damage_to_players_hybrid_amount")))
-        dmgDoneEntries.append(RadarChartDataEntry(value: statForKey("combat_damage_to_players_missile_amount")))
-        dmgDoneEntries.append(RadarChartDataEntry(value: statForKey("combat_damage_to_players_combat_drone_amount")))
+            armorEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_armor_self_amount"]!], label: "Local armor"))
+            shieldEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_shield_self_amount"]!], label: "Local Shield"))
+            capEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_capacitor_self_amount"]!], label: "Cap Boosted"))
+
+            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_energy_amount"]!))
+            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_projectile_amount"]!))
+            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_hybrid_amount"]!))
+            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_missile_amount"]!))
+            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_combat_drone_amount"]!))
+
+        }
 
         let dmgDoneSet = RadarChartDataSet(values: dmgDoneEntries, label: "Damage Done")
         dmgDoneSet.setColor(.green)
@@ -99,7 +109,6 @@ class StatsYearViewController : UICharacterViewController{
         let miningData = PieChartData(dataSet: miningSet)
         miningSet.drawValuesEnabled = false
 
-
         self.miningChart.drawSliceTextEnabled = false
         self.miningChart.highlightPerTapEnabled = true
 
@@ -119,7 +128,7 @@ class StatsYearViewController : UICharacterViewController{
     
     func statForKey(_ key : String) -> Double{
         if let stat = self.yearStats[key]{
-            return Double(stat)
+            return Double(stat as! Int64)
         }
         
         return 0
@@ -144,7 +153,7 @@ extension StatsYearViewController : UITableViewDataSource, UITableViewDelegate{
         let value = self.yearStats[key]!
 
         cell.textLabel?.text = key
-        cell.detailTextLabel?.text = String(value)
+        cell.detailTextLabel?.text = String(value as! Int64)
 
         return cell
     }

@@ -33,6 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
         print("\(path)")
 
+//        let gloader = GroupLoader()
+//        gloader.loadAllGroupIds(){ result in
+//            gloader.loadAllGroupsFromIds(ids: result)
+//
+//        }
+
         return true
 
     }

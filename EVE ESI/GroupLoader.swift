@@ -14,6 +14,7 @@ class GroupLoader {
 
         let params : Parameters = ["page" : page]
         esi.invoke(endPoint: "/universe/groups", parameters: params){ response in
+            debugPrint(response.result)
             if let ids = response.result as? [Int64]{
                 if ids.count > 0{
                     let combined = gIds + ids

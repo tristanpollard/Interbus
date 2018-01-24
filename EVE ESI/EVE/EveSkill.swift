@@ -15,9 +15,11 @@ class EveSkill : Mappable, Nameable {
         }
     }
 
+    var active_skill_level : Int?
     var skill_id : Int64?
-    var current_skill_level : Int?
     var skillpoints_in_skill : Int?
+    var trained_skill_level : Int?
+
 
     required init?(map: Map) {
 
@@ -26,8 +28,9 @@ class EveSkill : Mappable, Nameable {
     func mapping(map: Map) {
 
         self.skill_id <- map["skill_id"]
-        self.current_skill_level <- map["current_skill_level"]
+        self.active_skill_level <- map["active_skill_level"]
         self.skillpoints_in_skill <- map["skillpoints_in_skill"]
+        self.trained_skill_level <- map["trained_skill_level"]
 
     }
 

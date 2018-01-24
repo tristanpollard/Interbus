@@ -15,7 +15,7 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
     @IBOutlet weak var allianceImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
-    let options = ["Assets", "Clones", "Contacts", "Contracts", "Journal", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Stats"]
+    let options = ["Assets", "Clones", "Contacts", "Contracts", "Journal", "Kills", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Stats"]
 
     func updateOnline(){
         self.character.isOnline(){ online in
@@ -107,31 +107,7 @@ extension AuthCharacterViewController : UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch options[indexPath.row]{
-            case "Assets":
-                performSegue(withIdentifier: "authCharacterToAssets", sender: self)
-            case "Clones":
-                performSegue(withIdentifier: "authCharacterToClones", sender: self)
-            case "Contacts":
-                performSegue(withIdentifier: "authCharacterToContacts", sender: self)
-            case "Contracts":
-                performSegue(withIdentifier: "authCharacterToContracts", sender: self)
-            case "Journal":
-                performSegue(withIdentifier: "authCharacterToJournal", sender: self)
-            case "Mail":
-                performSegue(withIdentifier: "authCharacterToMail", sender: self)
-            case "Mining":
-                performSegue(withIdentifier: "authCharacterToMining", sender: self)
-            case "Orders":
-                performSegue(withIdentifier: "authCharacterToOrders", sender: self)
-            case "Skills":
-                performSegue(withIdentifier: "authCharacterToSkills", sender: self)
-            case "Skill Queue":
-                performSegue(withIdentifier: "authCharacterToSkillQueue", sender: self)
-            case "Stats":
-                performSegue(withIdentifier: "authCharacterToStats", sender: self)
-            default:
-                break
-        }
+
+        self.performSegue(withIdentifier: "authCharacterTo\(options[indexPath.row])", sender: self)
     }
 }

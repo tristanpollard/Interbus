@@ -65,6 +65,8 @@ class EveAuthCharacter : EveCharacter{
 
     var journal = [EveJournalEntry]()
 
+    var kills = [EveKill]()
+
     var mail = [EveMail]()
     var mailLabels = [EveMailLabel]()
 
@@ -149,14 +151,6 @@ class EveAuthCharacter : EveCharacter{
         }
     }
 
-    func loadFatigue(completionHandler: @escaping() -> ()){
-        esi.invoke(endPoint: "/characters/\(self.id)/fatigue/", token: self.token) { response in
-            if let fatigue = response.result as? [String:String]{
-
-            }
-            completionHandler()
-        }
-    }
 
     func loadContactLabels(completionHandler: @escaping() -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/contacts/labels/", token: self.token){ response in
@@ -208,6 +202,57 @@ class EveAuthCharacter : EveCharacter{
         }
 
     }
+
+    func loadFatigue(completionHandler: @escaping() -> ()){
+        esi.invoke(endPoint: "/characters/\(self.id)/fatigue/", token: self.token) { response in
+            if let fatigue = response.result as? [String:String]{
+
+            }
+            completionHandler()
+        }
+    }
+
+    func loadKills(completionHandler: @escaping() -> ()){
+
+        var killMails  = [[String:Any]]()
+
+        let group = DispatchGroup()
+
+        group.enter()
+        self.esi.invoke(endPoint: "/characters/\(self.id)/killmails/recent/", token: self.token){ response in
+
+            if let kills = response.result as? [[String:Any]]{
+                for kill in kills{
+                    if let hash = kill["killmail_hash"] as? String, let id = kill["killmail_id"] as? Int64{
+                        group.enter()
+                        self.esi.invoke(endPoint: "/killmails/\(id)/\(hash)/"){ response in
+                            if let km = response.result as? [String:Any]{
+                                group.leave()
+                                killMails.append(km)
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            group.leave()
+        }
+
+        group.notify(queue: .main){
+
+            for kill in killMails{
+                debugPrint(kill)
+            }
+
+            self.kills = Mapper<EveKill>().mapArray(JSONArray: killMails)
+            completionHandler()
+        }
+
+
+    }
+
+
 
     func loadSkills(completionHandler: @escaping() -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/skills/", token: self.token){ response in

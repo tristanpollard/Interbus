@@ -60,6 +60,8 @@
 		24119A37EB2CE02A7260065D /* EveJournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411952597C3A39B3CD76BA6 /* EveJournalEntry.swift */; };
 		24119B08E60D6A444DADD9C8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EE835488AAEC495BBC0 /* Dictionary.swift */; };
 		24119B293AE9D7877FFBBE4C /* ReturnResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E34F12D8DC1880D305A /* ReturnResultCell.swift */; };
+		24119B368ADFE91198146496 /* KillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193B32BEDE889CCDBC451 /* KillsViewController.swift */; };
+		24119B943EC25C8091F3D583 /* EveKill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B72094E4E3A7BB1C740 /* EveKill.swift */; };
 		24119B9892E308CA32238C24 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241190E93A956194AE6F9648 /* SkillsViewController.swift */; };
 		24119BA200608E9189CC4CA1 /* SSOToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E5417D0C31C67806374 /* SSOToken.swift */; };
 		24119CCDAE433939F78F0D25 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B5C8E1864DB4D457C4B /* Nameable.swift */; };
@@ -157,6 +159,7 @@
 		2411937A437BB7B3650D7E6E /* GroupLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupLoader.swift; sourceTree = "<group>"; };
 		241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSearchViewController.swift; sourceTree = "<group>"; };
 		241193981E2A2FD33F97FD8C /* ContractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		241193B32BEDE889CCDBC451 /* KillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillsViewController.swift; sourceTree = "<group>"; };
 		241194036EEC532D92965EBD /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2411940BECF8758D93CF25FD /* EveMarketOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMarketOrder.swift; sourceTree = "<group>"; };
 		241194A40371B264981B856C /* SendMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailHeaderCell.swift; sourceTree = "<group>"; };
 		24119B29FCF98169D67D033F /* EveSendMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSendMail.swift; sourceTree = "<group>"; };
 		24119B5C8E1864DB4D457C4B /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		24119B72094E4E3A7BB1C740 /* EveKill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKill.swift; sourceTree = "<group>"; };
 		24119BAE4E371321EA057DF2 /* ESIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIResponse.swift; sourceTree = "<group>"; };
 		24119BDFDF51714A214F5E96 /* EveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSkill.swift; sourceTree = "<group>"; };
 		24119BE0220F035169A097DE /* ContractHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractHeaderCell.swift; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 				24119170E0EC2B606F71D566 /* AssetsViewController.swift */,
 				24119F0E9995E793D219563B /* AssetLocationViewController.swift */,
 				24119EAC342084A98D2567BA /* StatsYearViewController.swift */,
+				241193B32BEDE889CCDBC451 /* KillsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				24119CEA490A7E3FC99E551C /* EveMiningLedger.swift */,
 				2411952687B67526FA857156 /* EveAsset.swift */,
 				24119DFB96FA05C2684154E3 /* EveAssetList.swift */,
+				24119B72094E4E3A7BB1C740 /* EveKill.swift */,
 			);
 			path = EVE;
 			sourceTree = "<group>";
@@ -940,6 +946,8 @@
 				24119D944B966B5E5EC2304B /* StatsYearViewController.swift in Sources */,
 				24119303C96CC3E5106547C5 /* BalloonMarker.swift in Sources */,
 				24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */,
+				24119B368ADFE91198146496 /* KillsViewController.swift in Sources */,
+				24119B943EC25C8091F3D583 /* EveKill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

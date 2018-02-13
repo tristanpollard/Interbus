@@ -2,7 +2,7 @@
 //  EVESSOToken+CoreDataProperties.swift
 //  
 //
-//  Created by Tristan Pollard on 2017-12-17.
+//  Created by Tristan Pollard on 2018-02-10.
 //
 //
 
@@ -21,7 +21,8 @@ extension EVESSOToken {
     @NSManaged public var character_name: String?
     @NSManaged public var expires: NSDate?
     @NSManaged public var refresh_token: String?
-    @NSManaged public var token_type: String?
+    //TODO move this to a relationship
     @NSManaged public var scopes: String?
+    @NSManaged public var token_type: String?
 
 }

@@ -20,6 +20,8 @@ class ContractViewController : UICharacterViewController, NVActivityIndicatorVie
 
         let group = DispatchGroup()
 
+        self.title = "\(contract.issuer!.name) -> \(contract.assignee!.name)"
+
         group.enter()
         self.character.loadContractItems(contract: self.contract){ response, contract in
             self.tableView.reloadData()

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EVESSOScopes" representedClassName="EVESSOScopes" syncable="YES" codeGenerationType="class">
+        <attribute name="scope" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="EVESSOToken" representedClassName="EVESSOToken" syncable="YES" codeGenerationType="class">
         <attribute name="access_token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -21,6 +24,7 @@
         <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="types" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
+        <element name="EVESSOScopes" positionX="-54" positionY="54" width="128" height="60"/>
         <element name="EVESSOToken" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Group" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Type" positionX="-54" positionY="54" width="128" height="75"/>

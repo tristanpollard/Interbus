@@ -32,7 +32,7 @@ class SearchViewController : UIViewController{
                 if let path = self.selectedCell {
                     let key = keyForSection(section: path.section)
                     if let result = self.searchResults.results[key]?[path.row] {
-                        viewController.character = EveCharacter(character_id: result.id)
+                        viewController.character = EveCharacter(result.id)
                         viewController.title = result.name
                     }
                 }

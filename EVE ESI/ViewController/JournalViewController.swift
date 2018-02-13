@@ -17,6 +17,8 @@ class JournalViewController : UICharacterViewController, NVActivityIndicatorView
 
         self.startAnimating()
 
+        self.title = "Wallet Journal"
+
         self.character.loadWalletJournal(){
             self.tableView.reloadData()
             self.stopAnimating()

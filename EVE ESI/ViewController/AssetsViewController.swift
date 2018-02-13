@@ -11,6 +11,7 @@ class AssetsViewController : UICharacterViewController, NVActivityIndicatorViewa
     @IBOutlet weak var assetTable: UITableView!
 
     var selectedLocation : Int64 = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -170,7 +170,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate{
 
         let placeholder = UIImage(named: "characterPlaceholder64.jpg")!.af_imageRoundedIntoCircle()
         let imageFilter = ScaledToSizeCircleFilter(size: CGSize(width: 44, height: 44))
-        let char = EveCharacter(character_id: token.character_id!)
+        let char = EveCharacter(token.character_id!)
         cell.imageView?.af_setImage(withURL: char.imageURL(size: cell.imageView!.sizeForImage(maxImageSize: 64)), placeholderImage: placeholder, filter: imageFilter)
         cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
 

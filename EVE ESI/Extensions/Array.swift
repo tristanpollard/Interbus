@@ -194,7 +194,7 @@ extension Array where Element == Int64 {
                 for char in characters {
                     if let name = char["character_name"] as? String{
                         if let id = char["character_id"] as? Int64{
-                            let char = EveCharacter(character_id: id)
+                            let char = EveCharacter(id)
                             char.name = name
                             names[id] = char
                         }

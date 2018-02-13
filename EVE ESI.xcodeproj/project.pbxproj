@@ -29,6 +29,7 @@
 		241193A575CEBD250C24C0BF /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E79D09DADDDDBF904DC /* EveMail.swift */; };
 		241193ACD335EF8C0DAF2126 /* ContractListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119C764840D6F3A62BD158 /* ContractListViewController.swift */; };
 		24119454780052B344C56B04 /* EveMailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241192F459921F333EDD91DC /* EveMailLabel.swift */; };
+		24119454E65CC84704E1E07B /* EveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D64BC92D43B61A231E5 /* EveTransaction.swift */; };
 		241194669881947CCE97E200 /* CorporationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119FE0E608699F0C7520E6 /* CorporationViewController.swift */; };
 		241194ACAB1EA1079FFBA6BB /* EveClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DD6CE8AA247173AC912 /* EveClone.swift */; };
 		241194CD502FA19083264B4E /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411994F5B51D7250EE4DBF7 /* TransformDate.swift */; };
@@ -72,12 +73,14 @@
 		24119D944B966B5E5EC2304B /* StatsYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EAC342084A98D2567BA /* StatsYearViewController.swift */; };
 		24119E2DF6922F2AE65E90D5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A78CB52AE11DB0177EF /* UIViewController.swift */; };
 		24119E63CAB9AA1139C6A50A /* ESIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119BAE4E371321EA057DF2 /* ESIResponse.swift */; };
+		24119EB343917C103D3E3A00 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241191BF5C53F2DCE99690EF /* TransactionViewController.swift */; };
 		24119F0DCC75542F70BD37B7 /* EveSendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B29FCF98169D67D033F /* EveSendMail.swift */; };
 		24119F0EB923693B454ED1C3 /* ReadMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */; };
 		24119F2E2E5AEEC09A387B07 /* AuthCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */; };
 		24119FCC5918FF4C74D9D85A /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119170E0EC2B606F71D566 /* AssetsViewController.swift */; };
 		24119FDAA6418CA1FA52E44F /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411959522CF00E7389457CF /* JournalTableViewCell.swift */; };
 		24119FDE37C6E783BEC40AD9 /* GroupLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411937A437BB7B3650D7E6E /* GroupLoader.swift */; };
+		24119FF7A00DAD64B6F4C4D4 /* RequiresScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D5A973652A6504D7709 /* RequiresScope.swift */; };
 		370CAEA36378750FE9D0E66D /* Pods_EVE_ESITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8B93C48F5275E316265EAE /* Pods_EVE_ESITests.framework */; };
 		55E721F492CFCFD5246FF96D /* Pods_EVE_ESIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBFF5ACFF45D8CEC49B7B9 /* Pods_EVE_ESIUITests.framework */; };
 		6A0032C31FE65B5300D8241E /* SearchPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A0032C21FE65B5300D8241E /* SearchPopupController.xib */; };
@@ -88,13 +91,13 @@
 		6A246BFC1F8F31F40025A1A2 /* EVE_ESI.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6A246BFA1F8F2E760025A1A2 /* EVE_ESI.xcdatamodeld */; };
 		6A2FE58D1F86D4FE000D3454 /* MailSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FE58C1F86D4FE000D3454 /* MailSearchCell.xib */; };
 		6A2FE5911F87658B000D3454 /* ReturnContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */; };
+		6A49D78D202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49D78B202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift */; };
+		6A49D78E202EDB3500210533 /* EVESSOToken+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49D78C202EDB3500210533 /* EVESSOToken+CoreDataClass.swift */; };
 		6A5156531F8F37A100D5C29E /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */; };
 		6A5156541F8F37A100D5C29E /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */; };
-		6A5156551F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */; };
 		6A5156571F8F37A100D5C29E /* Type+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */; };
 		6A5156581F8F37A100D5C29E /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */; };
 		6A8020941F80B6B800236B8E /* Authenticated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8020931F80B6B800236B8E /* Authenticated.storyboard */; };
-		6A9D3E1F1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */; };
 		6AA0D0C31F77878E008DC078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0D0C21F77878E008DC078 /* AppDelegate.swift */; };
 		6AA0D0CD1F77878E008DC078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA0D0CC1F77878E008DC078 /* Assets.xcassets */; };
 		6AA0D0DB1F77878E008DC078 /* EVE_ESITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA0D0DA1F77878E008DC078 /* EVE_ESITests.swift */; };
@@ -149,6 +152,7 @@
 		24119135CED2E38C3AA0ADA8 /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		24119170E0EC2B606F71D566 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		241191A562A9ACC3C5C820D8 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		241191BF5C53F2DCE99690EF /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		241191FAA83FC98A6C2206E9 /* EveCorporation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCorporation.swift; sourceTree = "<group>"; };
 		24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCharacterViewController.swift; sourceTree = "<group>"; };
 		24119244F7251393481662A4 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		24119D0539BD98E8F07FBCDA /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		24119D16383B908A657C6961 /* EveCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacter.swift; sourceTree = "<group>"; };
 		24119D1AE3BB4FE91CE399E4 /* AllianceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllianceViewController.swift; sourceTree = "<group>"; };
+		24119D5A973652A6504D7709 /* RequiresScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiresScope.swift; sourceTree = "<group>"; };
+		24119D64BC92D43B61A231E5 /* EveTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveTransaction.swift; sourceTree = "<group>"; };
 		24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAuthCharacter.swift; sourceTree = "<group>"; };
 		24119DD6CE8AA247173AC912 /* EveClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveClone.swift; sourceTree = "<group>"; };
 		24119DFB96FA05C2684154E3 /* EveAssetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssetList.swift; sourceTree = "<group>"; };
@@ -222,13 +228,13 @@
 		6A246BFB1F8F2E760025A1A2 /* EVE_ESI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EVE_ESI.xcdatamodel; sourceTree = "<group>"; };
 		6A2FE58C1F86D4FE000D3454 /* MailSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MailSearchCell.xib; sourceTree = "<group>"; };
 		6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnContactCell.xib; sourceTree = "<group>"; };
+		6A49D78B202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EVESSOToken+CoreDataProperties.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		6A49D78C202EDB3500210533 /* EVESSOToken+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EVESSOToken+CoreDataClass.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EVESSOToken+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A8020931F80B6B800236B8E /* Authenticated.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authenticated.storyboard; sourceTree = "<group>"; };
-		6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EVESSOToken+CoreDataProperties.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		6AA0D0BF1F77878E008DC078 /* EVE ESI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EVE ESI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA0D0C21F77878E008DC078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AA0D0CC1F77878E008DC078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 				24119F0E9995E793D219563B /* AssetLocationViewController.swift */,
 				24119EAC342084A98D2567BA /* StatsYearViewController.swift */,
 				241193B32BEDE889CCDBC451 /* KillsViewController.swift */,
+				241191BF5C53F2DCE99690EF /* TransactionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -411,6 +418,7 @@
 				2411952687B67526FA857156 /* EveAsset.swift */,
 				24119DFB96FA05C2684154E3 /* EveAssetList.swift */,
 				24119B72094E4E3A7BB1C740 /* EveKill.swift */,
+				24119D64BC92D43B61A231E5 /* EveTransaction.swift */,
 			);
 			path = EVE;
 			sourceTree = "<group>";
@@ -419,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				24119B5C8E1864DB4D457C4B /* Nameable.swift */,
+				24119D5A973652A6504D7709 /* RequiresScope.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -453,10 +462,10 @@
 		6A5156461F8F371000D5C29E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				6A9D3E1E1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift */,
+				6A49D78C202EDB3500210533 /* EVESSOToken+CoreDataClass.swift */,
+				6A49D78B202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift */,
 				6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */,
 				6A51564E1F8F37A100D5C29E /* Group+CoreDataProperties.swift */,
-				6A51564F1F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift */,
 				6A5156511F8F37A100D5C29E /* Type+CoreDataClass.swift */,
 				6A5156521F8F37A100D5C29E /* Type+CoreDataProperties.swift */,
 			);
@@ -900,13 +909,13 @@
 				241197201FE2DFFA2DF2849B /* MailViewController.swift in Sources */,
 				241193A575CEBD250C24C0BF /* EveMail.swift in Sources */,
 				24119F0EB923693B454ED1C3 /* ReadMailViewController.swift in Sources */,
+				6A49D78D202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift in Sources */,
 				24119D20FB51E76FE627DDDC /* SendMailViewController.swift in Sources */,
 				24119F0DCC75542F70BD37B7 /* EveSendMail.swift in Sources */,
 				6A5156581F8F37A100D5C29E /* Type+CoreDataProperties.swift in Sources */,
 				6A5156531F8F37A100D5C29E /* Group+CoreDataClass.swift in Sources */,
 				6A5156571F8F37A100D5C29E /* Type+CoreDataClass.swift in Sources */,
 				241190828AAF23446E954E4A /* ESIContext.swift in Sources */,
-				6A9D3E1F1FE6653D00748DB1 /* EVESSOToken+CoreDataProperties.swift in Sources */,
 				2411919098CB3B75BAD17DD9 /* ReturnSearchViewController.swift in Sources */,
 				241192815DC4540600127F6F /* MailRecipientCell.swift in Sources */,
 				241192E5D72BA96AC107998E /* MailHeaderCell.swift in Sources */,
@@ -916,12 +925,12 @@
 				24119E2DF6922F2AE65E90D5 /* UIViewController.swift in Sources */,
 				24119454780052B344C56B04 /* EveMailLabel.swift in Sources */,
 				24119CFCB93AE193EACD3ADF /* EveContactLabel.swift in Sources */,
-				6A5156551F8F37A100D5C29E /* EVESSOToken+CoreDataClass.swift in Sources */,
 				241193ACD335EF8C0DAF2126 /* ContractListViewController.swift in Sources */,
 				24119099B1B418137F17AA60 /* ContractViewController.swift in Sources */,
 				6A5156541F8F37A100D5C29E /* Group+CoreDataProperties.swift in Sources */,
 				241199F17AA2EB2A02106F00 /* EveItem.swift in Sources */,
 				241191E284CA4F98518F8391 /* ContractHeaderCell.swift in Sources */,
+				6A49D78E202EDB3500210533 /* EVESSOToken+CoreDataClass.swift in Sources */,
 				241195B3272781E1AB9C4AE7 /* UIColor.swift in Sources */,
 				24119FDAA6418CA1FA52E44F /* JournalTableViewCell.swift in Sources */,
 				24119826611F2BD2C33D41C4 /* EveSkill.swift in Sources */,
@@ -948,6 +957,9 @@
 				24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */,
 				24119B368ADFE91198146496 /* KillsViewController.swift in Sources */,
 				24119B943EC25C8091F3D583 /* EveKill.swift in Sources */,
+				24119FF7A00DAD64B6F4C4D4 /* RequiresScope.swift in Sources */,
+				24119EB343917C103D3E3A00 /* TransactionViewController.swift in Sources */,
+				24119454E65CC84704E1E07B /* EveTransaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

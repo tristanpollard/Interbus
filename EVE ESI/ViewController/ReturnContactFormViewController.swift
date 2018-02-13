@@ -83,7 +83,6 @@ class ReturnContactFormViewController : FormViewController{
         let results = self.searchResults.results.map({$0.1})
         var allResults = [SearchResult]()
         results.map({allResults = allResults + $0})
-        debugPrint(allResults)
         allResults = allResults.sorted(by: {$0.name! < $1.name!})
         searchSection.removeAll()
         for searchResult in allResults {

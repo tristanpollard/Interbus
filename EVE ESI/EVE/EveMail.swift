@@ -32,7 +32,7 @@ class EveMail : Mappable, Equatable{
         self.date <- (map["timestamp"], TransformDate())
         self.recipientsData <- map["recipients"]
 
-        self.from = EveCharacter(character_id: self.from_id!)
+        self.from = EveCharacter(self.from_id!)
         self.parseRecipients()
     }
 
@@ -41,7 +41,7 @@ class EveMail : Mappable, Equatable{
             if let id = recip["recipient_id"] as? Int64, let type = recip["recipient_type"] as? String{
                 switch (type){
                     case "character":
-                        self.recipients.append(EveCharacter(character_id: id))
+                        self.recipients.append(EveCharacter(id))
                     case "corporation":
                         self.recipients.append(EveCorporation(corporation_id: id))
                     case "alliance":

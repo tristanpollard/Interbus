@@ -63,7 +63,7 @@ class EveContact : Mappable, Equatable, Nameable{
         switch self.contact_type as! String{
             case "character":
                 self.type = .character
-                self.contact = EveCharacter(character_id: self.contact_id!)
+                self.contact = EveCharacter(self.contact_id!)
             case "corporation":
                 self.type = .corporation
                 self.contact = EveCorporation(corporation_id: self.contact_id!)

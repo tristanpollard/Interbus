@@ -129,6 +129,7 @@ class SendMailViewController : FormViewController{
         let sendMail = EveSendMail(body: NSString(string: body.value as! String).replacingOccurrences(of: "\n", with: "<br />"), recipients: vals, subject: subject.value as! String, token: self.character.token!)
         sendMail.send(){ result in
             debugPrint(result.rawResponse)
+            self.navigationController?.popViewController(animated: true)
         }
 
     }

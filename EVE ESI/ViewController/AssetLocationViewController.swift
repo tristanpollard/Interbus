@@ -17,6 +17,9 @@ class AssetLocationViewController : UICharacterViewController, NVActivityIndicat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startAnimating()
+
+        self.title = self.character.assets.assetLocations[locationId]
+
         var loadingAssets = self.character.assets.assetsForLocation(location: locationId)
         loadingAssets.loadNames(){
             loadingAssets.sort(by: {$0.name < $1.name})

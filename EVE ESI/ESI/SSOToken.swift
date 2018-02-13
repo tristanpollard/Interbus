@@ -15,15 +15,13 @@ class SSOToken {
     var expires : Date?
     var character_id : Int64?
     var character_name : String?
-    var scopes : String?
+    var scopes : [String]?
 
     var characterDidUpdate:(()->Void)?
 
     let esi = ESIClient.sharedInstance
     let refreshTime = 30 //30 seconds
     var inRefresh = false
-
-
 
     init(response: ESIResponse){
         updateToken(response: response){
@@ -38,11 +36,11 @@ class SSOToken {
         self.expires = coreData.expires as! Date
         self.character_id = coreData.character_id
         self.character_name = coreData.character_name
-        self.scopes = coreData.scopes
+        self.scopes = coreData.scopes!.components(separatedBy: " ")
     }
 
     func getMissingScopes() -> Set<String>{
-        let checkScopes : Set<String> = Set(self.scopes!.components(separatedBy: " "))
+        let checkScopes : Set<String> = Set(self.scopes!)
         var requiredScopes : Set<String> = Set(ESIClient.scopes)
 
         requiredScopes.subtract(checkScopes)
@@ -91,7 +89,7 @@ class SSOToken {
                     self.character_name = name
                 }
                 if let scopes = response["Scopes"] as? String{
-                    self.scopes = scopes
+                    self.scopes = scopes.components(separatedBy: " ")
                 }
             }
             self.characterDidUpdate?()
@@ -137,7 +135,7 @@ class SSOToken {
                 token.character_name = self.character_name!
                 token.expires = self.expires! as NSDate
                 token.token_type = self.token_type!
-                token.scopes = self.scopes!
+                token.scopes = self.scopes!.joined(separator: " ")
                 do{
                     try context.save()
                 }
@@ -164,7 +162,7 @@ class SSOToken {
         token.character_name = self.character_name!
         token.expires = self.expires! as NSDate
         token.token_type = self.token_type!
-        token.scopes = self.scopes!
+        token.scopes = self.scopes!.joined(separator: " ")
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 

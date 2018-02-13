@@ -66,13 +66,13 @@ class EveContract : Mappable{
         if self.for_corporation!{
             self.assignee = EveCorporation(corporation_id: self.assignee_id!)
         }else{
-            self.assignee = EveCharacter(character_id: self.assignee_id!)
+            self.assignee = EveCharacter(self.assignee_id!)
         }
 
         if self.issuer_id == self.issuer_corporation_id{
             self.issuer = EveCorporation(corporation_id: self.issuer_id!)
         }else{
-            self.issuer = EveCharacter(character_id: self.issuer_id!)
+            self.issuer = EveCharacter(self.issuer_id!)
         }
 
     }

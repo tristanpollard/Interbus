@@ -120,7 +120,7 @@ public class SearchResult : Mappable, CustomStringConvertible, Equatable{
     func playerOwned() -> EvePlayerOwned?{
         switch (self.type){
             case .character:
-                let char = EveCharacter(character_id: self.id)
+                let char = EveCharacter(self.id)
                 char.name = self.name
                 return char
             case .corporation:

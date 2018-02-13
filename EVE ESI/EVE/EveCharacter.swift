@@ -49,7 +49,7 @@ class EveCharacter : EvePlayerOwned, Mappable{
 
     static var validImageSizes = [32,64,128,256,512]
 
-    init(character_id: Int64){
+    init(_ character_id: Int64){
         super.init()
         self.imageEndpoint = "character"
         self.imageExtension = "jpg"

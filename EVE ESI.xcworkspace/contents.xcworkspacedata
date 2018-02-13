@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
       location = "group:/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/EVESSOToken+CoreDataProperties.swift">
    </FileRef>
    <FileRef

@@ -15,7 +15,7 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
     @IBOutlet weak var allianceImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
-    let options = ["Assets", "Clones", "Contacts", "Contracts", "Journal", "Kills", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Stats"]
+    let options = ["Assets", "Clones", "Contacts", "Contracts", "Journal", "Kills", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Transactions"/*"Stats"*/]
 
     func updateOnline(){
         self.character.isOnline(){ online in
@@ -86,6 +86,7 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
         }
 
     }
+
 }
 
 extension AuthCharacterViewController : UITableViewDelegate, UITableViewDataSource{
@@ -108,6 +109,6 @@ extension AuthCharacterViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        self.performSegue(withIdentifier: "authCharacterTo\(options[indexPath.row])", sender: self)
+        self.performSegue(withIdentifier: "authCharacterTo\(options[indexPath.row].components(separatedBy: " ").joined())", sender: self)
     }
 }

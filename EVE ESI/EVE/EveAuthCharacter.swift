@@ -81,9 +81,11 @@ class EveAuthCharacter : EveCharacter{
 
     var stats = [[String:Any]]()
 
+    var transactions = [EveTransaction]()
+
     init(token: SSOToken){
         self.token = token
-        super.init(character_id: token.character_id!)
+        super.init(token.character_id!)
         self.name = self.token!.character_name!
         self.assets.character = self
         self.miningLedger.character = self
@@ -367,6 +369,20 @@ class EveAuthCharacter : EveCharacter{
 
             completionHandler()
         }
+    }
+
+    func loadTransactions(completionHandler: @escaping() -> ()){
+
+        esi.invoke(endPoint: "/characters/\(self.id)/wallet/transactions/", token: self.token){ response in
+
+            if let transactions = response.result as? [[String:Any]]{
+                self.transactions = Mapper<EveTransaction>().mapArray(JSONArray: transactions)
+            }
+
+            completionHandler()
+
+        }
+
     }
 
     func loadWalletBalance(completionHandler: @escaping() -> ()){

@@ -11,30 +11,39 @@ class EveAssetList {
 
     let esi = ESIClient.sharedInstance
 
-    var character : EveAuthCharacter!
-    var assetList = [EveAsset]()
-    var assetLocations = [Int64:String]()
+    unowned var character : EveAuthCharacter
+    var assetList : [EveAsset]
+
+    init(_ character : EveAuthCharacter){
+        self.character = character
+        assetList = [EveAsset]()
+    }
 
     func loadAllAssetsForCharacter(nextPage: Int = 1, completionHandler: @escaping() -> ()){
 
         let page = max(1, nextPage)
 
         if page <= 1{
-            self.assetList = [EveAsset]()
+            assetList.removeAll()
         }
 
         let params : Parameters = ["page" : page]
         esi.invoke(endPoint: "/characters/\(character.id)/assets/", parameters: params, token: character.token){ response in
+
             self.addESIResponse(response: response)
 
             if let result = response.result as? [[String:Any]], let numPages = response.rawResponse.response?.allHeaderFields["x-pages"] as? String, let pages = Int(numPages){
+
                 if result.count > 0 && page < pages{
+
                     self.loadAllAssetsForCharacter(nextPage: page + 1) {
                         completionHandler()
                     }
+
                 }else{
                     completionHandler()
                 }
+
             }else{
                 completionHandler()
             }
@@ -46,38 +55,71 @@ class EveAssetList {
     func addESIResponse(response: ESIResponse){
 
         if let assets = response.result as? [[String:Any]] {
-            let assetList = Mapper<EveAsset>().mapArray(JSONArray: assets)
-            self.assetList.append(contentsOf: assetList)
+            let assetArr = Mapper<EveAsset>().mapArray(JSONArray: assets)
+            for asset in assetArr{
+                self.assetList.append(asset)
+            }
         }
 
     }
 
-    func loadLocations(completionHandler: @escaping() -> ()){
+    func processAssets(){
+        for asset in self.assetList{
+            if asset.location_type == "other" && asset.location_flag.lowercased() != "hangar"{
+                //Subitem
 
-        self.assetLocations.removeAll()
+                guard let parent = self.assetList.first(where: {$0.item_id == asset.location_id}) else{
+                    debugPrint("Parent Asset Not Found...", asset.location_type, asset.location_flag)
+                    continue
+                }
+
+
+                parent.childrenAssets.append(asset)
+                asset.parentAsset = parent
+
+            }
+        }
+    }
+
+
+    /*
+    func loadLocations(completionHandler: @escaping() -> ()){
 
         let stationIds : [Int64] = Set(self.assetList.filter({$0.location_type == "station"}).map({$0.location_id})).map({$0})
         let citadelIds : [Int64] = Set(self.assetList.filter({$0.location_type == "other"}).map({$0.location_id})).map({$0})
 
+        let group = DispatchGroup()
+
+        var assetLocations = [Int64 : String]()
+
+        group.enter()
         stationIds.loadNames(){ names in
 
-            self.assetLocations.merge(dict: names)
+            assetLocations.merge(dict: names)
 
-            if citadelIds.count > 0{
-                self.assetLocations[0] = "Citadels"
+            group.leave()
+
+        }
+
+        var citadelLocations = [Int64 : String]()
+
+        for cid in citadelIds{
+            group.enter()
+            self.character.loadStructure(cid){ name in
+
+                citadelLocations.merge(dict: name)
+
+                group.leave()
             }
+        }
+
+        group.notify(queue: .main){
+
 
             completionHandler()
         }
 
-    }
+    }*/
 
-    func assetsForLocation(location: Int64) -> [EveAsset]{
-        if location == 0{
-            return self.assetList.filter({$0.location_type == "other"}) //citadels
-        }
-
-        return self.assetList.filter({$0.location_id == location})
-    }
 
 }

@@ -88,24 +88,42 @@ extension Array where Element : Nameable{
     func loadNames(completionHandler: @escaping() -> ()){
 
         let ids : [Int64] = Set(self.map({$0.id})).map({$0})
-        let esi = ESIClient.sharedInstance
 
         if ids.count == 0{
             completionHandler()
             return
         }
 
-        esi.invoke(endPoint: "/universe/names/", httpMethod: .post, parameters: ids.asParameters(), parameterEncoding: ArrayEncoding()){ response in
-            if let types = response.result as? [[String:Any]]{
-                for type in types{
-                    if let type_name = type["name"] as? String, let type_id = type["id"] as? Int64{
-                        var nameables = self.filter({$0.id == type_id})
-                        for i in 0..<nameables.count{
-                            nameables[i].name = type_name
+        let group = DispatchGroup()
+
+
+        stride(from: 0, to: ids.count, by: 200 ).map { sIndex in
+
+            var eIndex = self.index(sIndex, offsetBy: 200)
+                if eIndex > ids.count {
+                    eIndex = ids.count
+                }
+
+
+                let arr = ids[sIndex ..< eIndex]
+                let idArr = arr.map{$0}
+
+                group.enter()
+                idArr.loadNames{ names in
+
+                    for name in names{
+                        let toNames = self.filter{$0.id == name.key}
+                        for var toName in toNames{
+                            toName.name = name.value
                         }
                     }
+
+                    group.leave()
                 }
-            }
+
+        }
+
+        group.notify(queue: .main){
             completionHandler()
         }
     }
@@ -135,26 +153,37 @@ extension Array where Element == EveJournalEntry {
 
         let esi = ESIClient.sharedInstance
         let group = DispatchGroup()
-        var names = [Int64: EvePlayerOwned]()
+        var journalNames = [Int64: EvePlayerOwned]()
+        //TODO write a custom loop for efficiency
         var corps: [Int64] = filter({ $0.first_party_type != nil && $0.first_party_type! == "corporation" }).map({ $0.first_party_id! })
         var chars: [Int64] = filter({ $0.first_party_type != nil && $0.first_party_type! == "character" }).map({ $0.first_party_id! })
         corps += filter({ $0.second_party_type != nil && $0.second_party_type! == "corporation" }).map({ $0.second_party_id! })
         chars += filter({ $0.second_party_type != nil && $0.second_party_type! == "character" }).map({ $0.second_party_id! })
 
+
         group.enter()
-        corps.loadCorporationNames() { corpNames in
-            names.merge(dict: corpNames)
+        corps.loadNames{ names in
+            for name in names {
+                let corp = EveCorporation(corporation_id: name.key)
+                corp.name = name.value
+                journalNames[name.key] = corp
+            }
             group.leave()
         }
 
         group.enter()
-        chars.loadCharacterNames() { charNames in
-            names.merge(dict: charNames)
+        chars.loadNames{ names in
+            for name in names{
+                let char = EveCharacter(name.key)
+                char.name = name.value
+                journalNames[name.key] = char
+            }
             group.leave()
         }
+
 
         group.notify(queue: .main) {
-            completionHandler(names)
+            completionHandler(journalNames)
         }
 
     }
@@ -169,15 +198,25 @@ extension Array where Element == Int64 {
 
         let ids = Set(self).map({$0})
 
+        if ids.count == 0{
+            completionHandler([:])
+            return
+        }
+
         esi.invoke(endPoint: "/universe/names/", httpMethod: .post, parameters: ids.asParameters(), parameterEncoding: ArrayEncoding()){ response in
-            debugPrint(response.rawResponse)
+
             if let results = response.result as? [[String:Any]]{
                 for result in results{
                     if let name = result["name"] as? String, let id = result["id"] as? Int64{
                         names[id] = name
+
                     }
                 }
+
+            }else{
+                debugPrint(response.rawResponse)
             }
+
             completionHandler(names)
         }
 

@@ -33,10 +33,45 @@ class ContractViewController : UICharacterViewController, NVActivityIndicatorVie
             group.leave()
         }
 
+        group.enter()
+        self.updateOnline{
+            group.leave()
+        }
+
+
         group.notify(queue: .main){
             self.stopAnimating()
         }
 
+    }
+
+    @objc func openContract(){
+
+        self.contract.openContract(token: self.character.token!){
+
+        }
+
+    }
+
+    func updateOnline(completionHandler: @escaping () -> ()){
+
+        guard self.contract.status != "deleted" else{
+            completionHandler()
+            return
+        }
+
+        self.character.isOnline{ online in
+
+            if online{
+               let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.openContract))
+                self.navigationItem.setRightBarButton(item, animated: true)
+            }else{
+                self.navigationItem.setRightBarButton(nil, animated: true)
+            }
+
+            self.view.layoutIfNeeded()
+            completionHandler()
+        }
     }
 
 }

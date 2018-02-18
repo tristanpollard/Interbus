@@ -14,7 +14,7 @@ class TransactionViewController : UICharacterViewController, NVActivityIndicator
 
         group.enter()
         self.character.loadTransactions{
-            self.character.transactions.loadNames() {
+            self.character.transactions.loadNames{
                 group.leave()
             }
         }

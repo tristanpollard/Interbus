@@ -11,6 +11,8 @@ class EveAuthCharacter : EveCharacter{
 
     required init?(map: Map) {
         super.init(map: map)
+        self.fleet = EveFleet(self)
+        self.assets = EveAssetList(self)
     }
 
     override func mapping(map: Map) {
@@ -30,6 +32,31 @@ class EveAuthCharacter : EveCharacter{
         }
     }
 
+    struct CharacterLocation : Nameable{
+        var solar_system_id : Int64?
+        var structure : EveStructure?
+
+        var name = ""
+        var id : Int64{
+            get{
+                return self.solar_system_id!
+            }
+        }
+    }
+
+    struct CharacterActiveShip : Nameable{
+        var ship_item_id : Int64?
+        var ship_name : String?
+        var ship_type_id : Int64?
+
+        var name = ""
+        var id : Int64 {
+            get{
+                return self.ship_type_id!
+            }
+        }
+    }
+
     var token: SSOToken?
 
     var fatigue_expire : Date?
@@ -45,7 +72,9 @@ class EveAuthCharacter : EveCharacter{
 
     var wallet_balance : Double?
 
-    var assets = EveAssetList()
+    var assets : EveAssetList!
+
+    var ship : CharacterActiveShip?
 
     var active_clone : EveClone?{
         get{
@@ -63,9 +92,13 @@ class EveAuthCharacter : EveCharacter{
     var contactLabels = [EveContactLabel]()
     var contacts_last_loaded : Date?
 
+    var fleet : EveFleet!
+
     var journal = [EveJournalEntry]()
 
     var kills = [EveKill]()
+
+    var location : CharacterLocation?
 
     var mail = [EveMail]()
     var mailLabels = [EveMailLabel]()
@@ -73,6 +106,11 @@ class EveAuthCharacter : EveCharacter{
     var miningLedger = EveMiningLedger()
 
     var orders = [EveMarketOrder]()
+
+    var last_login : Date?
+    var last_logout : Date?
+    var logins : Int?
+    var online : Bool?
 
     var skills = [EveSkill]()
     var skillQueue = [EveSkillQueue]()
@@ -87,8 +125,9 @@ class EveAuthCharacter : EveCharacter{
         self.token = token
         super.init(token.character_id!)
         self.name = self.token!.character_name!
-        self.assets.character = self
         self.miningLedger.character = self
+        self.fleet = EveFleet(self)
+        self.assets = EveAssetList(self)
     }
 
     func loadAttributes(completionHandler: @escaping() -> ()){
@@ -103,17 +142,39 @@ class EveAuthCharacter : EveCharacter{
 
     func loadAssets(completionHandler: @escaping() -> ()){
         self.assets.loadAllAssetsForCharacter(){
-            completionHandler()
+            self.assets.assetList.loadNames {
+                self.assets.processAssets()
+                completionHandler()
+            }
         }
     }
 
     func isOnline(completionHandler: @escaping(Bool) -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/online/", token: self.token){ response in
-            if let online = response.result as? Bool{
-                completionHandler(online)
-                return
+
+            if let result = response.result as? [String:Any] {
+
+                if let online = result["online"] as? Bool {
+                    self.online = online
+                    completionHandler(online)
+                    return
+                }
+
             }
             completionHandler(false)
+        }
+    }
+
+    func loadStructure(_ structure_id : Int64, completionHandler: @escaping([Int64 : String]) -> ()){
+        esi.invoke(endPoint: "/universe/structures/\(structure_id)", token: self.token, showErrors: false){ response in
+
+            if let structure = response.result as? [String:Any], let name = structure["name"] as? String {
+                completionHandler([structure_id : name])
+                return
+            }
+
+            completionHandler([structure_id:"Unknown"])
+
         }
     }
 
@@ -197,8 +258,8 @@ class EveAuthCharacter : EveCharacter{
 
     func removeContact(contact: EveContact, completionHandler: @escaping() -> ()){
 
-        let ids = [contact.contact_id]
-        esi.invoke(endPoint: "/characters/\(self.id)/contacts", httpMethod: .delete, parameters: ids.asParameters(), parameterEncoding: ArrayEncoding(), token: self.token){ result in
+        let ids : Parameters = ["contact_ids" : contact.contact_id]
+        esi.invoke(endPoint: "/characters/\(self.id)/contacts", httpMethod: .delete, parameters: ids , token: self.token){ result in
             self.contacts.remove(at: self.contacts.index(of: contact)!)
             completionHandler()
         }
@@ -242,11 +303,6 @@ class EveAuthCharacter : EveCharacter{
         }
 
         group.notify(queue: .main){
-
-            for kill in killMails{
-                debugPrint(kill)
-            }
-
             self.kills = Mapper<EveKill>().mapArray(JSONArray: killMails)
             completionHandler()
         }
@@ -254,7 +310,72 @@ class EveAuthCharacter : EveCharacter{
 
     }
 
+    func loadLocation(completionHandler: @escaping() -> ()){
+        esi.invoke(endPoint: "/characters/\(self.id)/location/", token: self.token){ response in
 
+            var isStructure = false
+
+            let group = DispatchGroup()
+
+            if let result = response.result as? [String:Any] {
+
+                if let system = result["solar_system_id"] as? Int64 {
+
+                    var structure: EveStructure?
+                    if let structure_id = result["structure_id"] as? Int64 {
+                        isStructure = true
+                        structure = EveStructure(structure_id)
+                        group.enter()
+                        structure!.loadStructure(token: self.token!) {
+                            group.leave()
+                        }
+                    }
+
+                    self.location = CharacterLocation(solar_system_id: system, structure: structure, name: "")
+                    group.enter()
+                    self.location!.loadName { name in
+                        self.location!.name = name
+                        group.leave()
+                    }
+
+
+                }
+
+            }
+
+            group.notify(queue: .main) {
+                completionHandler()
+            }
+
+        }
+    }
+
+    func loadShip(completionHandler: @escaping() -> ()){
+
+        esi.invoke(endPoint: "/characters/\(self.id)/ship/", token: self.token){ response in
+
+            let group = DispatchGroup()
+
+            if let result = response.result as? [String:Any]{
+
+                if let item = result["ship_item_id"] as? Int64, let name = result["ship_name"] as? String, let type = result["ship_type_id"] as? Int64{
+                    self.ship = CharacterActiveShip(ship_item_id: item, ship_name: name, ship_type_id: type, name: "")
+                    group.enter()
+                    self.ship!.loadName{ name in
+                        self.ship!.name = name
+                        group.leave()
+                    }
+                }
+
+            }
+
+            group.notify(queue: .main){
+                completionHandler()
+            }
+
+        }
+
+    }
 
     func loadSkills(completionHandler: @escaping() -> ()){
         esi.invoke(endPoint: "/characters/\(self.id)/skills/", token: self.token){ response in
@@ -292,6 +413,7 @@ class EveAuthCharacter : EveCharacter{
 
 
     func loadMarketOrders(completionHandler: @escaping() -> ()){
+
         esi.invoke(endPoint: "/characters/\(self.id)/orders/", token: self.token){ response in
 
             if let orders = response.result as? [[String:Any]]{
@@ -301,6 +423,8 @@ class EveAuthCharacter : EveCharacter{
                 }
             }
         }
+
+
     }
 
     func loadMailHeaders(lastMailId: Int64?, completionHandler: @escaping() -> ()){
@@ -399,6 +523,7 @@ class EveAuthCharacter : EveCharacter{
             if let resp = response.result as? [[String:Any]] {
                 self.journal = Mapper<EveJournalEntry>().mapArray(JSONArray: resp)
             }
+
             self.journal.loadNames(){ names in
                 for entry in self.journal{
                     if let firstID = entry.first_party_id{

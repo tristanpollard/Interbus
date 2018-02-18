@@ -52,23 +52,21 @@ extension JournalViewController : UITableViewDataSource, UITableViewDelegate{
         let entry = self.character.journal[indexPath.row]
         if let first = entry.first_party, let second = entry.second_party {
 
-
             let filter = ScaledToSizeCircleFilter(size: CGSize(width: 44, height: 44))
 
-            if first.id == self.character.id{
-                cell.nameLabel.text = second.name
-                let placeHolder = first.getPlaceholder(size: 64).af_imageRoundedIntoCircle().af_imageScaled(to: CGSize(width: 44, height: 44))
-                cell.entryImage.af_setImage(withURL: second.imageURL(size: cell.entryImage.sizeForImage()), placeholderImage: placeHolder, filter: filter)
+            var player = first
+            cell.amountLabel.textColor = .green
+            if player.id == self.character.id{
+                player = second
                 cell.amountLabel.textColor = .red
-            }else{
-                cell.nameLabel.text = first.name
-                let placeHolder = second.getPlaceholder(size: 64).af_imageRoundedIntoCircle().af_imageScaled(to: CGSize(width: 44, height: 44))
-                cell.entryImage.af_setImage(withURL: first.imageURL(size: cell.entryImage.sizeForImage()), placeholderImage: placeHolder, filter: filter)
-                cell.amountLabel.textColor = .darkGreen
             }
 
+            cell.nameLabel.text = player.name
+            let placeHolder = player.getPlaceholder(size: 64).af_imageRoundedIntoCircle().af_imageScaled(to: CGSize(width: 44, height: 44))
+            cell.entryImage.af_setImage(withURL: player.imageURL(size: cell.entryImage.sizeForImage()), placeholderImage: placeHolder, filter: filter)
+
         } else {
-            cell.nameLabel.text = nil
+            cell.nameLabel.text = "CONCORD"
             cell.amountLabel.text = nil
             cell.entryImage.image = UIImage(named: "characterPlaceholder64.jpg")!.af_imageRoundedIntoCircle().af_imageScaled(to: CGSize(width: 44, height: 44))
         }
@@ -90,5 +88,12 @@ extension JournalViewController : UITableViewDataSource, UITableViewDelegate{
         }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let entry = self.character.journal[indexPath.row]
+        debugPrint(entry, entry.first_party_id, entry.second_party_id, entry.first_party?.name, entry.second_party?.name)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -13,6 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git'
   pod 'NVActivityIndicatorView'
   pod 'PopupDialog', '~> 0.6'
   pod 'Charts'
+  pod 'GSTouchesShowingWindow-Swift'
 
   # Pods for EVE ESI
 

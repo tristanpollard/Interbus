@@ -11,30 +11,37 @@
 		2411904F47AA2A90C93363BA /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119965F18F3FCBCF991914 /* URL.swift */; };
 		241190828AAF23446E954E4A /* ESIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A7DA9C765264B9CAA38 /* ESIContext.swift */; };
 		24119099B1B418137F17AA60 /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193981E2A2FD33F97FD8C /* ContractViewController.swift */; };
+		241190A2FCB54F353FEC914A /* EveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193E15ABD8EBE00474B49 /* EveType.swift */; };
+		241190CB41F21D2E73EDF099 /* FleetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DCAFEB273D1E80B4ABD /* FleetViewController.swift */; };
 		2411912D5E19842C9317275E /* EvePlayerOwned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241198C160BD0C671D2E9A41 /* EvePlayerOwned.swift */; };
 		2411913B47B1EB89AFDBCE4C /* EveAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411952687B67526FA857156 /* EveAsset.swift */; };
 		2411919098CB3B75BAD17DD9 /* ReturnSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */; };
+		241191DF45491F06A6358B9D /* AssetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B5E0B0D2202B15B81F3 /* AssetHeaderView.swift */; };
 		241191E14FF894A55FEEE508 /* EveMarketOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411940BECF8758D93CF25FD /* EveMarketOrder.swift */; };
 		241191E284CA4F98518F8391 /* ContractHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119BE0220F035169A097DE /* ContractHeaderCell.swift */; };
 		2411922C0569E40CAF12BD2C /* SkillQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411931DE56E716C89058500 /* SkillQueueViewController.swift */; };
+		2411922ED3F04E7F39B162DD /* AssetHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119C817726446A5370042E /* AssetHeaderViewDelegate.swift */; };
 		24119272717A449625969508 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411936BC6A4250586C5018E /* ContactViewController.swift */; };
 		2411927C413EF151DB26CFF5 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241197F6534C453DE242FAD3 /* StatsViewController.swift */; };
 		241192815DC4540600127F6F /* MailRecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EA99AE89153C19EAD23 /* MailRecipientCell.swift */; };
 		241192E5D72BA96AC107998E /* MailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */; };
 		24119303C96CC3E5106547C5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241190B2EC5C485A9888E5C2 /* BalloonMarker.swift */; };
 		2411936438A040EF4DA455A6 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241191A562A9ACC3C5C820D8 /* JournalViewController.swift */; };
+		241193708532D4596CC2FB28 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119C78EFE76B7EB872F6E0 /* Location.swift */; };
 		2411938510BEC9FAE6D7CF22 /* EveSkillQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A037CC6A4D650A19ADA /* EveSkillQueue.swift */; };
-		24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */; };
 		2411939EF77DB24A0536CEC4 /* ReturnContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119A3CBB29469F8497C99E /* ReturnContactViewController.swift */; };
+		241193A20275A312B7381286 /* EveFleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119F65E9963F7273F9007D /* EveFleet.swift */; };
 		241193A575CEBD250C24C0BF /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E79D09DADDDDBF904DC /* EveMail.swift */; };
 		241193ACD335EF8C0DAF2126 /* ContractListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119C764840D6F3A62BD158 /* ContractListViewController.swift */; };
 		24119454780052B344C56B04 /* EveMailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241192F459921F333EDD91DC /* EveMailLabel.swift */; };
 		24119454E65CC84704E1E07B /* EveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D64BC92D43B61A231E5 /* EveTransaction.swift */; };
 		241194669881947CCE97E200 /* CorporationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119FE0E608699F0C7520E6 /* CorporationViewController.swift */; };
+		24119483D513AE8D196758A2 /* FleetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119F8F41C9979C4DFA22E4 /* FleetHeaderView.swift */; };
 		241194ACAB1EA1079FFBA6BB /* EveClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DD6CE8AA247173AC912 /* EveClone.swift */; };
 		241194CD502FA19083264B4E /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411994F5B51D7250EE4DBF7 /* TransformDate.swift */; };
 		24119502A3A857AC70E5038D /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119244F7251393481662A4 /* CharacterViewController.swift */; };
 		24119546D71A308A68E04D0C /* EveAuthCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */; };
+		2411956FCC98CCE2D7D5D4BE /* FleetCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411968CA43E2F081031AD7C /* FleetCompositionViewController.swift */; };
 		24119578DAFDAFBA6190F152 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241194036EEC532D92965EBD /* OrdersViewController.swift */; };
 		24119592D8AD0F5278B0CDE7 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241198C9ACFC9C6127313E21 /* Array.swift */; };
 		241195B3272781E1AB9C4AE7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241196A58D4A1902BFF600C3 /* UIColor.swift */; };
@@ -49,8 +56,10 @@
 		2411985E7198F0C4087F19FA /* EveNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119634B626DBB5E416A223 /* EveNotification.swift */; };
 		241198DDE27881A51908ECD9 /* EveMiningLedgerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119CE5A915FD341D9C9454 /* EveMiningLedgerEntry.swift */; };
 		24119909FEAA57C167BAAADB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411932E78504F6669418108 /* String.swift */; };
+		2411992A843B379F7647D4A6 /* EveAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241196C06D777EFEC6F19996 /* EveAssetGroup.swift */; };
 		2411993963C3EBD92C7055B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119E276C08226C30C75F34 /* MainViewController.swift */; };
 		24119944BEA246353B08D5DE /* ClonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119CA455B2CABF33D5EAD5 /* ClonesViewController.swift */; };
+		2411997BAB2C06EEAE508D11 /* EveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411971A2824BDCFE1BEEDEF /* EveSystem.swift */; };
 		2411998F49B7D6E6788090ED /* AllianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119D1AE3BB4FE91CE399E4 /* AllianceViewController.swift */; };
 		24119991FCDFDA54C08CB90C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119906E83865F048AC454A /* UIImage.swift */; };
 		241199D43B41B8C62AA3EADC /* EveContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241196EAEE7B4C2BE38EDC12 /* EveContract.swift */; };
@@ -77,6 +86,7 @@
 		24119F0DCC75542F70BD37B7 /* EveSendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119B29FCF98169D67D033F /* EveSendMail.swift */; };
 		24119F0EB923693B454ED1C3 /* ReadMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */; };
 		24119F2E2E5AEEC09A387B07 /* AuthCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119223781F1837B2BCE5F7 /* AuthCharacterViewController.swift */; };
+		24119FCBB390B1E978EEAB59 /* EveStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241193275F41901733464F92 /* EveStructure.swift */; };
 		24119FCC5918FF4C74D9D85A /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24119170E0EC2B606F71D566 /* AssetsViewController.swift */; };
 		24119FDAA6418CA1FA52E44F /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411959522CF00E7389457CF /* JournalTableViewCell.swift */; };
 		24119FDE37C6E783BEC40AD9 /* GroupLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2411937A437BB7B3650D7E6E /* GroupLoader.swift */; };
@@ -109,6 +119,14 @@
 		6AC74AB41F882FF900A01C6D /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB71F882FF900A01C6D /* Eureka.framework */; };
 		6AC74AB51F882FF900A01C6D /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */; };
 		6AC74AB61F882FF900A01C6D /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC74AB91F882FF900A01C6D /* PopupDialog.framework */; };
+		6AD88BCE2034FC8100DD5996 /* AssetHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD88BCD2034FC8100DD5996 /* AssetHeader.xib */; };
+		6AD88BED2036386100DD5996 /* Structure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD88BE92036386100DD5996 /* Structure+CoreDataClass.swift */; };
+		6AD88BEE2036386100DD5996 /* StructureAttempts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD88BEA2036386100DD5996 /* StructureAttempts+CoreDataClass.swift */; };
+		6AD88BEF2036386100DD5996 /* StructureAttempts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD88BEB2036386100DD5996 /* StructureAttempts+CoreDataProperties.swift */; };
+		6AD88BF02036386100DD5996 /* Structure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD88BEC2036386100DD5996 /* Structure+CoreDataProperties.swift */; };
+		6AD88BF12037521900DD5996 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD88BF22037521900DD5996 /* Charts.framework */; };
+		6AD88BF4203815F200DD5996 /* FleetHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD88BF3203815F200DD5996 /* FleetHeader.xib */; };
+		6AD88BF62038161E00DD5996 /* FleetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AD88BF52038161E00DD5996 /* FleetCell.xib */; };
 		6AFA23FF1F7C231B00B635BE /* alliancePlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23ED1F7C210800B635BE /* alliancePlaceholder32.png */; };
 		6AFA24001F7C231B00B635BE /* alliancePlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23F01F7C210900B635BE /* alliancePlaceholder64.png */; };
 		6AFA24011F7C231B00B635BE /* alliancePlaceholder128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA23E91F7C210800B635BE /* alliancePlaceholder128.png */; };
@@ -158,12 +176,14 @@
 		24119244F7251393481662A4 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		241192F459921F333EDD91DC /* EveMailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailLabel.swift; sourceTree = "<group>"; };
 		2411931DE56E716C89058500 /* SkillQueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillQueueViewController.swift; sourceTree = "<group>"; };
+		241193275F41901733464F92 /* EveStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveStructure.swift; sourceTree = "<group>"; };
 		2411932E78504F6669418108 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2411936BC6A4250586C5018E /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		2411937A437BB7B3650D7E6E /* GroupLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupLoader.swift; sourceTree = "<group>"; };
 		241193849BAC7D60EEBDD8A0 /* ReturnSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnSearchViewController.swift; sourceTree = "<group>"; };
 		241193981E2A2FD33F97FD8C /* ContractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
 		241193B32BEDE889CCDBC451 /* KillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillsViewController.swift; sourceTree = "<group>"; };
+		241193E15ABD8EBE00474B49 /* EveType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveType.swift; sourceTree = "<group>"; };
 		241194036EEC532D92965EBD /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2411940BECF8758D93CF25FD /* EveMarketOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMarketOrder.swift; sourceTree = "<group>"; };
 		241194A40371B264981B856C /* SendMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailViewController.swift; sourceTree = "<group>"; };
@@ -172,8 +192,11 @@
 		2411959522CF00E7389457CF /* JournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		241195B4D6E215A92D7CDB44 /* characterPlaceholder64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder64.jpg; sourceTree = "<group>"; };
 		24119634B626DBB5E416A223 /* EveNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveNotification.swift; sourceTree = "<group>"; };
+		2411968CA43E2F081031AD7C /* FleetCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetCompositionViewController.swift; sourceTree = "<group>"; };
 		241196A58D4A1902BFF600C3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		241196C06D777EFEC6F19996 /* EveAssetGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssetGroup.swift; sourceTree = "<group>"; };
 		241196EAEE7B4C2BE38EDC12 /* EveContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContract.swift; sourceTree = "<group>"; };
+		2411971A2824BDCFE1BEEDEF /* EveSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSystem.swift; sourceTree = "<group>"; };
 		241197F6534C453DE242FAD3 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		2411982C6DDD3DC011EA97EC /* UICharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICharacterViewController.swift; sourceTree = "<group>"; };
 		241198C160BD0C671D2E9A41 /* EvePlayerOwned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvePlayerOwned.swift; sourceTree = "<group>"; };
@@ -190,11 +213,14 @@
 		24119ACB8A7AEE086728B75D /* MailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailHeaderCell.swift; sourceTree = "<group>"; };
 		24119B29FCF98169D67D033F /* EveSendMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSendMail.swift; sourceTree = "<group>"; };
 		24119B5C8E1864DB4D457C4B /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		24119B5E0B0D2202B15B81F3 /* AssetHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHeaderView.swift; sourceTree = "<group>"; };
 		24119B72094E4E3A7BB1C740 /* EveKill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKill.swift; sourceTree = "<group>"; };
 		24119BAE4E371321EA057DF2 /* ESIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIResponse.swift; sourceTree = "<group>"; };
 		24119BDFDF51714A214F5E96 /* EveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSkill.swift; sourceTree = "<group>"; };
 		24119BE0220F035169A097DE /* ContractHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractHeaderCell.swift; sourceTree = "<group>"; };
 		24119C764840D6F3A62BD158 /* ContractListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractListViewController.swift; sourceTree = "<group>"; };
+		24119C78EFE76B7EB872F6E0 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		24119C817726446A5370042E /* AssetHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		24119CA455B2CABF33D5EAD5 /* ClonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClonesViewController.swift; sourceTree = "<group>"; };
 		24119CE5A915FD341D9C9454 /* EveMiningLedgerEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMiningLedgerEntry.swift; sourceTree = "<group>"; };
 		24119CEA490A7E3FC99E551C /* EveMiningLedger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMiningLedger.swift; sourceTree = "<group>"; };
@@ -204,6 +230,7 @@
 		24119D5A973652A6504D7709 /* RequiresScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiresScope.swift; sourceTree = "<group>"; };
 		24119D64BC92D43B61A231E5 /* EveTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveTransaction.swift; sourceTree = "<group>"; };
 		24119DB38E0027B4E319E324 /* EveAuthCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAuthCharacter.swift; sourceTree = "<group>"; };
+		24119DCAFEB273D1E80B4ABD /* FleetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetViewController.swift; sourceTree = "<group>"; };
 		24119DD6CE8AA247173AC912 /* EveClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveClone.swift; sourceTree = "<group>"; };
 		24119DFB96FA05C2684154E3 /* EveAssetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssetList.swift; sourceTree = "<group>"; };
 		24119E276C08226C30C75F34 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -211,13 +238,14 @@
 		24119E34F12D8DC1880D305A /* ReturnResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnResultCell.swift; sourceTree = "<group>"; };
 		24119E5417D0C31C67806374 /* SSOToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSOToken.swift; sourceTree = "<group>"; };
 		24119E79D09DADDDDBF904DC /* EveMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMail.swift; sourceTree = "<group>"; };
-		24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSet.swift; sourceTree = "<group>"; };
 		24119EA99AE89153C19EAD23 /* MailRecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRecipientCell.swift; sourceTree = "<group>"; };
 		24119EAC342084A98D2567BA /* StatsYearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsYearViewController.swift; sourceTree = "<group>"; };
 		24119EDF3B6E20890881AD33 /* ReadMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMailViewController.swift; sourceTree = "<group>"; };
 		24119EE7D698869D2119AB3C /* EveAlliance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAlliance.swift; sourceTree = "<group>"; };
 		24119EE835488AAEC495BBC0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		24119F0E9995E793D219563B /* AssetLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetLocationViewController.swift; sourceTree = "<group>"; };
+		24119F65E9963F7273F9007D /* EveFleet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveFleet.swift; sourceTree = "<group>"; };
+		24119F8F41C9979C4DFA22E4 /* FleetHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetHeaderView.swift; sourceTree = "<group>"; };
 		24119F94C28D18B0DDE1C9FE /* MiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiningViewController.swift; sourceTree = "<group>"; };
 		24119FE0E608699F0C7520E6 /* CorporationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorporationViewController.swift; sourceTree = "<group>"; };
 		6A0032C21FE65B5300D8241E /* SearchPopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPopupController.xib; sourceTree = "<group>"; };
@@ -253,6 +281,14 @@
 		6AC74AB71F882FF900A01C6D /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC74AB91F882FF900A01C6D /* PopupDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PopupDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD88BCD2034FC8100DD5996 /* AssetHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetHeader.xib; sourceTree = "<group>"; };
+		6AD88BE92036386100DD5996 /* Structure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Structure+CoreDataClass.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/Structure+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		6AD88BEA2036386100DD5996 /* StructureAttempts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StructureAttempts+CoreDataClass.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/StructureAttempts+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		6AD88BEB2036386100DD5996 /* StructureAttempts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StructureAttempts+CoreDataProperties.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/StructureAttempts+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		6AD88BEC2036386100DD5996 /* Structure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Structure+CoreDataProperties.swift"; path = "/Users/Tristan/iosProjects/EVE ESI/EVE ESI/CoreData/Structure+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		6AD88BF22037521900DD5996 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD88BF3203815F200DD5996 /* FleetHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FleetHeader.xib; sourceTree = "<group>"; };
+		6AD88BF52038161E00DD5996 /* FleetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FleetCell.xib; sourceTree = "<group>"; };
 		6AFA23E91F7C210800B635BE /* alliancePlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder128.png; sourceTree = "<group>"; };
 		6AFA23EA1F7C210800B635BE /* corporationPlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder64.png; sourceTree = "<group>"; };
 		6AFA23EB1F7C210800B635BE /* characterPlaceholder32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder32.jpg; sourceTree = "<group>"; };
@@ -277,6 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD88BF12037521900DD5996 /* Charts.framework in Frameworks */,
 				6AC74AB41F882FF900A01C6D /* Eureka.framework in Frameworks */,
 				6AC74AB51F882FF900A01C6D /* NVActivityIndicatorView.framework in Frameworks */,
 				6AC74AB61F882FF900A01C6D /* PopupDialog.framework in Frameworks */,
@@ -320,7 +357,6 @@
 				24119A78CB52AE11DB0177EF /* UIViewController.swift */,
 				241196A58D4A1902BFF600C3 /* UIColor.swift */,
 				241190B2EC5C485A9888E5C2 /* BalloonMarker.swift */,
-				24119E7D7D8B1831BE6E4ADB /* ChartDataSet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,8 +424,19 @@
 				24119EAC342084A98D2567BA /* StatsYearViewController.swift */,
 				241193B32BEDE889CCDBC451 /* KillsViewController.swift */,
 				241191BF5C53F2DCE99690EF /* TransactionViewController.swift */,
+				24119DCAFEB273D1E80B4ABD /* FleetViewController.swift */,
+				2411968CA43E2F081031AD7C /* FleetCompositionViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		241199EDBCF1997D2463D004 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				241196C06D777EFEC6F19996 /* EveAssetGroup.swift */,
+				24119B5E0B0D2202B15B81F3 /* AssetHeaderView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		24119A785F07BCE780DCA1EC /* EVE */ = {
@@ -419,6 +466,10 @@
 				24119DFB96FA05C2684154E3 /* EveAssetList.swift */,
 				24119B72094E4E3A7BB1C740 /* EveKill.swift */,
 				24119D64BC92D43B61A231E5 /* EveTransaction.swift */,
+				241193275F41901733464F92 /* EveStructure.swift */,
+				24119F65E9963F7273F9007D /* EveFleet.swift */,
+				2411971A2824BDCFE1BEEDEF /* EveSystem.swift */,
+				241193E15ABD8EBE00474B49 /* EveType.swift */,
 			);
 			path = EVE;
 			sourceTree = "<group>";
@@ -428,6 +479,8 @@
 			children = (
 				24119B5C8E1864DB4D457C4B /* Nameable.swift */,
 				24119D5A973652A6504D7709 /* RequiresScope.swift */,
+				24119C78EFE76B7EB872F6E0 /* Location.swift */,
+				24119C817726446A5370042E /* AssetHeaderViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -435,6 +488,7 @@
 		52109CEE6A720915266C462C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AD88BF22037521900DD5996 /* Charts.framework */,
 				6AC74AB71F882FF900A01C6D /* Eureka.framework */,
 				6AC74AB81F882FF900A01C6D /* NVActivityIndicatorView.framework */,
 				6AC74AB91F882FF900A01C6D /* PopupDialog.framework */,
@@ -462,6 +516,10 @@
 		6A5156461F8F371000D5C29E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				6AD88BEA2036386100DD5996 /* StructureAttempts+CoreDataClass.swift */,
+				6AD88BEB2036386100DD5996 /* StructureAttempts+CoreDataProperties.swift */,
+				6AD88BE92036386100DD5996 /* Structure+CoreDataClass.swift */,
+				6AD88BEC2036386100DD5996 /* Structure+CoreDataProperties.swift */,
 				6A49D78C202EDB3500210533 /* EVESSOToken+CoreDataClass.swift */,
 				6A49D78B202EDB3500210533 /* EVESSOToken+CoreDataProperties.swift */,
 				6A51564D1F8F37A100D5C29E /* Group+CoreDataClass.swift */,
@@ -499,6 +557,7 @@
 		6AA0D0C11F77878E008DC078 /* EVE ESI */ = {
 			isa = PBXGroup;
 			children = (
+				6AD88BCD2034FC8100DD5996 /* AssetHeader.xib */,
 				6A0032C41FE65BB100D8241E /* RatingViewController.xib */,
 				6A5156461F8F371000D5C29E /* CoreData */,
 				6A10CAA71F7A07E3003106E2 /* ESI */,
@@ -518,6 +577,10 @@
 				6A2FE5901F87658B000D3454 /* ReturnContactCell.xib */,
 				2411937A437BB7B3650D7E6E /* GroupLoader.swift */,
 				6A0032C21FE65B5300D8241E /* SearchPopupController.xib */,
+				241199EDBCF1997D2463D004 /* Helpers */,
+				6AD88BF3203815F200DD5996 /* FleetHeader.xib */,
+				6AD88BF52038161E00DD5996 /* FleetCell.xib */,
+				24119F8F41C9979C4DFA22E4 /* FleetHeaderView.swift */,
 			);
 			path = "EVE ESI";
 			sourceTree = "<group>";
@@ -670,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A246BFC1F8F31F40025A1A2 /* EVE_ESI.xcdatamodeld in Resources */,
+				6AD88BF62038161E00DD5996 /* FleetCell.xib in Resources */,
 				6AFA24091F7C231B00B635BE /* corporationPlaceholder256.png in Resources */,
 				6AA0D0CD1F77878E008DC078 /* Assets.xcassets in Resources */,
 				6AFA24061F7C231B00B635BE /* corporationPlaceholder32.png in Resources */,
@@ -684,7 +748,9 @@
 				6AFA24071F7C231B00B635BE /* corporationPlaceholder64.png in Resources */,
 				6AFA24031F7C231B00B635BE /* characterPlaceholder128.jpg in Resources */,
 				6A0032C31FE65B5300D8241E /* SearchPopupController.xib in Resources */,
+				6AD88BCE2034FC8100DD5996 /* AssetHeader.xib in Resources */,
 				6AFA24051F7C231B00B635BE /* characterPlaceholder512.jpg in Resources */,
+				6AD88BF4203815F200DD5996 /* FleetHeader.xib in Resources */,
 				6A2FE58D1F86D4FE000D3454 /* MailSearchCell.xib in Resources */,
 				6AFA23FF1F7C231B00B635BE /* alliancePlaceholder32.png in Resources */,
 				6AFA24041F7C231B00B635BE /* characterPlaceholder256.jpg in Resources */,
@@ -720,7 +786,9 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GSTouchesShowingWindow-Swift/GSTouchesShowingWindow_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
@@ -731,7 +799,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSTouchesShowingWindow_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
@@ -894,10 +964,13 @@
 				2411904F47AA2A90C93363BA /* URL.swift in Sources */,
 				24119909FEAA57C167BAAADB /* String.swift in Sources */,
 				24119BA200608E9189CC4CA1 /* SSOToken.swift in Sources */,
+				6AD88BEE2036386100DD5996 /* StructureAttempts+CoreDataClass.swift in Sources */,
 				24119F2E2E5AEEC09A387B07 /* AuthCharacterViewController.swift in Sources */,
 				24119546D71A308A68E04D0C /* EveAuthCharacter.swift in Sources */,
+				6AD88BED2036386100DD5996 /* Structure+CoreDataClass.swift in Sources */,
 				2411985E7198F0C4087F19FA /* EveNotification.swift in Sources */,
 				241194ACAB1EA1079FFBA6BB /* EveClone.swift in Sources */,
+				6AD88BEF2036386100DD5996 /* StructureAttempts+CoreDataProperties.swift in Sources */,
 				241199D43B41B8C62AA3EADC /* EveContract.swift in Sources */,
 				24119272717A449625969508 /* ContactViewController.swift in Sources */,
 				2411912D5E19842C9317275E /* EvePlayerOwned.swift in Sources */,
@@ -944,6 +1017,7 @@
 				24119578DAFDAFBA6190F152 /* OrdersViewController.swift in Sources */,
 				241191E14FF894A55FEEE508 /* EveMarketOrder.swift in Sources */,
 				2411927C413EF151DB26CFF5 /* StatsViewController.swift in Sources */,
+				6AD88BF02036386100DD5996 /* Structure+CoreDataProperties.swift in Sources */,
 				24119D369FD4945B6C669B59 /* MiningViewController.swift in Sources */,
 				241198DDE27881A51908ECD9 /* EveMiningLedgerEntry.swift in Sources */,
 				241199DA07A22191D3522981 /* EveMiningLedger.swift in Sources */,
@@ -954,12 +1028,22 @@
 				24119049C2D52BB10C8DF03C /* AssetLocationViewController.swift in Sources */,
 				24119D944B966B5E5EC2304B /* StatsYearViewController.swift in Sources */,
 				24119303C96CC3E5106547C5 /* BalloonMarker.swift in Sources */,
-				24119399895E014ED2556C95 /* ChartDataSet.swift in Sources */,
 				24119B368ADFE91198146496 /* KillsViewController.swift in Sources */,
 				24119B943EC25C8091F3D583 /* EveKill.swift in Sources */,
 				24119FF7A00DAD64B6F4C4D4 /* RequiresScope.swift in Sources */,
 				24119EB343917C103D3E3A00 /* TransactionViewController.swift in Sources */,
 				24119454E65CC84704E1E07B /* EveTransaction.swift in Sources */,
+				241193708532D4596CC2FB28 /* Location.swift in Sources */,
+				2411992A843B379F7647D4A6 /* EveAssetGroup.swift in Sources */,
+				241191DF45491F06A6358B9D /* AssetHeaderView.swift in Sources */,
+				2411922ED3F04E7F39B162DD /* AssetHeaderViewDelegate.swift in Sources */,
+				24119FCBB390B1E978EEAB59 /* EveStructure.swift in Sources */,
+				241193A20275A312B7381286 /* EveFleet.swift in Sources */,
+				241190CB41F21D2E73EDF099 /* FleetViewController.swift in Sources */,
+				24119483D513AE8D196758A2 /* FleetHeaderView.swift in Sources */,
+				2411997BAB2C06EEAE508D11 /* EveSystem.swift in Sources */,
+				241190A2FCB54F353FEC914A /* EveType.swift in Sources */,
+				2411956FCC98CCE2D7D5D4BE /* FleetCompositionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

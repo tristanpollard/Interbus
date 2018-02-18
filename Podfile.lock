@@ -1,19 +1,22 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.6.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - Charts (3.0.4):
-    - Charts/Core (= 3.0.4)
-  - Charts/Core (3.0.4)
-  - Eureka (4.0.0)
-  - NVActivityIndicatorView (4.0.0):
-    - NVActivityIndicatorView/Presenter (= 4.0.0)
-  - NVActivityIndicatorView/Presenter (4.0.0)
-  - ObjectMapper (3.0.0)
-  - PopupDialog (0.6.0)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
+  - DynamicBlurView (2.0.2)
+  - Eureka (4.0.1)
+  - GSTouchesShowingWindow-Swift (1.0.3)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
+  - ObjectMapper (3.1.0)
+  - PopupDialog (0.7.0):
+    - DynamicBlurView (~> 2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (from `https://github.com/tristanhimmelman/AlamofireObjectMapper.git`, branch `swift-4`)
   - Charts
   - Eureka
+  - GSTouchesShowingWindow-Swift
   - NVActivityIndicatorView
   - PopupDialog (~> 0.6)
 
@@ -35,15 +39,17 @@ CHECKOUT OPTIONS:
     :git: https://github.com/tristanhimmelman/AlamofireObjectMapper.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: e1ff207b71715478ab69f12ca85112f37b139de8
-  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
-  Eureka: c0b55d2aec82050c1400c7d65960b700be8d10ef
-  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
-  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
-  PopupDialog: 687af43af0f7b89948cd411ac701865f931bd6dc
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  GSTouchesShowingWindow-Swift: 445376c1c5b105996458498adcfde9019be6fa27
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PopupDialog: 4abc6db5b22b7c8029e2162bde8891ee6aa4b6c8
 
-PODFILE CHECKSUM: 28a6e05b2d0fa86f616e53d258c75f666d003af3
+PODFILE CHECKSUM: 4c98ee383408bd619ea06228dc1734f58f16d0ec
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

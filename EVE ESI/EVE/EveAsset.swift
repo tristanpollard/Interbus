@@ -23,6 +23,9 @@ class EveAsset : Mappable, Nameable{
     var quantity : Int!
     var type_id : Int64!
 
+    var parentAsset : EveAsset?
+    var childrenAssets = [EveAsset]()
+
     required init?(map: Map) {
 
     }

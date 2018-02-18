@@ -33,11 +33,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
         print("\(path)")
 
-//        let gloader = GroupLoader()
-//        gloader.loadAllGroupIds(){ result in
-//            gloader.loadAllGroupsFromIds(ids: result)
-//
-//        }
+        let gloader = GroupLoader()
+
+        let loadedIds = gloader.loadAllGroupIdsFromCoreData()
+
+        gloader.loadAllGroupIds(){ result in
+
+            let diff = result.filter{!loadedIds.contains($0)}
+            debugPrint("ToLoad: \(diff.count)")
+            if diff.count > 0 {
+                gloader.loadAllGroupsFromIds(ids: diff)
+            }
+        }
 
         return true
 

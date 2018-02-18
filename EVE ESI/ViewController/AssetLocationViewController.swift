@@ -18,15 +18,7 @@ class AssetLocationViewController : UICharacterViewController, NVActivityIndicat
         super.viewDidLoad()
         self.startAnimating()
 
-        self.title = self.character.assets.assetLocations[locationId]
-
-        var loadingAssets = self.character.assets.assetsForLocation(location: locationId)
-        loadingAssets.loadNames(){
-            loadingAssets.sort(by: {$0.name < $1.name})
-            self.assets = loadingAssets
-            self.assetTable.reloadData()
-            self.stopAnimating()
-        }
+        self.stopAnimating()
     }
 }
 
@@ -42,18 +34,14 @@ extension AssetLocationViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "assetCell", for: indexPath)
 
-        let asset = self.assets[indexPath.row]
-
-        cell.imageView?.af_cancelImageRequest()
-        cell.imageView?.image = nil
-
-        let placeholder = UIImage(named: "alliancePlaceholder64")!.af_imageScaled(to: CGSize(width: 44, height: 44))
-        let filter = ScaledToSizeFilter(size: CGSize(width: 44, height: 44))
-        cell.imageView?.af_setImage(withURL: asset.imageURL(size: cell.imageView!.sizeForImage()), placeholderImage: placeholder, filter: filter)
-
-        cell.textLabel?.text = asset.name
-        cell.detailTextLabel?.text = String(asset.quantity)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+
+        self.assetTable.deselectRow(at: indexPath, animated: true)
+
     }
 }

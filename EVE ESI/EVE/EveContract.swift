@@ -5,6 +5,7 @@
 
 import Foundation
 import ObjectMapper
+import Alamofire
 
 class EveContract : Mappable{
 
@@ -91,6 +92,16 @@ class EveContract : Mappable{
         }
 
         group.notify(queue: .main) {
+            completionHandler()
+        }
+
+    }
+
+    func openContract(token: SSOToken, completionHandler: @escaping () -> ()){
+
+        let esi = ESIClient.sharedInstance
+        let params : Parameters = ["contract_id" : self.contract_id!]
+        esi.invoke(endPoint: "/ui/openwindow/contract/", httpMethod: .post, parameters: params, parameterEncoding: URLEncoding(destination: .queryString), token: token){ response in
             completionHandler()
         }
 

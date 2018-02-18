@@ -18,4 +18,18 @@ extension Nameable {
         return URL(string: "https://image.eveonline.com/Type/\(self.id)_\(size).png")!
     }
 
+    func loadName(completionHandler: @escaping(String) -> ()){
+
+        let ids = [id]
+        ids.loadNames{ names in
+            let name = names.first{$0.key == self.id}
+            if name != nil{
+                completionHandler(name!.value)
+                return
+            }
+            completionHandler("")
+        }
+
+    }
+
 }

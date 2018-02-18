@@ -126,7 +126,7 @@ class SendMailViewController : FormViewController{
         let body : TextAreaRow = self.form.rowBy(tag: "bodyTag")!
         let subject : TextRow = self.form.rowBy(tag: "subjectTag")!
 
-        let sendMail = EveSendMail(body: NSString(string: body.value as! String).replacingOccurrences(of: "\n", with: "<br />"), recipients: vals, subject: subject.value as! String, token: self.character.token!)
+        let sendMail = EveSendMail(body: NSString(string: body.value!).replacingOccurrences(of: "\n", with: "<br />"), recipients: vals, subject: subject.value!, token: self.character.token!)
         sendMail.send(){ result in
             debugPrint(result.rawResponse)
             self.navigationController?.popViewController(animated: true)

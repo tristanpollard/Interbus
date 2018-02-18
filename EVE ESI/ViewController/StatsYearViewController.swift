@@ -12,117 +12,117 @@ class StatsYearViewController : UICharacterViewController{
     var yearStats = [String:Any]()
     var sortedKeys = [String]()
 //    @IBOutlet weak var statsTable: UITableView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var miningChart: PieChartView!
-    @IBOutlet weak var repairChart: BarChartView!
-    @IBOutlet weak var dmgDoneChart: RadarChartView!
-    
-    @IBOutlet weak var bc2: BarChartView!
+//    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var contentView: UIView!
+//    @IBOutlet weak var miningChart: PieChartView!
+//    @IBOutlet weak var repairChart: BarChartView!
+//    @IBOutlet weak var dmgDoneChart: RadarChartView!
+//
+//    @IBOutlet weak var bc2: BarChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scrollView.contentSize = contentView.bounds.size
-        debugPrint(scrollView.contentSize)
-
-        self.title = String(year)
-        self.yearStats = self.character.stats.first(where: {$0["year"] as! Int64 == year})!
-        self.sortedKeys = Array(self.yearStats.keys).sorted(by: {$0 < $1})
-        debugPrint(self.sortedKeys)
-        debugPrint(self.yearStats)
-
-        var miningEntries = [PieChartDataEntry]()
-
-        var armorEntries = [BarChartDataEntry]()
-        var shieldEntries = [BarChartDataEntry]()
-        var capEntries = [BarChartDataEntry]()
-
-        var dmgDoneEntries = [RadarChartDataEntry]()
-
-
-        if let mining = self.yearStats["mining"] as? [String:Double]{
-
-
-            for key in mining.keys.sorted(by: {$0 < $1}) {
-                if key.range(of: "ore_") != nil { //mining
-                    let entry = PieChartDataEntry(value: mining[key]!, label: key)
-                    miningEntries.append(entry)
-                }
-            }
-        }
-
-        if let combat = self.yearStats["combat"] as? [String:Double] {
-
-            armorEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_armor_by_remote_amount"]!], label: "Armor Received"))
-            shieldEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_shield_by_remote_amount"]!], label: "Shield Received"))
-            capEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_capacitor_by_remote_amount"]!], label: "Cap Received"))
-
-            armorEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_armor_remote_amount"]!], label: "Armor Sent"))
-            shieldEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_shield_remote_amount"]!], label: "Shield Sent"))
-            capEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_capacitor_remote_amount"]!], label: "Cap Sent"))
-
-            armorEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_armor_self_amount"]!], label: "Local armor"))
-            shieldEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_shield_self_amount"]!], label: "Local Shield"))
-            capEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_capacitor_self_amount"]!], label: "Cap Boosted"))
-
-            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_energy_amount"]!))
-            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_projectile_amount"]!))
-            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_hybrid_amount"]!))
-            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_missile_amount"]!))
-            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_combat_drone_amount"]!))
-
-        }
-
-        let dmgDoneSet = RadarChartDataSet(values: dmgDoneEntries, label: "Damage Done")
-        dmgDoneSet.setColor(.green)
-
-        let dmgDoneData = RadarChartData(dataSet: dmgDoneSet)
-
-        self.dmgDoneChart.data = dmgDoneData
-
-
-        let armorSet = BarChartDataSet(values: armorEntries, label: "Armor")
-        armorSet.setColor(.red)
-        let shieldSet = BarChartDataSet(values: shieldEntries, label: "Shield")
-        shieldSet.setColor(.blue)
-        let capSet = BarChartDataSet(values: capEntries, label: "Cap")
-        capSet.setColor(.orange)
-
-        let repairData = BarChartData(dataSets: [shieldSet, armorSet, capSet])
-
-        let groupSpace = 0.08
-        let barSpace = 0.03
-        let barWidth = 0.2
-
-        repairData.barWidth = barWidth
-
-        self.repairChart.xAxis.axisMinimum = 0
-        self.repairChart.xAxis.axisMaximum = repairData.groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(repairData.dataSets.count)
-        self.repairChart.data = repairData
-        self.repairChart.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
-
-        self.bc2.data = repairData
-
-        let miningSet = PieChartDataSet(values: miningEntries, label: nil)
-        miningSet.setRandomColors()
-
-        let miningData = PieChartData(dataSet: miningSet)
-        miningSet.drawValuesEnabled = false
-
-        self.miningChart.drawSliceTextEnabled = false
-        self.miningChart.highlightPerTapEnabled = true
-
-        self.miningChart.data = miningData
-        self.miningChart.chartDescription?.enabled = false
-
-        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-                font: .systemFont(ofSize: 12),
-                textColor: .white,
-                insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-
-        marker.chartView = self.miningChart
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        self.miningChart.marker = marker
+//        scrollView.contentSize = contentView.bounds.size
+//        debugPrint(scrollView.contentSize)
+//
+//        self.title = String(year)
+//        self.yearStats = self.character.stats.first(where: {$0["year"] as! Int64 == year})!
+//        self.sortedKeys = Array(self.yearStats.keys).sorted(by: {$0 < $1})
+//        debugPrint(self.sortedKeys)
+//        debugPrint(self.yearStats)
+//
+//        var miningEntries = [PieChartDataEntry]()
+//
+//        var armorEntries = [BarChartDataEntry]()
+//        var shieldEntries = [BarChartDataEntry]()
+//        var capEntries = [BarChartDataEntry]()
+//
+//        var dmgDoneEntries = [RadarChartDataEntry]()
+//
+//
+//        if let mining = self.yearStats["mining"] as? [String:Double]{
+//
+//
+//            for key in mining.keys.sorted(by: {$0 < $1}) {
+//                if key.range(of: "ore_") != nil { //mining
+//                    let entry = PieChartDataEntry(value: mining[key]!, label: key)
+//                    miningEntries.append(entry)
+//                }
+//            }
+//        }
+//
+//        if let combat = self.yearStats["combat"] as? [String:Double] {
+//
+//            armorEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_armor_by_remote_amount"]!], label: "Armor Received"))
+//            shieldEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_shield_by_remote_amount"]!], label: "Shield Received"))
+//            capEntries.append(BarChartDataEntry(x: 0, yValues: [combat["repair_capacitor_by_remote_amount"]!], label: "Cap Received"))
+//
+//            armorEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_armor_remote_amount"]!], label: "Armor Sent"))
+//            shieldEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_shield_remote_amount"]!], label: "Shield Sent"))
+//            capEntries.append(BarChartDataEntry(x: 1, yValues: [combat["repair_capacitor_remote_amount"]!], label: "Cap Sent"))
+//
+//            armorEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_armor_self_amount"]!], label: "Local armor"))
+//            shieldEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_shield_self_amount"]!], label: "Local Shield"))
+//            capEntries.append(BarChartDataEntry(x: 2, yValues: [combat["repair_capacitor_self_amount"]!], label: "Cap Boosted"))
+//
+//            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_energy_amount"]!))
+//            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_projectile_amount"]!))
+//            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_hybrid_amount"]!))
+//            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_missile_amount"]!))
+//            dmgDoneEntries.append(RadarChartDataEntry(value: combat["damage_to_players_combat_drone_amount"]!))
+//
+//        }
+//
+//        let dmgDoneSet = RadarChartDataSet(values: dmgDoneEntries, label: "Damage Done")
+//        dmgDoneSet.setColor(.green)
+//
+//        let dmgDoneData = RadarChartData(dataSet: dmgDoneSet)
+//
+//        self.dmgDoneChart.data = dmgDoneData
+//
+//
+//        let armorSet = BarChartDataSet(values: armorEntries, label: "Armor")
+//        armorSet.setColor(.red)
+//        let shieldSet = BarChartDataSet(values: shieldEntries, label: "Shield")
+//        shieldSet.setColor(.blue)
+//        let capSet = BarChartDataSet(values: capEntries, label: "Cap")
+//        capSet.setColor(.orange)
+//
+//        let repairData = BarChartData(dataSets: [shieldSet, armorSet, capSet])
+//
+//        let groupSpace = 0.08
+//        let barSpace = 0.03
+//        let barWidth = 0.2
+//
+//        repairData.barWidth = barWidth
+//
+//        self.repairChart.xAxis.axisMinimum = 0
+//        self.repairChart.xAxis.axisMaximum = repairData.groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(repairData.dataSets.count)
+//        self.repairChart.data = repairData
+//        self.repairChart.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
+//
+//        self.bc2.data = repairData
+//
+//        let miningSet = PieChartDataSet(values: miningEntries, label: nil)
+//        miningSet.setRandomColors()
+//
+//        let miningData = PieChartData(dataSet: miningSet)
+//        miningSet.drawValuesEnabled = false
+//
+//        self.miningChart.drawSliceTextEnabled = false
+//        self.miningChart.highlightPerTapEnabled = true
+//
+//        self.miningChart.data = miningData
+//        self.miningChart.chartDescription?.enabled = false
+//
+//        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
+//                font: .systemFont(ofSize: 12),
+//                textColor: .white,
+//                insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+//
+//        marker.chartView = self.miningChart
+//        marker.minimumSize = CGSize(width: 80, height: 40)
+//        self.miningChart.marker = marker
         
     }
     

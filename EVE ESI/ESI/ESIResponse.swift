@@ -37,7 +37,6 @@ class ESIResponse {
             df.dateFormat = "E, dd MMM yyyy HH:mm:ss zzz"
             self.expires = df.date(from: expires)
         }
-
         self.statusCode = self.rawResponse.response?.statusCode
         self.result = self.rawResponse.result.value
 

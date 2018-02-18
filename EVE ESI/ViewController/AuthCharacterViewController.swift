@@ -15,7 +15,7 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
     @IBOutlet weak var allianceImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
-    let options = ["Assets", "Clones", "Contacts", "Contracts", "Journal", "Kills", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Transactions"/*"Stats"*/]
+    var options = ["Assets", "Clones", "Contacts", "Contracts", "Fleet", "Journal", "Kills", "Mail", "Mining", "Orders", "Skills", "Skill Queue", "Transactions"/*"Stats"*/]
 
     func updateOnline(){
         self.character.isOnline(){ online in
@@ -56,18 +56,68 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
 
         }
 
-        group.enter()
-        self.character.loadFatigue(){
+
+        //TODO can we solve a character not having anything elegantly?
+        /*group.enter()
+        self.character.loadMining{
+            if self.character.miningLedger.entries.count == 0{
+                self.options.remove(at: self.options.index(of: "Mining")!)
+            }
             group.leave()
         }
 
+        group.enter()
+        self.character.loadClones{
+            if self.character.clones.count == 0{
+                self.options.remove(at: self.options.index(of: "Clones")!)
+            }
+            group.leave()
+        }
 
         group.enter()
-        self.character.loadWalletBalance(){
+        self.character.loadKills{
+            if self.character.kills.count == 0{
+                self.options.remove(at: self.options.index(of: "Kills")!)
+            }
+            group.leave()
+        }
+
+        group.enter()
+        self.character.loadContracts{
+            if self.character.contacts.count == 0{
+                self.options.remove(at: self.options.index(of: "Contracts")!)
+            }
+            group.leave()
+        }
+
+        group.enter()
+        self.character.loadMarketOrders{
+            if self.character.orders.count == 0{
+                self.options.remove(at: self.options.index(of: "Orders")!)
+            }
+            group.leave()
+        }
+
+        group.enter()
+        self.character.loadTransactions{
+            if self.character.transactions.count == 0{
+                self.options.remove(at: self.options.index(of: "Transactions")!)
+            }
+            group.leave()
+        }*/
+
+        group.enter()
+        self.character.loadLocation{
+            group.leave()
+        }
+
+        group.enter()
+        self.character.loadShip{
             group.leave()
         }
 
         group.notify(queue: .main){
+            self.tableView.reloadData()
             self.stopAnimating()
         }
 
@@ -76,13 +126,19 @@ class AuthCharacterViewController : UICharacterViewController, NVActivityIndicat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.updateOnline()
+       // self.updateOnline()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let vc = segue.destination as? UICharacterViewController {
             vc.character = self.character
+        }else if let tabViews = segue.destination as? UITabBarController, let controllers = tabViews.viewControllers{
+            for view in controllers{
+                if let vc = view as? UICharacterViewController{
+                    vc.character = self.character
+                }
+            }
         }
 
     }
@@ -108,7 +164,6 @@ extension AuthCharacterViewController : UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
         self.performSegue(withIdentifier: "authCharacterTo\(options[indexPath.row].components(separatedBy: " ").joined())", sender: self)
     }
 }

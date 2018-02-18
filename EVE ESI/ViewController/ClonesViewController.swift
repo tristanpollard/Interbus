@@ -18,8 +18,22 @@ class ClonesViewController : UICharacterViewController, NVActivityIndicatorViewa
 
         self.character.loadClones(){
             self.character.clones.loadImplantNames() {
-                self.tableView.reloadData()
-                self.stopAnimating()
+
+                let group = DispatchGroup()
+
+                for clone in self.character.clones{
+                    group.enter()
+                    clone.loadLocationName(token: self.character.token){
+                        group.leave()
+                    }
+                }
+
+                group.notify(queue: .main){
+                    debugPrint("Clones: \(self.character.clones.count)")
+                    self.tableView.reloadData()
+                    self.stopAnimating()
+                }
+
             }
         }
 
@@ -33,7 +47,7 @@ extension ClonesViewController : UITableViewDataSource, UITableViewDelegate{
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.character.clones[section].location_type
+        return self.character.clones[section].location_name
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +57,7 @@ extension ClonesViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cloneCell", for: indexPath)
 
-        cell.textLabel?.text = self.character.clones[indexPath.section].implants[indexPath.row].name
+        cell.textLabel?.text = self.character.clones[indexPath.section].implants.sorted(by: {$0.name < $1.name})[indexPath.row].name
 
         return cell
     }

@@ -58,6 +58,7 @@ class SSOToken {
     }
 
     func updateToken(response: ESIResponse, completionHandler: @escaping() -> ()){
+
         if let data = response.result as? [String:Any] {
             if let access_token = data["access_token"] as? String {
                 self.access_token = access_token
@@ -97,10 +98,11 @@ class SSOToken {
         }
     }
 
+    //TODO if multiple requests fire at same time, it can lock up.
     func refreshIfNeeded(completionHandler: @escaping() -> ()){
         let now = Date().addingTimeInterval(TimeInterval(self.refreshTime))
         if now > self.expires!{
-            print("Refreshing token for: \(self.character_name)")
+            print("Refreshing token for: \(self.character_name!)")
             self.refresh(){
                 completionHandler()
             }
@@ -120,15 +122,21 @@ class SSOToken {
     }
 
     func saveToken(){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "EVESSOToken")
+
+        debugPrint("SAVING TOKEN")
+
+        let parentContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = parentContext
+
+        let fetchRequest:NSFetchRequest<EVESSOToken> = NSFetchRequest.init(entityName: "EVESSOToken")
         let predicate = NSPredicate(format: "character_id = '\(self.character_id!)'")
         fetchRequest.predicate = predicate
         do {
             let fetch = try context.fetch(fetchRequest)
 
             if fetch.count > 0 {
-                let token = fetch[0] as! EVESSOToken
+                let token = fetch[0]
                 token.access_token = self.access_token!
                 token.refresh_token = self.refresh_token!
                 token.character_id = self.character_id!
@@ -137,14 +145,18 @@ class SSOToken {
                 token.token_type = self.token_type!
                 token.scopes = self.scopes!.joined(separator: " ")
                 do{
-                    try context.save()
+                    debugPrint("ATTEMPTING SAVE")
+                        try context.save()
+                        try parentContext.save()
+                    debugPrint("SAVED")
                 }
                 catch
                 {
                     print("Error saving: \(error)")
                 }
             }else{
-                insertToken()
+                debugPrint("INSERTING TOKEN")
+                self.insertToken()
             }
         }
         catch
@@ -154,7 +166,9 @@ class SSOToken {
     }
 
     func insertToken(){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let parentContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = parentContext
         let token = EVESSOToken(context: context)
         token.access_token = self.access_token!
         token.refresh_token = self.refresh_token!
@@ -163,11 +177,18 @@ class SSOToken {
         token.expires = self.expires! as NSDate
         token.token_type = self.token_type!
         token.scopes = self.scopes!.joined(separator: " ")
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        do{
+            try context.save()
+            try parentContext.save()
+        } catch {
+            debugPrint("ERROR: \(error)")
+        }
     }
 
     func deleteToken(){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let parentContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = parentContext
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "EVESSOToken")
         let predicate = NSPredicate(format: "character_id = '\(self.character_id!)'")
         fetchRequest.predicate = predicate
@@ -176,11 +197,8 @@ class SSOToken {
                 for tok in fetch{
                     context.delete(tok)
                 }
-                do{
-                    try context.save()
-                }catch{
-                    print("Error saving: \(error)")
-                }
+                try context.save()
+                try parentContext.save()
              }
         }
         catch

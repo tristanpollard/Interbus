@@ -25,6 +25,8 @@ class EveClone : Mappable{
     var location_type : String?
     var active_clone = false
 
+    var location_name : String?
+
     required init?(map: Map) {
 
     }
@@ -39,6 +41,25 @@ class EveClone : Mappable{
         }
     }
 
+    func loadLocationName(token: SSOToken?, completionHandler: @escaping() -> ()){
+
+        if self.location_type == "structure" && token != nil{
+            let loc = EveStructure(self.location_id!)
+            loc.loadStructure(token: token!){
+                self.location_name = loc.name
+                completionHandler()
+            }
+            return
+        }
+
+        let ids = [self.location_id!]
+        ids.loadNames{ names in
+            self.location_name = names[self.location_id!]
+            completionHandler()
+        }
+
+
+    }
 
 
 }

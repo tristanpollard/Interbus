@@ -46,9 +46,6 @@ class ContractListViewController : UICharacterViewController, NVActivityIndicato
 }
 
 extension ContractListViewController : UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Contracts"
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.character.contracts.count

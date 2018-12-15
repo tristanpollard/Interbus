@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.0.0.beta.1)
+  - JWTDecode (2.1.1)
+  - KTVJSONWebToken (2.1.0)
+  - NVActivityIndicatorView (4.4.1):
+    - NVActivityIndicatorView/Presenter (= 4.4.1)
+  - NVActivityIndicatorView/Presenter (4.4.1)
+  - ObjectMapper (3.4.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0.beta.1)
+  - JWTDecode (~> 2.1)
+  - KTVJSONWebToken
+  - NVActivityIndicatorView
+  - ObjectMapper (~> 3.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - JWTDecode
+    - KTVJSONWebToken
+    - NVActivityIndicatorView
+    - ObjectMapper
+
+SPEC CHECKSUMS:
+  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
+  JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
+  KTVJSONWebToken: c3cc06e26876d63c62a5c40c5e89939899de48cf
+  NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+
+PODFILE CHECKSUM: 3eea000a93fa6c7d24027103731f7a00c8510c4c
+
+COCOAPODS: 1.5.3

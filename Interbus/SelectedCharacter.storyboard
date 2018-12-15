@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V9v-ff-Ndv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Selected Character View Controller-->
+        <scene sceneID="WU9-UJ-TUy">
+            <objects>
+                <viewController id="V9v-ff-Ndv" customClass="SelectedCharacterViewController" customModule="Interbus" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQA-Tf-QE7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="characterPlaceholder512.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lck-Ux-ZHb">
+                                <rect key="frame" x="107.5" y="8" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lck-Ux-ZHb" secondAttribute="height" multiplier="1:1" id="a9Q-JH-vdG"/>
+                                    <constraint firstAttribute="width" constant="160" id="scf-go-oDt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="corporationPlaceholder256.png" translatesAutoresizingMaskIntoConstraints="NO" id="pJE-i2-MWz">
+                                <rect key="frame" x="16" y="176" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pJE-i2-MWz" secondAttribute="height" multiplier="1:1" id="TtA-nf-bBW"/>
+                                    <constraint firstAttribute="width" constant="96" id="dnh-pE-FGC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alliancePlaceholder128.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y2R-hp-pJo">
+                                <rect key="frame" x="263" y="176" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="jSA-CK-4wT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Corporation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVs-gj-VZG">
+                                <rect key="frame" x="8" y="276" width="112" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alliance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-if-NCw">
+                                <rect key="frame" x="255" y="276" width="112" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pJE-i2-MWz" firstAttribute="leading" secondItem="glS-WD-5Ua" secondAttribute="leading" constant="16" id="1tX-bc-zg1"/>
+                            <constraint firstItem="YRw-if-NCw" firstAttribute="leading" secondItem="Y2R-hp-pJo" secondAttribute="leading" constant="-8" id="Hw6-4J-fk5"/>
+                            <constraint firstItem="Y2R-hp-pJo" firstAttribute="top" secondItem="lck-Ux-ZHb" secondAttribute="bottom" constant="8" id="P00-0K-3kk"/>
+                            <constraint firstItem="ZVs-gj-VZG" firstAttribute="top" secondItem="pJE-i2-MWz" secondAttribute="bottom" constant="4" id="PiN-Pd-wsq"/>
+                            <constraint firstItem="Y2R-hp-pJo" firstAttribute="width" secondItem="Y2R-hp-pJo" secondAttribute="height" multiplier="1:1" id="S3Q-Vg-1pl"/>
+                            <constraint firstItem="glS-WD-5Ua" firstAttribute="trailing" secondItem="Y2R-hp-pJo" secondAttribute="trailing" constant="16" id="Tqw-MZ-CjE"/>
+                            <constraint firstItem="lck-Ux-ZHb" firstAttribute="top" secondItem="glS-WD-5Ua" secondAttribute="top" constant="8" id="Z8x-HQ-JoD"/>
+                            <constraint firstItem="ZVs-gj-VZG" firstAttribute="trailing" secondItem="pJE-i2-MWz" secondAttribute="trailing" constant="8" id="ZVm-BH-Myg"/>
+                            <constraint firstItem="lck-Ux-ZHb" firstAttribute="centerX" secondItem="RQA-Tf-QE7" secondAttribute="centerX" id="cFk-bm-Ug9"/>
+                            <constraint firstItem="YRw-if-NCw" firstAttribute="trailing" secondItem="Y2R-hp-pJo" secondAttribute="trailing" constant="8" id="hyC-OX-zOT"/>
+                            <constraint firstItem="ZVs-gj-VZG" firstAttribute="leading" secondItem="pJE-i2-MWz" secondAttribute="leading" constant="-8" id="qS8-em-Oxr"/>
+                            <constraint firstItem="YRw-if-NCw" firstAttribute="top" secondItem="Y2R-hp-pJo" secondAttribute="bottom" constant="4" id="v50-Ac-qSt"/>
+                            <constraint firstItem="pJE-i2-MWz" firstAttribute="top" secondItem="lck-Ux-ZHb" secondAttribute="bottom" constant="8" id="xLe-uo-WFy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="glS-WD-5Ua"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="allianceImage" destination="Y2R-hp-pJo" id="3p0-fN-ZB9"/>
+                        <outlet property="allianceLabel" destination="YRw-if-NCw" id="MXo-RU-XDL"/>
+                        <outlet property="characterImage" destination="lck-Ux-ZHb" id="ntI-al-Pk1"/>
+                        <outlet property="corporationImage" destination="pJE-i2-MWz" id="nUP-gd-R6D"/>
+                        <outlet property="corporationLabel" destination="ZVs-gj-VZG" id="BEr-bg-puc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uQ-oD-O27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="789.35532233883066"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alliancePlaceholder128.png" width="128" height="128"/>
+        <image name="characterPlaceholder512.jpg" width="512" height="512"/>
+        <image name="corporationPlaceholder256.png" width="256" height="256"/>
+    </resources>
+</document>

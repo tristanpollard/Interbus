@@ -13,9 +13,14 @@ protocol EVEImage {
 }
 
 extension EVEImage {
-    func fetchImage(size: Int, completion: @escaping (UIImage?) -> ()) {
-        let url = URL(string: "\(ESIClient.baseURI.image.rawValue)/\(self.imageEndpoint)/\(self.imageID)_\(size).\(self.imageExtension)")!
-        print(url.absoluteURL)
+
+    func getImageUrl(size: Int) -> String {
+        let url = "\(ESIClient.baseURI.image.rawValue)/\(self.imageEndpoint)/\(self.imageID)_\(size).\(self.imageExtension)"
+        return url
+    }
+
+    func fetchImage(_ strUrl: String, completion: @escaping (UIImage?) -> ()) {
+        let url = URL(string: strUrl)!
         DispatchQueue.global(qos: .background).async {
             if let data = NSData(contentsOf: url) {
                 let image = UIImage(data: data as Data)

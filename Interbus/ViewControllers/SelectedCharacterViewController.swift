@@ -9,12 +9,16 @@ class SelectedCharacterViewController: UIViewController {
 
     var character: EveCharacter!
 
+    let options = ["Assets", "Clones", "Contacts", "Fleet", "Mail", "Journal", "Wallet"]
+    var selectedOption: String?
+
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var corporationImage: UIImageView!
     @IBOutlet weak var allianceImage: UIImageView!
     @IBOutlet weak var corporationLabel: UILabel!
     @IBOutlet weak var allianceLabel: UILabel!
-
+    @IBOutlet weak var navigationTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,5 +39,37 @@ class SelectedCharacterViewController: UIViewController {
             }
             self.allianceLabel.text = alliance.name
         }
+    }
+
+    func getSegueIdentifier() -> String? {
+        guard let selected = self.selectedOption else {
+            return nil
+        }
+        return "selectedCharacterTo\(selected)"
+    }
+}
+
+extension SelectedCharacterViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.selectedOption = self.options[indexPath.row]
+    }
+}
+
+extension SelectedCharacterViewController: UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "navigationOptionCell", for: indexPath)
+
+        cell.textLabel?.text = options[indexPath.row]
+
+        return cell
     }
 }

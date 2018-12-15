@@ -82,7 +82,7 @@ extension Array where Element: EveCharacter {
         let group = DispatchGroup()
         self.forEach { character in
             group.enter()
-            character.characterData?.fetchCharacterData { data in
+            character.characterData?.fetchCharacterCorpAllianceData {
                 group.leave()
             }
         }

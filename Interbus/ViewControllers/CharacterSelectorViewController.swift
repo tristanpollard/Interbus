@@ -28,13 +28,18 @@ class CharacterSelectorViewController: UIViewController {
             return EveCharacter(token: token)
         }
 
+        let group = DispatchGroup()
+        group.enter()
         self.characters.fetchAllCharacterData {
-            self.characters.map({ $0.characterData! }).fetchCorpsAndAlliances {
-                self.tokenTableView.reloadData()
-            }
+            group.leave()
         }
 
+        group.enter()
         self.characters.fetchAllCharacterLocationOnline {
+            group.leave()
+        }
+
+        group.notify(queue: .main) {
             self.tokenTableView.reloadData()
         }
     }
@@ -52,6 +57,11 @@ class CharacterSelectorViewController: UIViewController {
         self.characters = self.characters.filter({ $0.id != char.id })
         self.characters.append(char)
         self.tokenTableView.reloadData()
+        char.characterData?.fetchCharacterCorpAllianceData {
+            char.fetchLocationOnline { online in
+                self.tokenTableView.reloadData()
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,12 +102,16 @@ extension CharacterSelectorViewController: UITableViewDataSource {
         cell.corpAllianceLabel.text = corpAllianceData.joined(separator: " - ")
 
         if !character.token!.hasAllScopes() {
+            cell.accessoryView = nil
             cell.accessoryType = .detailButton
         } else {
             if let _ = character.characterData?.corporation {
+                cell.accessoryView = nil
                 cell.accessoryType = .disclosureIndicator
             } else {
-                cell.accessoryType = .none
+                let indicator = UIActivityIndicatorView(style: .gray)
+                cell.accessoryView = indicator
+                indicator.startAnimating()
             }
         }
 

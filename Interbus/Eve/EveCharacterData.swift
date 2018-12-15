@@ -109,23 +109,39 @@ class EveCharacterData: Mappable, EVEImage {
             }
         }
     }
-}
 
-extension Array where Element: EveCharacterData {
-    func fetchCorpsAndAlliances(completion: @escaping () -> ()) {
+    func fetchCharacterCorpAllianceData(completion: @escaping () -> ()) {
         let group = DispatchGroup()
-        self.forEach { character in
-            if let corp = character.corporation {
+        group.enter()
+        self.fetchCharacterData { data in
+            if let corp = self.corporation {
                 group.enter()
-                corp.fetchCorporationData { data in
+                self.corporation?.fetchCorporationData { corp in
                     group.leave()
                 }
             }
-            if let alliance = character.alliance {
+            if let alliance = self.alliance {
                 group.enter()
-                alliance.fetchAllianceData { data in
+                self.alliance?.fetchAllianceData { alliance in
                     group.leave()
                 }
+            }
+            group.leave()
+        }
+
+        group.notify(queue: .main) {
+            completion()
+        }
+    }
+}
+
+extension Array where Element: EveCharacterData {
+    func fetchAllData(completion: @escaping () -> ()) {
+        let group = DispatchGroup()
+        self.forEach { character in
+            group.enter()
+            character.fetchCharacterCorpAllianceData {
+                group.leave()
             }
         }
 

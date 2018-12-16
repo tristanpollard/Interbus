@@ -44,13 +44,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corporation - Alliance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QV-Ly-MNd">
-                                                    <rect key="frame" x="80" y="40.5" width="272" height="16"/>
+                                                    <rect key="frame" x="80" y="38.5" width="272" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-eG-rMs">
-                                                    <rect key="frame" x="80" y="60.5" width="287" height="16"/>
+                                                    <rect key="frame" x="80" y="56.5" width="287" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -60,11 +60,11 @@
                                                 <constraint firstItem="0SG-eP-hHt" firstAttribute="top" secondItem="V9L-7Q-Gnd" secondAttribute="top" constant="8" id="Lhd-Ob-4Hr"/>
                                                 <constraint firstItem="0QV-Ly-MNd" firstAttribute="leading" secondItem="0SG-eP-hHt" secondAttribute="trailing" constant="8" id="RvC-S5-am3"/>
                                                 <constraint firstItem="ce7-eG-rMs" firstAttribute="leading" secondItem="0SG-eP-hHt" secondAttribute="trailing" constant="8" id="XgG-sA-xCp"/>
-                                                <constraint firstItem="0QV-Ly-MNd" firstAttribute="top" secondItem="ex5-j7-dO0" secondAttribute="bottom" constant="4" id="YD4-nh-nw3"/>
+                                                <constraint firstItem="0QV-Ly-MNd" firstAttribute="top" secondItem="ex5-j7-dO0" secondAttribute="bottom" constant="2" id="YD4-nh-nw3"/>
                                                 <constraint firstAttribute="bottom" secondItem="0SG-eP-hHt" secondAttribute="bottom" constant="8" id="dje-ba-bif"/>
                                                 <constraint firstItem="ex5-j7-dO0" firstAttribute="leading" secondItem="0SG-eP-hHt" secondAttribute="trailing" constant="8" id="eNU-cW-r79"/>
                                                 <constraint firstItem="0SG-eP-hHt" firstAttribute="leading" secondItem="V9L-7Q-Gnd" secondAttribute="leading" constant="8" id="g35-Ml-62t"/>
-                                                <constraint firstItem="ce7-eG-rMs" firstAttribute="top" secondItem="0QV-Ly-MNd" secondAttribute="bottom" constant="4" id="jo0-Xy-wTP"/>
+                                                <constraint firstItem="ce7-eG-rMs" firstAttribute="top" secondItem="0QV-Ly-MNd" secondAttribute="bottom" constant="2" id="jo0-Xy-wTP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0QV-Ly-MNd" secondAttribute="trailing" constant="8" id="k4F-Hv-OvO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ex5-j7-dO0" secondAttribute="trailing" constant="8" id="nHP-dc-6nn"/>
                                                 <constraint firstAttribute="trailing" secondItem="ce7-eG-rMs" secondAttribute="trailing" constant="8" id="qd3-Kg-kAc"/>

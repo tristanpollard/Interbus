@@ -50,7 +50,10 @@ class EveCharacter: Nameable {
 // Location related
 extension EveCharacter {
     func fetchLocationOnline(completion: @escaping (EveLocationOnline) -> ()) {
-        self.esi.invoke(endPoint: "/v2/characters/\(self.id)/online/") { response in
+        let options = [
+            "token": self.token
+        ]
+        self.esi.invoke(endPoint: "/v2/characters/\(self.id)/online/", token: self.token) { response in
             if let result = response.result as? [String: Any] {
                 self.locationOnline = EveLocationOnline(character: self, json: result)
                 completion(self.locationOnline!)
@@ -59,7 +62,7 @@ extension EveCharacter {
     }
 
     func fetchLocationShip(completion: @escaping (EveLocationShip) -> ()) {
-        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/ship/") { response in
+        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/ship/", token: self.token) { response in
             if let result = response.result as? [String: Any] {
                 self.locationShip = EveLocationShip(character: self, json: result)
                 completion(self.locationShip!)
@@ -68,7 +71,7 @@ extension EveCharacter {
     }
 
     func fetchLocationSystem(completion: @escaping (EveLocationSystem) -> ()) {
-        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/location/") { response in
+        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/location/", token: self.token) { response in
             if let result = response.result as? [String: Any] {
                 self.locationSystem = EveLocationSystem(character: self, json: result)
                 completion(self.locationSystem!)
@@ -98,6 +101,36 @@ extension Array where Element: EveCharacter {
             group.enter()
             character.fetchLocationOnline { online in
                 group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            completion()
+        }
+    }
+
+    func fetchAllCharactersLocationShip(completion: @escaping () -> ()) {
+        let group = DispatchGroup()
+        self.forEach { character in
+            group.enter()
+            character.fetchLocationShip { ship in
+                group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            completion()
+        }
+    }
+
+    func fetchAllCharactersLocationSystems(completion: @escaping () -> ()) {
+        let group = DispatchGroup()
+        self.forEach { character in
+            group.enter()
+            character.fetchLocationSystem { system in
+                system.fetchName { name in
+                    group.leave()
+                }
             }
         }
 

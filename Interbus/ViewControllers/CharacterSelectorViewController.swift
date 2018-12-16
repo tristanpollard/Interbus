@@ -26,6 +26,8 @@ class CharacterSelectorViewController: UIViewController {
         let tokens = SSOToken.loadAllTokens()
         self.characters = tokens.map { token in
             return EveCharacter(token: token)
+        }.sorted {
+            $0.name! < $1.name!
         }
 
         let group = DispatchGroup()
@@ -39,10 +41,21 @@ class CharacterSelectorViewController: UIViewController {
             group.leave()
         }
 
+        group.enter()
+        self.characters.fetchAllCharactersLocationShip {
+            group.leave()
+        }
+
+        group.enter()
+        self.characters.fetchAllCharactersLocationSystems {
+            group.leave()
+        }
+
         group.notify(queue: .main) {
             self.tokenTableView.reloadData()
         }
     }
+
 
     @objc
     func addBarButtonTapped() {
@@ -56,9 +69,31 @@ class CharacterSelectorViewController: UIViewController {
         let char = EveCharacter(token: token)
         self.characters = self.characters.filter({ $0.id != char.id })
         self.characters.append(char)
+        self.characters.sort {
+            $0.name! < $1.name!
+        }
         self.tokenTableView.reloadData()
         char.characterData?.fetchCharacterCorpAllianceData {
+            let group = DispatchGroup()
+
+            group.enter()
             char.fetchLocationOnline { online in
+                group.leave()
+            }
+
+            group.enter()
+            char.fetchLocationShip { ship in
+                group.leave()
+            }
+
+            group.enter()
+            char.fetchLocationSystem { system in
+                system.fetchName { name in
+                    group.leave()
+                }
+            }
+
+            group.notify(queue: .main) {
                 self.tokenTableView.reloadData()
             }
         }
@@ -114,6 +149,16 @@ extension CharacterSelectorViewController: UITableViewDataSource {
                 indicator.startAnimating()
             }
         }
+
+        var locationLabelItems: [String] = []
+        if let location = character.locationSystem?.name {
+            locationLabelItems.append(location)
+        }
+        if let ship = character.locationShip?.ship_name {
+            locationLabelItems.append(ship)
+        }
+
+        cell.locationLabel.text = locationLabelItems.joined(separator: ": ")
 
         return cell
     }

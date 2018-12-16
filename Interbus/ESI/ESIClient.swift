@@ -52,7 +52,7 @@ final class ESIClient {
         "esi-universe.read_structures.v1",
         "esi-bookmarks.read_character_bookmarks.v1",
         "esi-killmails.read_killmails.v1",
-        "esi-corporations.read_corporation_membership.v1",
+//        "esi-corporations.read_corporation_membership.v1",
         "esi-assets.read_assets.v1",
         "esi-planets.manage_planets.v1",
         "esi-fleets.read_fleet.v1",
@@ -63,8 +63,8 @@ final class ESIClient {
         "esi-fittings.read_fittings.v1",
         "esi-fittings.write_fittings.v1",
         "esi-markets.structure_markets.v1",
-        "esi-corporations.read_structures.v1",
-        "esi-corporations.write_structures.v1",
+//        "esi-corporations.read_structures.v1",
+//        "esi-corporations.write_structures.v1",
         "esi-characters.read_loyalty.v1",
         "esi-characters.read_opportunities.v1",
         "esi-characters.read_chat_channels.v1",
@@ -80,31 +80,31 @@ final class ESIClient {
         "esi-clones.read_implants.v1",
         "esi-characters.read_fatigue.v1",
         "esi-killmails.read_corporation_killmails.v1",
-        "esi-corporations.track_members.v1",
+//        "esi-corporations.track_members.v1",
         "esi-wallet.read_corporation_wallets.v1",
         "esi-characters.read_notifications.v1",
-        "esi-corporations.read_divisions.v1",
-        "esi-corporations.read_contacts.v1",
+//        "esi-corporations.read_divisions.v1",
+//        "esi-corporations.read_contacts.v1",
         "esi-assets.read_corporation_assets.v1",
-        "esi-corporations.read_titles.v1",
-        "esi-corporations.read_blueprints.v1",
+//        "esi-corporations.read_titles.v1",
+//        "esi-corporations.read_blueprints.v1",
         "esi-bookmarks.read_corporation_bookmarks.v1",
         "esi-contracts.read_corporation_contracts.v1",
-        "esi-corporations.read_standings.v1",
-        "esi-corporations.read_starbases.v1",
+//        "esi-corporations.read_standings.v1",
+//        "esi-corporations.read_starbases.v1",
         "esi-industry.read_corporation_jobs.v1",
         "esi-markets.read_corporation_orders.v1",
-        "esi-corporations.read_container_logs.v1",
+//        "esi-corporations.read_container_logs.v1",
         "esi-industry.read_character_mining.v1",
         "esi-industry.read_corporation_mining.v1",
         "esi-planets.read_customs_offices.v1",
-        "esi-corporations.read_facilities.v1",
-        "esi-corporations.read_medals.v1",
+//        "esi-corporations.read_facilities.v1",
+//        "esi-corporations.read_medals.v1",
         "esi-characters.read_titles.v1",
         "esi-alliances.read_contacts.v1",
         "esi-characters.read_fw_stats.v1",
-        "esi-corporations.read_fw_stats.v1",
-        "esi-corporations.read_outposts.v1",
+//        "esi-corporations.read_fw_stats.v1",
+//        "esi-corporations.read_outposts.v1",
         "esi-characterstats.read.v1"
     ]
 
@@ -176,12 +176,12 @@ final class ESIClient {
         self.lastCodeChallenge = challenge
     }
 
-    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, options: [String: Any]? = nil, completion: @escaping (ESIResponse) -> ()) {
+    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, token: SSOToken? = nil, options: [String: Any]? = nil, completion: @escaping (ESIResponse) -> ()) {
 
         var requestBase = ESIClient.baseURI.api
         var parameters: Parameters? = nil
         var headers: HTTPHeaders? = nil
-        var token: SSOToken? = nil
+        var parameterEncoding: ParameterEncoding = URLEncoding.default
 
         let group = DispatchGroup()
 
@@ -195,15 +195,8 @@ final class ESIClient {
             if let base = opt["baseURI"] as? ESIClient.baseURI {
                 requestBase = base
             }
-            if let tok = opt["token"] as? SSOToken {
-                token = tok
-                if opt["headers"] == nil {
-                    headers = []
-                }
-                group.enter()
-                tok.refreshIfNeeded {
-                    group.leave()
-                }
+            if let encoding = opt["encoding"] as? ParameterEncoding {
+                parameterEncoding = encoding
             }
         }
         var requestURL = requestBase.rawValue + endPoint
@@ -211,12 +204,23 @@ final class ESIClient {
             requestURL += "/"
         }
 
+        if let tok = token {
+            if headers == nil {
+                headers = []
+            }
+            group.enter()
+            tok.refreshIfNeeded {
+                group.leave()
+            }
+        }
+
         group.notify(queue: .main) {
             if let tok = token {
                 headers!["Authorization"] = tok.authorizationHeader()
             }
             print(requestURL, httpMethod, parameters, headers)
-            AF.request(requestURL, method: httpMethod, parameters: parameters, headers: headers).responseJSON { json in
+
+            AF.request(requestURL, method: httpMethod, parameters: parameters, encoding: parameterEncoding, headers: headers).responseJSON { json in
                 completion(ESIResponse(rawResponse: json))
             }
         }
@@ -229,6 +233,7 @@ final class ESIClient {
             "parameters": parameters
         ]
         self.invoke(endPoint: "/oauth/token", httpMethod: .post, options: options) { response in
+            print(response.result)
             completion(response)
         }
     }
@@ -247,6 +252,7 @@ final class ESIClient {
 
         self.invoke(endPoint: "/oauth/token", httpMethod: .post, options: options) { response in
             let token = SSOToken(response: response)
+            print(response.result)
             completion(token)
         }
     }

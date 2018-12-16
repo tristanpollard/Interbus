@@ -23,9 +23,10 @@ class EveAllianceData: Nameable, Mappable, EVEImage {
             return self.alliance_id
         }
     }
-    var name: String?
+    var name: EveName?
 
     var alliance_id: Int64!
+    var alliance_name: String!
 
     var creator_corporation_id: Int64? {
         didSet {
@@ -65,7 +66,7 @@ class EveAllianceData: Nameable, Mappable, EVEImage {
     }
 
     func mapping(map: Map) {
-        self.name <- map["name"]
+        self.alliance_name <- map["name"]
         self.creator_corporation_id <- map["creator_corporation_id"]
         self.creator_id <- map["creator_id"]
         self.executor_corporation_id <- map["executor_corporation_id"]

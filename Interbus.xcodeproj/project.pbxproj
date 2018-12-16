@@ -20,11 +20,14 @@
 		C0D8F22B2EF516243BB86151 /* SSOToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F06F981C1ECD38116D74 /* SSOToken.swift */; };
 		C0D8F3A39150C095AE56CD92 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9A46598A1B351417C38 /* UIImageView.swift */; };
 		C0D8F3BCBDE038D3B12992C2 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9990F5568E1BC2FF601 /* Fetchable.swift */; };
+		C0D8F40CE3032A10F03EDBB8 /* EveWalletJournalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */; };
 		C0D8F4716AF4C1E6C360C11D /* alliancePlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F66B346E8B95924D7B27 /* alliancePlaceholder32.png */; };
 		C0D8F4C97F49E8AF4FEED9C7 /* corporationPlaceholder256.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F4B737703E7B9689DBEF /* corporationPlaceholder256.png */; };
 		C0D8F600ECEC8B978101C0EF /* characterPlaceholder64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */; };
 		C0D8F604083088E0C24729BA /* SelectedCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0DBD73D628AA1E83E04 /* SelectedCharacterViewController.swift */; };
 		C0D8F6689FF41CE3B21DB2B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F987D6EEAC0E1034F679 /* LaunchScreen.storyboard */; };
+		C0D8F679E63F2ED2502E7992 /* EveWalletJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */; };
+		C0D8F71EB0F1EDD5210DAC53 /* EveWalletJournalItemParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */; };
 		C0D8F78F17948BD8448827A5 /* corporationPlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FF6BD2613CBEE99DE9B9 /* corporationPlaceholder32.png */; };
 		C0D8F7B14115910BD6A465DB /* characterPlaceholder32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F839E63146DBF7AD72E5 /* characterPlaceholder32.jpg */; };
 		C0D8F866E7F67D8B911DEBD9 /* EveCorporationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE662522AD91AD616F9D /* EveCorporationData.swift */; };
@@ -32,16 +35,20 @@
 		C0D8F8D5C34B6C400206EC99 /* corporationPlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FDF29B2B06EC5FD5950D /* corporationPlaceholder64.png */; };
 		C0D8F8ED16392DA87708B237 /* ESIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FCCA6C88BD7EFC115AFD /* ESIResponse.swift */; };
 		C0D8F9AD21E86BED2AB69390 /* TokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */; };
+		C0D8F9CCC0C5A82EA0150234 /* EveWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F608C40BA811F295633C /* EveWallet.swift */; };
 		C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */; };
 		C0D8FA877308C205BCE85753 /* InterbusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */; };
+		C0D8FA8AC6143D7F2F0030E0 /* EveName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0C51E398F10E69B295A /* EveName.swift */; };
 		C0D8FA8C0553400B1FE307B6 /* EveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */; };
 		C0D8FAC58679DEA9F5184257 /* EveLocationOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */; };
+		C0D8FB11A6B36D49F683CBFB /* EveWalletTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */; };
 		C0D8FB5BFE40D18147A5ED1D /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F981EC72B1283BE2CCDD /* TransformDate.swift */; };
 		C0D8FB90B162368FF0A334E4 /* EveLocationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */; };
 		C0D8FBAB49FFBB7ACEE6C00B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F891694848D3ECE4AD69 /* Main.storyboard */; };
 		C0D8FBD35D73B92FDF715BBC /* alliancePlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F0DF95475EE4193DA09E /* alliancePlaceholder64.png */; };
 		C0D8FD61A71EC4A902C42D3C /* InterbusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F80C00F889194CB21675 /* InterbusTests.swift */; };
 		C0D8FE233B40B994EE11F5BB /* ESIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F24BC3EA899DED436F3F /* ESIClient.swift */; };
+		C0D8FE4BF8E7F67F8F638697 /* WalletJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FD336D1444DEDEFB2881 /* WalletJournalViewController.swift */; };
 		C0D8FE4EEBACCE331B686BA8 /* EVEImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F6C3685A3706259264C7 /* EVEImage.swift */; };
 		C0D8FE5F46B44DAF7C82CE6F /* characterPlaceholder256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FA909057E5AED799A8E1 /* characterPlaceholder256.jpg */; };
 		C0D8FE9CB47ACECE60ACBA8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2007066F7D2E5D48D71 /* AppDelegate.swift */; };
@@ -72,6 +79,7 @@
 		ABAA6119BDBD218773F9AD74 /* Pods_Interbus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Interbus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTableViewCell.swift; sourceTree = "<group>"; };
 		C0D8F06F981C1ECD38116D74 /* SSOToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSOToken.swift; sourceTree = "<group>"; };
+		C0D8F0C51E398F10E69B295A /* EveName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveName.swift; sourceTree = "<group>"; };
 		C0D8F0DBD73D628AA1E83E04 /* SelectedCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCharacterViewController.swift; sourceTree = "<group>"; };
 		C0D8F0DF95475EE4193DA09E /* alliancePlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder64.png; sourceTree = "<group>"; };
 		C0D8F2007066F7D2E5D48D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,9 +89,11 @@
 		C0D8F47BDD8EA9BD0FF99605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		C0D8F4B737703E7B9689DBEF /* corporationPlaceholder256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder256.png; sourceTree = "<group>"; };
 		C0D8F4CE59927BD625163CC6 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournal.swift; sourceTree = "<group>"; };
 		C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder512.jpg; sourceTree = "<group>"; };
 		C0D8F5AE487CDCF338378602 /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationSystem.swift; sourceTree = "<group>"; };
+		C0D8F608C40BA811F295633C /* EveWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWallet.swift; sourceTree = "<group>"; };
 		C0D8F66B346E8B95924D7B27 /* alliancePlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder32.png; sourceTree = "<group>"; };
 		C0D8F688A5134A3C85D9E16F /* EveAllianceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAllianceData.swift; sourceTree = "<group>"; };
 		C0D8F6C3685A3706259264C7 /* EVEImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEImage.swift; sourceTree = "<group>"; };
@@ -91,6 +101,7 @@
 		C0D8F70A4319EBD3F7CDEEE4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C0D8F75C365955AE91E363EA /* EveCharacterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacterData.swift; sourceTree = "<group>"; };
 		C0D8F80C00F889194CB21675 /* InterbusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterbusTests.swift; sourceTree = "<group>"; };
+		C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletTransactions.swift; sourceTree = "<group>"; };
 		C0D8F839E63146DBF7AD72E5 /* characterPlaceholder32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder32.jpg; sourceTree = "<group>"; };
 		C0D8F864085F8431EFEB4F96 /* characterPlaceholder128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder128.jpg; sourceTree = "<group>"; };
 		C0D8F885FB0DBC0AC3A361F4 /* alliancePlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder128.png; sourceTree = "<group>"; };
@@ -104,7 +115,10 @@
 		C0D8FA943C2A1DF528D7DA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		C0D8FB2672F7539F2C951F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		C0D8FB7660D7D2AE95C4573B /* Interbus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Interbus.xcdatamodel; sourceTree = "<group>"; };
+		C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItem.swift; sourceTree = "<group>"; };
+		C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItemParty.swift; sourceTree = "<group>"; };
 		C0D8FCCA6C88BD7EFC115AFD /* ESIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIResponse.swift; sourceTree = "<group>"; };
+		C0D8FD336D1444DEDEFB2881 /* WalletJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletJournalViewController.swift; sourceTree = "<group>"; };
 		C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder64.jpg; sourceTree = "<group>"; };
 		C0D8FD82188D3DE55A032D4A /* InterbusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterbusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8FDF29B2B06EC5FD5950D /* corporationPlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder64.png; sourceTree = "<group>"; };
@@ -176,6 +190,7 @@
 			children = (
 				C0D8F6FF6AA8923FB8F74D53 /* CharacterSelectorViewController.swift */,
 				C0D8F0DBD73D628AA1E83E04 /* SelectedCharacterViewController.swift */,
+				C0D8FD336D1444DEDEFB2881 /* WalletJournalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -280,6 +295,12 @@
 				C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */,
 				C0D8F9A4BAEE9834871A674C /* EveLocationShip.swift */,
 				C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */,
+				C0D8F608C40BA811F295633C /* EveWallet.swift */,
+				C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */,
+				C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */,
+				C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */,
+				C0D8F0C51E398F10E69B295A /* EveName.swift */,
+				C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */,
 			);
 			path = Eve;
 			sourceTree = "<group>";
@@ -540,6 +561,13 @@
 				C0D8FAC58679DEA9F5184257 /* EveLocationOnline.swift in Sources */,
 				C0D8F2081904DD827D3771C5 /* EveLocationShip.swift in Sources */,
 				C0D8FB90B162368FF0A334E4 /* EveLocationSystem.swift in Sources */,
+				C0D8F9CCC0C5A82EA0150234 /* EveWallet.swift in Sources */,
+				C0D8F679E63F2ED2502E7992 /* EveWalletJournal.swift in Sources */,
+				C0D8FB11A6B36D49F683CBFB /* EveWalletTransactions.swift in Sources */,
+				C0D8F40CE3032A10F03EDBB8 /* EveWalletJournalItem.swift in Sources */,
+				C0D8FE4BF8E7F67F8F638697 /* WalletJournalViewController.swift in Sources */,
+				C0D8FA8AC6143D7F2F0030E0 /* EveName.swift in Sources */,
+				C0D8F71EB0F1EDD5210DAC53 /* EveWalletJournalItemParty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

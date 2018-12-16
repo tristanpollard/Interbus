@@ -22,9 +22,13 @@ class SelectedCharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = self.character.name
+        self.title = self.character.name?.name
 
-        self.characterImage.roundImageWithBorder(color: .clear)
+        var characterBorderColor: UIColor = .red
+        if let online = self.character.locationOnline?.online, online {
+            characterBorderColor = .green
+        }
+        self.characterImage.roundImageWithBorder(color: characterBorderColor)
         self.corporationImage.roundImageWithBorder(color: .clear)
 
         self.characterImage.fetchAndSetImage(eve: self.character.characterData!) {
@@ -32,12 +36,12 @@ class SelectedCharacterViewController: UIViewController {
         if let corp = self.character.characterData?.corporation {
             self.corporationImage.fetchAndSetImage(eve: corp) {
             }
-            self.corporationLabel.text = corp.name
+            self.corporationLabel.text = corp.name?.name
         }
         if let alliance = self.character.characterData?.alliance {
             self.allianceImage.fetchAndSetImage(eve: alliance) {
             }
-            self.allianceLabel.text = alliance.name
+            self.allianceLabel.text = alliance.name?.name
         }
     }
 
@@ -47,12 +51,20 @@ class SelectedCharacterViewController: UIViewController {
         }
         return "selectedCharacterTo\(selected)"
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let journal = segue.destination as? WalletJournalViewController {
+            journal.walletJournal = self.character.walletJournal
+        }
+    }
 }
 
 extension SelectedCharacterViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedOption = self.options[indexPath.row]
+        self.performSegue(withIdentifier: "selectedCharacterTo\(self.selectedOption!)", sender: self)
     }
 }
 

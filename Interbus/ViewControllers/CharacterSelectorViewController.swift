@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
 class CharacterSelectorViewController: UIViewController {
 
@@ -38,7 +37,7 @@ class CharacterSelectorViewController: UIViewController {
     func refreshAllCharacters() {
 
         self.characters.sort {
-            $0.name! < $1.name!
+            $0.character_name < $1.character_name
         }
 
         self.characters.refreshTokens {
@@ -81,10 +80,12 @@ class CharacterSelectorViewController: UIViewController {
 
     func didReceiveToken(token: SSOToken) {
         let char = EveCharacter(token: token)
-        self.characters = self.characters.filter({ $0.id != char.id })
+        self.characters = self.characters.filter {
+            $0.id != char.id
+        }
         self.characters.append(char)
         self.characters.sort {
-            $0.name! < $1.name!
+            $0.character_name < $1.character_name
         }
         self.tokenTableView.reloadData()
         char.characterData?.fetchCharacterCorpAllianceData {
@@ -136,15 +137,15 @@ extension CharacterSelectorViewController: UITableViewDataSource {
         }
         cell.characterImage.roundImageWithBorder(color: color)
 
-        cell.characterName.text = character.name
+        cell.characterName.text = character.character_name
 
         cell.characterImage.fetchAndSetImage(eve: character.characterData!) {
         }
 
         var corpAllianceData: [String] = []
-        if let corp = character.characterData?.corporation?.name {
+        if let corp = character.characterData?.corporation?.corporation_name {
             corpAllianceData.append(corp)
-            if let alliance = character.characterData?.alliance?.name {
+            if let alliance = character.characterData?.alliance?.alliance_name {
                 corpAllianceData.append(alliance)
             }
         }
@@ -165,7 +166,7 @@ extension CharacterSelectorViewController: UITableViewDataSource {
         }
 
         var locationLabelItems: [String] = []
-        if let location = character.locationSystem?.name {
+        if let location = character.locationSystem?.name?.name {
             locationLabelItems.append(location)
         }
         if let ship = character.locationShip?.ship_name {

@@ -23,7 +23,7 @@ class EveCorporationData: Nameable, Mappable, EVEImage {
             return self.corporation_id
         }
     }
-    var name: String?
+    var name: EveName?
 
     var corporation_id: Int64!
 
@@ -34,6 +34,7 @@ class EveCorporationData: Nameable, Mappable, EVEImage {
             }
         }
     }
+    var corporation_name: String!
     var ceo_id: Int64?
     var creator_id: Int64?
     var date_founded: Date?
@@ -71,7 +72,7 @@ class EveCorporationData: Nameable, Mappable, EVEImage {
         self.ticker <- map["ticker"]
         self.url <- map["url"]
         self.war_eligible <- map["war_eligible"]
-        self.name <- map["name"]
+        self.corporation_name <- map["name"]
 
         self.lastUpdate = Date()
     }

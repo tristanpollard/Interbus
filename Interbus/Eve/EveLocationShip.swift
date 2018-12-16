@@ -14,7 +14,7 @@ class EveLocationShip: Mappable, Nameable {
             return self.ship_type_id!
         }
     }
-    var name: String?
+    var name: EveName?
 
     var ship_item_id: Int64?
     var ship_name: String?

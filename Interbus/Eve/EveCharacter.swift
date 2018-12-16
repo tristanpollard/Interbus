@@ -15,28 +15,25 @@ class EveCharacter: Nameable {
             return self.character_id
         }
     }
-    var name: String? {
-        get {
-            return self.character_name
-        }
-        set {
-            self.character_name = newValue!
-        }
-    }
+    var name: EveName?
 
     var character_id: Int64!
     var character_name: String = ""
     var token: SSOToken?
 
-    var characterData: EveCharacterData?
+    var characterData: EveCharacterData!
 
     var locationOnline: EveLocationOnline?
     var locationShip: EveLocationShip?
     var locationSystem: EveLocationSystem?
 
+    var wallet: EveWallet?
+    var walletJournal: EveWalletJournal!
+
     init(id: Int64) {
         self.character_id = id
         self.characterData = EveCharacterData(character: self)
+        self.walletJournal = EveWalletJournal(character: self)
     }
 
     init(token: SSOToken) {
@@ -44,6 +41,7 @@ class EveCharacter: Nameable {
         self.character_name = token.character_name!
         self.token = token
         self.characterData = EveCharacterData(character: self)
+        self.walletJournal = EveWalletJournal(character: self)
     }
 }
 
@@ -80,12 +78,32 @@ extension EveCharacter {
     }
 }
 
+// Wallet
+extension EveCharacter {
+    func fetchWalletBalance(completion: @escaping (EveWallet) -> ()) {
+        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/wallet", token: self.token) { response in
+            if let result = response.result as? [String: Any] {
+                self.wallet = EveWallet(character: self, json: result)
+                completion(self.wallet!)
+            }
+        }
+    }
+
+    func fetchWalletJournal(completion: @escaping (EveWalletJournal) -> ()) {
+        self.esi.invoke(endPoint: "/v4/characters/\(self.id)/wallet/journal", token: self.token) { response in
+            if let result = response.result as? [String: Any] {
+
+            }
+        }
+    }
+}
+
 extension Array where Element: EveCharacter {
     func fetchAllCharacterData(completion: @escaping () -> ()) {
         let group = DispatchGroup()
         self.forEach { character in
             group.enter()
-            character.characterData?.fetchCharacterCorpAllianceData {
+            character.characterData.fetchCharacterCorpAllianceData {
                 group.leave()
             }
         }

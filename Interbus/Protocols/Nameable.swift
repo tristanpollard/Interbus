@@ -5,16 +5,17 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 protocol Nameable: class {
 
     var id: Int64 { get }
-    var name: String? { get set }
+    var name: EveName? { get set }
 
 }
 
 extension Nameable {
-    func fetchName(completionHandler: @escaping (String) -> ()) {
+    func fetchName(completionHandler: @escaping (EveName) -> ()) {
         let ids = [id]
         ids.fetchNames { names in
             let name = names.first {
@@ -23,23 +24,19 @@ extension Nameable {
             if name != nil {
                 self.name = name!.value
                 completionHandler(name!.value)
-                return
             }
-            completionHandler("")
         }
-
     }
-
 }
 
 extension Array where Element == Int64 {
-    func fetchNames(completion: @escaping ([Int64: String]) -> ()) {
+    func fetchNames(completion: @escaping ([Int64: EveName]) -> ()) {
         let esi = ESIClient.sharedInstance
         let group = DispatchGroup()
 
         let unique = Array(Set(self))
 
-        var results: [Int64: String] = [:]
+        var results: [Int64: EveName] = [:]
 
         stride(from: 0, to: unique.count, by: 200).forEach { sIndex in
             let end = self.index(sIndex, offsetBy: 200)
@@ -52,10 +49,9 @@ extension Array where Element == Int64 {
             group.enter()
             esi.invoke(endPoint: "/v2/universe/names", httpMethod: .post, options: options) { response in
                 if let result = response.result as? [[String: Any]] {
-                    result.forEach { value in
-                        if let id = value["id"] as? Int64, let name = value["name"] as? String {
-                            results[id] = name
-                        }
+                    let items = Mapper<EveName>().mapArray(JSONArray: result)
+                    items.forEach { value in
+                        results[value.id] = value
                     }
                 }
                 group.leave()
@@ -77,14 +73,13 @@ extension Array where Element: Nameable {
             return
         }
 
-        var items: [Int64: Nameable] = [:]
-        for item in self {
-            items[item.id] = item
-        }
-
         ids.fetchNames { names in
             names.forEach { key, value in
-                items[key]?.name = value
+                self.filter {
+                    $0.id == key
+                }.forEach { item in
+                    item.name = value
+                }
             }
             completion()
         }

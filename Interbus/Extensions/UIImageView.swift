@@ -45,7 +45,9 @@ extension UIImageView {
             print("Fetched:", url)
             DispatchQueue.main.async {
                 self.image = image
-                cache.setObject(image!, forKey: NSString(string: url))
+                if let img = image {
+                    cache.setObject(img, forKey: NSString(string: url))
+                }
                 completion()
             }
         }

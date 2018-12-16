@@ -14,7 +14,7 @@ class EveLocationSystem: Mappable, Nameable {
             return self.solar_system_id!
         }
     }
-    var name: String?
+    var name: EveName?
 
     var solar_system_id: Int64?
     var station_id: Int64?

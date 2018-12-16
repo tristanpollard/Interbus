@@ -103,7 +103,6 @@ class EveCharacterData: Mappable, EVEImage {
 
         esi.invoke(endPoint: "/v4/characters/\(self.id)") { response in
             if let json = response.result as? [String: Any] {
-                print(json)
                 Mapper<EveCharacterData>().map(JSON: json, toObject: self)
                 completion(self)
             }

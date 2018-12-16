@@ -14,6 +14,7 @@ class CharacterSelectorViewController: UIViewController {
     @IBOutlet weak var tokenTableView: UITableView!
     var characters: [EveCharacter] = []
     var selectedCharacter: EveCharacter?
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,36 +24,49 @@ class CharacterSelectorViewController: UIViewController {
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped))
         ];
 
+        refreshControl.addTarget(self, action: #selector(refreshAllCharacters), for: .valueChanged)
+        self.tokenTableView.refreshControl = self.refreshControl
+
         let tokens = SSOToken.loadAllTokens()
         self.characters = tokens.map { token in
             return EveCharacter(token: token)
-        }.sorted {
+        }
+        self.refreshAllCharacters()
+    }
+
+    @objc
+    func refreshAllCharacters() {
+
+        self.characters.sort {
             $0.name! < $1.name!
         }
 
-        let group = DispatchGroup()
-        group.enter()
-        self.characters.fetchAllCharacterData {
-            group.leave()
-        }
+        self.characters.refreshTokens {
+            let group = DispatchGroup()
+            group.enter()
+            self.characters.fetchAllCharacterData {
+                group.leave()
+            }
 
-        group.enter()
-        self.characters.fetchAllCharacterLocationOnline {
-            group.leave()
-        }
+            group.enter()
+            self.characters.fetchAllCharacterLocationOnline {
+                group.leave()
+            }
 
-        group.enter()
-        self.characters.fetchAllCharactersLocationShip {
-            group.leave()
-        }
+            group.enter()
+            self.characters.fetchAllCharactersLocationShip {
+                group.leave()
+            }
 
-        group.enter()
-        self.characters.fetchAllCharactersLocationSystems {
-            group.leave()
-        }
+            group.enter()
+            self.characters.fetchAllCharactersLocationSystems {
+                group.leave()
+            }
 
-        group.notify(queue: .main) {
-            self.tokenTableView.reloadData()
+            group.notify(queue: .main) {
+                self.refreshControl.endRefreshing()
+                self.tokenTableView.reloadData()
+            }
         }
     }
 
@@ -177,6 +191,7 @@ extension CharacterSelectorViewController: UITableViewDataSource {
 }
 
 extension CharacterSelectorViewController: UITableViewDelegate {
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let character = self.characters[indexPath.row]

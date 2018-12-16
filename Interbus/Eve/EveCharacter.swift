@@ -139,3 +139,19 @@ extension Array where Element: EveCharacter {
         }
     }
 }
+
+extension Array where Element: EveCharacter {
+    func refreshTokens(completion: @escaping () -> ()) {
+        let group = DispatchGroup()
+        self.forEach { character in
+            group.enter()
+            character.token!.refreshIfNeeded {
+                group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            completion()
+        }
+    }
+}

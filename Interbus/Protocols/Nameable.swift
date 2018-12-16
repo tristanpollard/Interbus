@@ -54,7 +54,6 @@ extension Array where Element == Int64 {
                 if let result = response.result as? [[String: Any]] {
                     result.forEach { value in
                         if let id = value["id"] as? Int64, let name = value["name"] as? String {
-                            print(id, name)
                             results[id] = name
                         }
                     }
@@ -126,10 +125,7 @@ public struct ArrayEncoding: ParameterEncoding {
         }
 
         do {
-            print(array)
             let data = try JSONSerialization.data(withJSONObject: array, options: options)
-            print(data)
-
             if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }

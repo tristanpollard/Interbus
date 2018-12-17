@@ -31,7 +31,7 @@ class EveMail {
         self.isFetching = false
         requestCount += 1
 
-        self.fetchNextPageMail(clear: true) { _ in
+        self.fetchNextPageMail { _ in
             completion()
         }
 
@@ -40,6 +40,7 @@ class EveMail {
     func fetchNextPageMail(clear: Bool = false, completion: @escaping (Bool) -> ()) {
 
         let initialRequestCount = self.requestCount
+        let initialMailId = self.lastMailId
 
         guard self.isFetching == false && self.hasFetchedAll == false else {
             completion(false)
@@ -82,7 +83,7 @@ class EveMail {
 
                 group.notify(queue: .main) {
                     if initialRequestCount == self.requestCount {
-                        if clear {
+                        if initialMailId == Int64(Int32.max) {
                             self.mail = items
                         } else {
                             self.mail += items
@@ -100,35 +101,35 @@ class EveMail {
         }
     }
 
-        func fetchMailLabels(completion: @escaping () -> ()) {
+    func fetchMailLabels(completion: @escaping () -> ()) {
         let esi = ESIClient.sharedInstance
         esi.invoke(endPoint: "/v3/characters/\(self.character.id)/mail/labels", token: self.character.token) {
-        response in
-        if let result = response.result as? [String:Any] {
-        if let labels = result["labels"] as? [[String:Any]] {
-        self.labels = Mapper<EveMailLabel>().mapArray(JSONArray: labels)
+            response in
+            if let result = response.result as? [String: Any] {
+                if let labels = result["labels"] as? [[String: Any]] {
+                    self.labels = Mapper<EveMailLabel>().mapArray(JSONArray: labels)
+                }
+            }
+            completion()
         }
-        }
-        completion()
-        }
-        }
+    }
 
-        func sendMail(_ subject: String, body: String, recipients: [EveSearchResult], completion: @escaping () -> () = {
-        }) {
+    func sendMail(_ subject: String, body: String, recipients: [EveSearchResult], completion: @escaping () -> () = {
+    }) {
         let esi = ESIClient.sharedInstance
-        let options : [String:Any] = [
-        "parameters": [
-        "body": "<font size=\"12\" color=\"#bfffffff\">\(body)</font>",
-        "subject": subject,
-        "recipients": recipients.asRecipients()
-        ],
-        "encoding": JSONEncoding.default
+        let options: [String: Any] = [
+            "parameters": [
+                "body": "<font size=\"12\" color=\"#bfffffff\">\(body)</font>",
+                "subject": subject,
+                "recipients": recipients.asRecipients()
+            ],
+            "encoding": JSONEncoding.default
         ]
         esi.invoke(endPoint: "/v1/characters/\(self.character.id)/mail/", httpMethod: .post, token: self.character.token, options: options) {
-        response in
-        print(response.result)
-        completion()
+            response in
+            print(response.result)
+            completion()
         }
-        }
-
     }
+
+}

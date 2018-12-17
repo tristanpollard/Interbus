@@ -17,6 +17,11 @@ class EveCorporationData: Nameable, Mappable, EVEImage {
         }
     }
     private(set) var imageExtension: String = "png"
+    var placeholder: UIImage {
+        get {
+            return UIImage(named: "corporationPlaceholder256.png")!
+        }
+    }
 
     var id: Int64 {
         get {

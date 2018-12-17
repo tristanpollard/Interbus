@@ -41,30 +41,33 @@ class CharacterSelectorViewController: UIViewController {
         }
 
         self.characters.refreshTokens {
-            let group = DispatchGroup()
-            group.enter()
-            self.characters.fetchAllCharacterData {
-                group.leave()
-            }
+            for (idx, character) in self.characters.enumerated() {
+                let group = DispatchGroup()
 
-            group.enter()
-            self.characters.fetchAllCharacterLocationOnline {
-                group.leave()
-            }
+                group.enter()
+                character.fetchLocationOnline { online in
+                    group.leave()
+                }
 
-            group.enter()
-            self.characters.fetchAllCharactersLocationShip {
-                group.leave()
-            }
+                group.enter()
+                character.fetchLocationShip { ship in
+                    group.leave()
+                }
 
-            group.enter()
-            self.characters.fetchAllCharactersLocationSystems {
-                group.leave()
-            }
+                group.enter()
+                character.fetchLocationSystem { system in
+                    group.leave()
+                }
 
-            group.notify(queue: .main) {
-                self.refreshControl.endRefreshing()
-                self.tokenTableView.reloadData()
+                group.enter()
+                character.characterData.fetchCharacterCorpAllianceData {
+                    group.leave()
+                }
+
+                group.notify(queue: .main) {
+                    let indexPath = IndexPath(row: idx, section: 0)
+                    self.tokenTableView.reloadRows(at: [indexPath], with: .automatic)
+                }
             }
         }
     }
@@ -139,8 +142,7 @@ extension CharacterSelectorViewController: UITableViewDataSource {
 
         cell.characterName.text = character.character_name
 
-        cell.characterImage.fetchAndSetImage(eve: character.characterData!) {
-        }
+        cell.characterImage.fetchAndSetImage(eve: character.characterData!)
 
         var corpAllianceData: [String] = []
         if let corp = character.characterData?.corporation?.corporation_name {

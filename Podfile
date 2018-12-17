@@ -6,8 +6,10 @@ target 'Interbus' do
   pod 'ObjectMapper', '~> 3.4'
   pod 'JWTDecode', '~> 2.1'
   pod 'NVActivityIndicatorView'
+  pod 'SDWebImage/GIF'
 #	pod 'SwiftyJWT'
   pod 'KTVJSONWebToken'
+  pod 'Eureka'
 #	pod 'OAuthSwiftAlamofire'
 #	pod 'AlamofireImage', '~> 3.5'
 end

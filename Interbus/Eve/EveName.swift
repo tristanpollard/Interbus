@@ -24,6 +24,12 @@ class EveName: Mappable {
     // alliance, character, constellation, corporation, inventory_type, region, solar_system, station
     var category: EveNameCategory!
 
+    init(_ id: Int64, name: String, category: EveNameCategory) {
+        self.id = id
+        self.name = name
+        self.category = category
+    }
+
     required init?(map: Map) {
 
     }

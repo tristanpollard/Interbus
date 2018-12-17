@@ -4,10 +4,10 @@
 //
 
 import UIKit
-
-let cache = NSCache<NSString, UIImage>()
+import SDWebImage
 
 extension UIImageView {
+
     func sizeForImage(maxImageSize: Int = 256) -> Int {
         let imageSizes = [32, 64, 128, 256, 512]
         let maxSize = Int(max(self.bounds.size.width, self.bounds.size.height))
@@ -33,23 +33,32 @@ extension UIImageView {
         self.clipsToBounds = true
     }
 
-    func fetchAndSetImage(eve: EVEImage, completion: @escaping () -> ()) {
-        let url = eve.getImageUrl(size: self.sizeForImage())
-        if let cached = cache.object(forKey: NSString(string: url)) {
-            print("Cache:", url)
-            self.image = cached
+    func fetchAndSetImage(eve: EVEImage, completion: @escaping () -> () = {
+    }) {
+        let url = URL(string: eve.getImageUrl(size: self.sizeForImage()))
+        self.image = nil
+        self.sd_cancelCurrentImageLoad()
+        self.sd_setImage(with: url, placeholderImage: eve.placeholder) { (image, error, cacheType, imageURL) in
             completion()
-            return
         }
-        eve.fetchImage(url) { image in
-            print("Fetched:", url)
-            DispatchQueue.main.async {
-                self.image = image
-                if let img = image {
-                    cache.setObject(img, forKey: NSString(string: url))
-                }
-                completion()
-            }
-        }
+
+//        if let cached = cache.object(forKey: NSString(string: url)) {
+//            print("Cache:", url)
+//            self.image = cached
+//            completion()
+//            return
+//        }
+//        eve.fetchImage(url) { image in
+//            print("Fetched:", url)
+//            DispatchQueue.main.async {
+//                if let downloaded = downloadedUrl, url == downloaded {
+//                    self.image = image
+//                }
+//                if let img = image {
+//                    cache.setObject(img, forKey: NSString(string: url))
+//                }
+//                completion()
+//            }
+//        }
     }
 }

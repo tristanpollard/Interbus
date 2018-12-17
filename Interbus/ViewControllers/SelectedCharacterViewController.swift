@@ -31,16 +31,14 @@ class SelectedCharacterViewController: UIViewController {
         self.characterImage.roundImageWithBorder(color: characterBorderColor)
         self.corporationImage.roundImageWithBorder(color: .clear)
 
-        self.characterImage.fetchAndSetImage(eve: self.character.characterData!) {
-        }
+        self.characterImage.fetchAndSetImage(eve: self.character.characterData!)
         if let corp = self.character.characterData?.corporation {
             self.corporationImage.fetchAndSetImage(eve: corp) {
             }
             self.corporationLabel.text = corp.name?.name
         }
         if let alliance = self.character.characterData?.alliance {
-            self.allianceImage.fetchAndSetImage(eve: alliance) {
-            }
+            self.allianceImage.fetchAndSetImage(eve: alliance)
             self.allianceLabel.text = alliance.name?.name
         }
     }
@@ -56,6 +54,9 @@ class SelectedCharacterViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         if let journal = segue.destination as? WalletJournalViewController {
             journal.walletJournal = self.character.walletJournal
+        }
+        if let mail = segue.destination as? MailViewController {
+            mail.mail = self.character.mail
         }
     }
 }

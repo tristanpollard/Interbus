@@ -48,20 +48,40 @@ extension WalletJournalViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! WalletJournalCell
         let journalEntry = self.walletJournal.entries[indexPath.row]
 
-        var parties: [String] = []
-        if let firstParty = journalEntry.first_party?.name?.name {
-            parties.append(firstParty)
+        cell.partyLabel.text = self.walletJournal.character.name?.name
+        if let firstParty = journalEntry.first_party {
+            if firstParty.id != self.walletJournal.character.id {
+                cell.partyLabel.text = firstParty.name?.name
+            }
         }
-        if let secondParty = journalEntry.second_party?.name?.name {
-            parties.append(secondParty)
+        if let secondParty = journalEntry.second_party {
+            if secondParty.id != self.walletJournal.character.id {
+                cell.partyLabel.text = secondParty.name?.name
+            }
         }
-        if parties.count > 0 {
-            cell.textLabel?.text = parties.joined(separator: " -> ")
+
+        cell.amountLabel.textColor = .darkText
+        if let amt = journalEntry.amount {
+            let formatter = NumberFormatter()
+            formatter.groupingSeparator = ","
+            formatter.numberStyle = .decimal
+            cell.amountLabel.text = formatter.string(from: NSNumber(value: amt))
+            if amt > 0 {
+                cell.amountLabel.textColor = UIColor(red: 0.00, green: 0.75, blue: 0.13, alpha: 1.0)
+            } else if amt < 0 {
+                cell.amountLabel.textColor = .red
+            }
         } else {
-            cell.textLabel?.text = "Concord"
+            cell.amountLabel.text = nil
+        }
+
+        if let ref = journalEntry.ref_type {
+            cell.refLabel.text = ref.replacingOccurrences(of: "_", with: " ").capitalized
+        } else {
+            cell.refLabel.text = nil
         }
 
         var imageParty = journalEntry.first_party
@@ -71,17 +91,10 @@ extension WalletJournalViewController: UITableViewDataSource {
             imageParty = journalEntry.second_party
         }
 
-        cell.imageView?.image = UIImage(named: "characterPlaceholder64.jpg")
-        cell.imageView?.roundImageWithBorder(color: .clear)
+        cell.partyImage.image = UIImage(named: "characterPlaceholder64.jpg")
+        cell.partyImage.roundImageWithBorder(color: .clear)
         if let party = imageParty {
-            cell.imageView?.fetchAndSetImage(eve: party) {
-            }
-        }
-
-        if let amount = journalEntry.amount {
-            cell.detailTextLabel?.text = String(amount)
-        } else {
-            cell.detailTextLabel?.text = nil
+            cell.partyImage.fetchAndSetImage(eve: party)
         }
 
         return cell

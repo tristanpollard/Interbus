@@ -6,10 +6,22 @@
 import Foundation
 import ObjectMapper
 
-class EveCharacter: Nameable {
+class EveCharacter: Nameable, EVEImage, Equatable {
 
     let esi = ESIClient.sharedInstance
 
+    private(set) var imageEndpoint: String = "Character"
+    var imageID: Int64 {
+        get {
+            return self.id
+        }
+    }
+    private(set) var imageExtension: String = "jpg"
+    var placeholder: UIImage {
+        get {
+            return UIImage(named: "characterPlaceholder256.jpg")!
+        }
+    }
     var id: Int64 {
         get {
             return self.character_id
@@ -30,10 +42,13 @@ class EveCharacter: Nameable {
     var wallet: EveWallet?
     var walletJournal: EveWalletJournal!
 
+    var mail: EveMail!
+
     init(id: Int64) {
         self.character_id = id
         self.characterData = EveCharacterData(character: self)
         self.walletJournal = EveWalletJournal(character: self)
+        self.mail = EveMail(character: self)
     }
 
     init(token: SSOToken) {
@@ -42,6 +57,11 @@ class EveCharacter: Nameable {
         self.token = token
         self.characterData = EveCharacterData(character: self)
         self.walletJournal = EveWalletJournal(character: self)
+        self.mail = EveMail(character: self)
+    }
+
+    static func ==(lhs: EveCharacter, rhs: EveCharacter) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

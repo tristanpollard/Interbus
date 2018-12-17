@@ -176,7 +176,8 @@ final class ESIClient {
         self.lastCodeChallenge = challenge
     }
 
-    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, token: SSOToken? = nil, options: [String: Any]? = nil, completion: @escaping (ESIResponse) -> ()) {
+    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, token: SSOToken? = nil, options: [String: Any]? = nil, request: @escaping (DataRequest) -> () = { _ in
+    }, completion: @escaping (ESIResponse) -> ()) {
 
         var requestBase = ESIClient.baseURI.api
         var parameters: Parameters? = nil
@@ -220,9 +221,10 @@ final class ESIClient {
             }
             print(requestURL, httpMethod, parameters, headers)
 
-            AF.request(requestURL, method: httpMethod, parameters: parameters, encoding: parameterEncoding, headers: headers).responseJSON { json in
+            let req = AF.request(requestURL, method: httpMethod, parameters: parameters, encoding: parameterEncoding, headers: headers).responseJSON { json in
                 completion(ESIResponse(rawResponse: json))
             }
+            request(req)
         }
     }
 

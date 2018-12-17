@@ -17,6 +17,11 @@ class EveCharacterData: Mappable, EVEImage {
         }
     }
     private(set) var imageExtension: String = "jpg"
+    var placeholder: UIImage {
+        get {
+            return UIImage(named: "characterPlaceholder256.jpg")!
+        }
+    }
 
 
     var alliance_id: Int64? {

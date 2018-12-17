@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class EveWalletJournalItemParty: Nameable, EVEImage {
     var id: Int64
@@ -28,6 +29,11 @@ class EveWalletJournalItemParty: Nameable, EVEImage {
                 return "png"
             }
             return name.getImageExtension()
+        }
+    }
+    var placeholder: UIImage {
+        get {
+            return UIImage(named: "characterPlaceholder256.jpg")!
         }
     }
 

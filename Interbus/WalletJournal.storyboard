@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAY-r8-5w4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wallet Journal-->
+        <scene sceneID="M1f-79-MRO">
+            <objects>
+                <viewController title="Wallet Journal" id="tAY-r8-5w4" customClass="WalletJournalViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6iB-PX-oZR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t6U-b1-1Tt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="journalCell" id="rvB-3x-3GN" customClass="WalletJournalCell" customModule="Interbus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rvB-3x-3GN" id="k82-pc-cC1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JoZ-P1-hwW">
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="KRN-IA-XNc"/>
+                                                        <constraint firstAttribute="height" constant="44" id="LN9-rf-eVC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADi-5T-e1n">
+                                                    <rect key="frame" x="60" y="0.0" width="307" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ref Type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ar-Hb-iax">
+                                                    <rect key="frame" x="313.5" y="22" width="53.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCr-44-hiB">
+                                                    <rect key="frame" x="60" y="22" width="253.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ADi-5T-e1n" firstAttribute="leading" secondItem="JoZ-P1-hwW" secondAttribute="trailing" constant="8" id="D73-Lg-BTx"/>
+                                                <constraint firstAttribute="bottom" secondItem="JoZ-P1-hwW" secondAttribute="bottom" id="HpQ-yW-fm6"/>
+                                                <constraint firstAttribute="trailing" secondItem="ADi-5T-e1n" secondAttribute="trailing" constant="8" id="Phw-uZ-ymw"/>
+                                                <constraint firstItem="JoZ-P1-hwW" firstAttribute="top" secondItem="k82-pc-cC1" secondAttribute="top" id="YmZ-Vp-rgi"/>
+                                                <constraint firstItem="ADi-5T-e1n" firstAttribute="top" secondItem="k82-pc-cC1" secondAttribute="top" id="dVG-hm-SQG"/>
+                                                <constraint firstItem="JoZ-P1-hwW" firstAttribute="leading" secondItem="k82-pc-cC1" secondAttribute="leading" constant="8" id="fKa-N1-nS4"/>
+                                                <constraint firstItem="UCr-44-hiB" firstAttribute="leading" secondItem="JoZ-P1-hwW" secondAttribute="trailing" constant="8" id="jGO-tt-Vtu"/>
+                                                <constraint firstItem="UCr-44-hiB" firstAttribute="top" secondItem="ADi-5T-e1n" secondAttribute="bottom" constant="1" id="l34-M3-9WK"/>
+                                                <constraint firstItem="6ar-Hb-iax" firstAttribute="leading" secondItem="UCr-44-hiB" secondAttribute="trailing" id="lOb-ma-uAk"/>
+                                                <constraint firstAttribute="trailing" secondItem="6ar-Hb-iax" secondAttribute="trailing" constant="8" id="t7L-xG-E12"/>
+                                                <constraint firstItem="6ar-Hb-iax" firstAttribute="top" secondItem="ADi-5T-e1n" secondAttribute="bottom" constant="1" id="yzS-2F-jqV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="UCr-44-hiB" id="0P6-L5-EsB"/>
+                                            <outlet property="partyImage" destination="JoZ-P1-hwW" id="qhP-3h-iZC"/>
+                                            <outlet property="partyLabel" destination="ADi-5T-e1n" id="Em2-3C-yuB"/>
+                                            <outlet property="refLabel" destination="6ar-Hb-iax" id="PbC-Uz-vbe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tAY-r8-5w4" id="7zy-qr-VeZ"/>
+                                    <outlet property="delegate" destination="tAY-r8-5w4" id="rfr-E3-Pyb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pyX-Vw-Ab6"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="journalTable" destination="t6U-b1-1Tt" id="vlX-x4-zvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhU-gy-X0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864.8000000000002" y="788.45577211394311"/>
+        </scene>
+    </scenes>
+</document>

@@ -339,7 +339,7 @@
 				C0D8F45222B626FA0E3D7314 /* Views */,
 				C0D8FD3E75EC0A6823EF24F5 /* Images */,
 				C0D8FC64028E5313A8716F37 /* Protocols */,
-				C0D8FB2590079DD92999BB07 /* Eve */,
+				C0D8FB2590079DD92999BB07 /* EveModels */,
 				C0D8F981EC72B1283BE2CCDD /* TransformDate.swift */,
 				C0D8F361343F3318C6B4F157 /* ViewControllers */,
 			);
@@ -366,7 +366,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C0D8FB2590079DD92999BB07 /* Eve */ = {
+		C0D8FB2590079DD92999BB07 /* EveModels */ = {
 			isa = PBXGroup;
 			children = (
 				C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */,
@@ -397,7 +397,7 @@
 				C0D8F14A272EF61BBE2E81F7 /* EveAssets.swift */,
 				C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */,
 			);
-			path = Eve;
+			path = EveModels;
 			sourceTree = "<group>";
 		};
 		C0D8FBBBB0A1E3F0E78692CD /* CoreData */ = {

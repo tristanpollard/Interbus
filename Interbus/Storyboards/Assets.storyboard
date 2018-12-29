@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Assets View Controller-->
+        <!--Assets-->
         <scene sceneID="RaG-mw-nSO">
             <objects>
-                <viewController storyboardIdentifier="assetsView" id="zYv-95-bxl" customClass="AssetsViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="assetsView" title="Assets" id="zYv-95-bxl" customClass="AssetsViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vkc-dm-0Cb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="esc-I2-ial"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="assetTable" destination="ysI-n0-jnj" id="Fl4-T3-mG2"/>
                     </connections>

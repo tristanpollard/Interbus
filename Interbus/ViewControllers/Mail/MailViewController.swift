@@ -103,10 +103,11 @@ extension MailViewController: UITableViewDataSource {
         }
 
         cell.detailTextLabel?.text = nil
-        if let recipients = mail.recipients {
-            let recipientNames: [String] = recipients.flatMap({ $0.name?.name })
-            cell.detailTextLabel?.text = recipientNames.joined(separator: ", ")
-        }
+        cell.detailTextLabel?.text = mail.sender?.name?.name
+//        if let recipients = mail.recipients {
+//            let recipientNames: [String] = recipients.flatMap({ $0.name?.name })
+//            cell.detailTextLabel?.text = recipientNames.joined(separator: ", ")
+//        }
 
         return cell
     }

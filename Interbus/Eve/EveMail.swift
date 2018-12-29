@@ -127,7 +127,6 @@ class EveMail {
         ]
         esi.invoke(endPoint: "/v1/characters/\(self.character.id)/mail/", httpMethod: .post, token: self.character.token, options: options) {
             response in
-            print(response.result)
             completion()
         }
     }

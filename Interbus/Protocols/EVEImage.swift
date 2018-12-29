@@ -11,6 +11,8 @@ protocol EVEImage {
     var imageID: Int64 { get }
     var imageExtension: String { get }
     var placeholder: UIImage { get }
+
+
 }
 
 extension EVEImage {

@@ -108,75 +108,15 @@
                         <outlet property="corporationLabel" destination="ZVs-gj-VZG" id="BEr-bg-puc"/>
                         <outlet property="navigationTableView" destination="GDf-XV-lGN" id="yEB-Aj-I4B"/>
                         <segue destination="eGo-yd-fRz" kind="show" identifier="selectedCharacterToJournal" id="j2P-nf-8Bx"/>
-                        <segue destination="LQo-dh-AHQ" kind="show" identifier="selectedCharacterToMail" id="3WU-pT-aow"/>
+                        <segue destination="lly-RO-OUM" kind="show" identifier="selectedCharacterToMail" id="3WU-pT-aow"/>
+                        <segue destination="wdI-Ig-5UU" kind="show" identifier="selectedCharacterToNotifications" id="f2E-yy-lyh"/>
+                        <segue destination="daJ-cc-Y3c" kind="show" identifier="selectedCharacterToContacts" id="5v9-lf-oCd"/>
+                        <segue destination="9aI-m5-Bkv" kind="show" identifier="selectedCharacterToAssets" id="Evc-ly-Ic0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uQ-oD-O27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="781"/>
-        </scene>
-        <!--Mail-->
-        <scene sceneID="OpS-YB-hvZ">
-            <objects>
-                <viewController title="Mail" id="LQo-dh-AHQ" customClass="MailViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fpP-0z-VFl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="red-ud-Gei">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mailCell" textLabel="hPL-Id-SZd" detailTextLabel="umB-Zv-2Bm" imageView="xI4-9Z-rO7" style="IBUITableViewCellStyleSubtitle" id="mxq-KQ-5X4">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mxq-KQ-5X4" id="OeL-Zy-ILo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hPL-Id-SZd">
-                                                    <rect key="frame" x="74" y="5" width="35.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="umB-Zv-2Bm">
-                                                    <rect key="frame" x="74" y="25.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="characterPlaceholder64.jpg" id="xI4-9Z-rO7">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="LQo-dh-AHQ" id="9NE-xd-dYy"/>
-                                    <outlet property="delegate" destination="LQo-dh-AHQ" id="ibM-fm-CpA"/>
-                                    <outlet property="prefetchDataSource" destination="LQo-dh-AHQ" id="SLa-We-YVp"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="MIN-gQ-ZI0"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="mailTable" destination="red-ud-Gei" id="7Es-WX-2Xf"/>
-                        <segue destination="CYP-De-dSz" kind="show" identifier="mailToComposeMail" id="OlK-WT-Z5U"/>
-                        <segue destination="1hO-Ff-Rgu" kind="show" identifier="mailToMailItem" id="THg-LS-ZnU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6rc-Kr-6Uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2685.5999999999999" y="769.56521739130437"/>
         </scene>
         <!--WalletJournal-->
         <scene sceneID="fut-oN-Pbb">
@@ -184,120 +124,106 @@
                 <viewControllerPlaceholder storyboardName="WalletJournal" id="eGo-yd-fRz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxn-Pj-7fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="1270"/>
+            <point key="canvasLocation" x="2227" y="857"/>
         </scene>
-        <!--Send Mail View Controller-->
-        <scene sceneID="dcf-DJ-Dyc">
+        <!--Contacts View Controller-->
+        <scene sceneID="7jX-AA-imt">
             <objects>
-                <viewController id="CYP-De-dSz" customClass="SendMailViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WDq-1e-gjv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ITO-Fl-FGb"/>
-                    </view>
-                    <connections>
-                        <segue destination="gix-Li-Tlg" kind="show" identifier="sendMailToMailRecipient" id="ion-vH-83o"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HD3-6r-pj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3895" y="770"/>
-        </scene>
-        <!--Add Recipient-->
-        <scene sceneID="Ajp-tU-cVp">
-            <objects>
-                <viewController title="Add Recipient" id="gix-Li-Tlg" customClass="MailRecipientViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Poh-rT-cfR">
+                <viewController id="daJ-cc-Y3c" customClass="ContactsViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ns2-ob-SOn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-P2-JWM">
-                                <rect key="frame" x="0.0" y="30" width="375" height="573"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wmN-hB-r3f">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipientCell" id="p0X-tS-ttm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="dud-m4-7XG">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p0X-tS-ttm" id="c2Q-fL-V5l">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dud-m4-7XG" id="oyY-N8-8GB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="gix-Li-Tlg" id="IAM-vs-6ji"/>
-                                    <outlet property="delegate" destination="gix-Li-Tlg" id="4qv-tY-iz0"/>
+                                    <outlet property="dataSource" destination="daJ-cc-Y3c" id="2tL-ZP-rWB"/>
+                                    <outlet property="delegate" destination="daJ-cc-Y3c" id="CTL-y1-LSk"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="19O-oK-9Kl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="gix-Li-Tlg" id="qtG-H1-Ql6"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="leading" secondItem="sao-7b-Nt7" secondAttribute="leading" id="1Do-6g-hKe"/>
-                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="bottom" secondItem="sao-7b-Nt7" secondAttribute="bottom" id="7Ww-uw-8zK"/>
-                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="trailing" secondItem="sao-7b-Nt7" secondAttribute="trailing" id="LLa-5x-4U1"/>
-                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="top" secondItem="19O-oK-9Kl" secondAttribute="bottom" id="RCi-hK-MMq"/>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="top" secondItem="sao-7b-Nt7" secondAttribute="top" id="cy6-yo-srQ"/>
-                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="leading" secondItem="sao-7b-Nt7" secondAttribute="leading" id="gZD-hA-UsT"/>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="trailing" secondItem="sao-7b-Nt7" secondAttribute="trailing" id="x8T-JS-eRi"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="sao-7b-Nt7"/>
+                        <viewLayoutGuide key="safeArea" id="rbA-OS-ayo"/>
                     </view>
                     <connections>
-                        <outlet property="recipientTable" destination="Vx4-P2-JWM" id="ABs-KO-YHa"/>
-                        <outlet property="searchField" destination="19O-oK-9Kl" id="S0D-OH-HUy"/>
+                        <outlet property="contactsTable" destination="wmN-hB-r3f" id="eGL-h5-cda"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6mY-Ne-XRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wN0-p3-Fj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4686" y="780"/>
+            <point key="canvasLocation" x="2285.5999999999999" y="1314.6926536731635"/>
         </scene>
-        <!--Mail Item View Controller-->
-        <scene sceneID="Rjk-Ib-RF4">
+        <!--Notifications View Controller-->
+        <scene sceneID="Fdo-4j-iUI">
             <objects>
-                <viewController id="1hO-Ff-Rgu" customClass="MailItemViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ybm-Sl-zJ8">
+                <viewController id="wdI-Ig-5UU" customClass="NotificationsViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWj-dv-ZPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-tW-b98">
-                                <rect key="frame" x="0.0" y="187" width="375" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-FA-Zfm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" id="7z4-9m-NIR">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7z4-9m-NIR" id="nb4-dy-srx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wdI-Ig-5UU" id="yx2-st-YRJ"/>
+                                    <outlet property="delegate" destination="wdI-Ig-5UU" id="ke0-y6-NbL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="DgB-OO-tzq"/>
+                        <viewLayoutGuide key="safeArea" id="MbD-AJ-qVi"/>
                     </view>
                     <connections>
-                        <outlet property="mailDescription" destination="sN0-tW-b98" id="CAJ-2C-NkS"/>
-                        <segue destination="CYP-De-dSz" kind="show" identifier="mailItemToComposeMail" id="8zJ-oQ-NOu"/>
+                        <outlet property="notificationTable" destination="t6P-FA-Zfm" id="JMX-Pp-S4d"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U4S-0R-hGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZcS-cb-OYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3440.8000000000002" y="57.121439280359823"/>
+            <point key="canvasLocation" x="2308" y="314.39280359820094"/>
+        </scene>
+        <!--Mail-->
+        <scene sceneID="wV8-e9-YFy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mail" id="lly-RO-OUM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huj-Y0-3jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2274" y="780"/>
+        </scene>
+        <!--Assets-->
+        <scene sceneID="o2h-Da-FU7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Assets" id="9aI-m5-Bkv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcb-hS-Ehx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3029.5999999999999" y="894.60269865067471"/>
         </scene>
     </scenes>
     <resources>
         <image name="alliancePlaceholder128.png" width="128" height="128"/>
         <image name="characterPlaceholder512.jpg" width="512" height="512"/>
-        <image name="characterPlaceholder64.jpg" width="64" height="64"/>
         <image name="corporationPlaceholder256.png" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="8zJ-oQ-NOu"/>
-    </inferredMetricsTieBreakers>
 </document>

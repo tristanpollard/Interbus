@@ -15,14 +15,26 @@ enum EveNameCategory: String {
     case region = "region"
     case solar_system = "solar_system"
     case stations = "stations"
+    case asset = "asset"
 }
 
-class EveName: Mappable {
+struct DefaultNameCategoryContext: MapContext {
+    var category: EveNameCategory
+}
+
+class EveName: Mappable, CustomStringConvertible, CustomDebugStringConvertible {
 
     var name: String! = ""
     var id: Int64! = -1
     // alliance, character, constellation, corporation, inventory_type, region, solar_system, station
     var category: EveNameCategory!
+
+    var description: String {
+        return self.name
+    }
+    var debugDescription: String {
+        return String(self.id) + ":" + self.name
+    }
 
     init(_ id: Int64, name: String, category: EveNameCategory) {
         self.id = id
@@ -36,8 +48,13 @@ class EveName: Mappable {
 
     func mapping(map: Map) {
         self.name <- map["name"]
-        self.id <- map["id"]
-        self.category <- map["category"]
+        if let defaultNameContext = map.context as? DefaultNameCategoryContext {
+            self.category = defaultNameContext.category
+            self.id <- map["item_id"]
+        } else {
+            self.id <- map["id"]
+            self.category <- map["category"]
+        }
     }
 
     func getImageEndpoint() -> String {
@@ -46,8 +63,10 @@ class EveName: Mappable {
             return "Corporation"
         case .alliance?:
             return "Alliance"
-        default:
+        case .character?:
             return "Character"
+        default:
+            return "Type"
         }
     }
 

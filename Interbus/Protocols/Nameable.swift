@@ -8,10 +8,8 @@ import Alamofire
 import ObjectMapper
 
 protocol Nameable: class {
-
     var id: Int64 { get }
     var name: EveName? { get set }
-
 }
 
 extension Nameable {
@@ -39,7 +37,7 @@ extension Array where Element == Int64 {
         var results: [Int64: EveName] = [:]
 
         stride(from: 0, to: unique.count, by: 200).forEach { sIndex in
-            let end = self.index(sIndex, offsetBy: 200)
+            let end = unique.index(sIndex, offsetBy: 200)
             let endIndex = Swift.min(end, unique.count)
             let items = Array(unique[sIndex..<endIndex])
             let options: [String: Any] = [
@@ -84,7 +82,6 @@ extension Array where Element: Nameable {
             completion()
         }
     }
-
 }
 
 private let arrayParametersKey = "arrayParametersKey"

@@ -9,7 +9,7 @@ class SelectedCharacterViewController: UIViewController {
 
     var character: EveCharacter!
 
-    let options = ["Assets", "Clones", "Contacts", "Fleet", "Mail", "Journal", "Wallet"]
+    let options = ["Assets", "Clones", "Contacts", "Fleet", "Mail", "Journal", /*"Notifications",*/ "Wallet"]
     var selectedOption: String?
 
     @IBOutlet weak var characterImage: UIImageView!
@@ -54,9 +54,16 @@ class SelectedCharacterViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         if let journal = segue.destination as? WalletJournalViewController {
             journal.walletJournal = self.character.walletJournal
-        }
-        if let mail = segue.destination as? MailViewController {
+        } else if let mail = segue.destination as? MailViewController {
             mail.mail = self.character.mail
+        } else if let notifications = segue.destination as? NotificationsViewController {
+            notifications.notifications = self.character.notifications
+        } else if let contacts = segue.destination as? ContactsViewController {
+            contacts.contacts = self.character.contacts
+        }
+
+        if let assets = segue.destination as? AssetsViewController {
+            assets.assets = self.character.assets
         }
     }
 }
@@ -82,7 +89,6 @@ extension SelectedCharacterViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "navigationOptionCell", for: indexPath)
 
         cell.textLabel?.text = options[indexPath.row]
-
         return cell
     }
 }

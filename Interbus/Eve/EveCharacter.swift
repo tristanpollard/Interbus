@@ -29,26 +29,35 @@ class EveCharacter: Nameable, EVEImage, Equatable {
     }
     var name: EveName?
 
+    var assets: EveAssets!
+
     var character_id: Int64!
     var character_name: String = ""
     var token: SSOToken?
 
     var characterData: EveCharacterData!
 
+    var contacts: EveContacts!
+
     var locationOnline: EveLocationOnline?
     var locationShip: EveLocationShip?
     var locationSystem: EveLocationSystem?
 
+    var mail: EveMail!
+
+    var notifications: EveNotifications!
+
     var wallet: EveWallet?
     var walletJournal: EveWalletJournal!
-
-    var mail: EveMail!
 
     init(id: Int64) {
         self.character_id = id
         self.characterData = EveCharacterData(character: self)
         self.walletJournal = EveWalletJournal(character: self)
         self.mail = EveMail(character: self)
+        self.notifications = EveNotifications(character: self)
+        self.contacts = EveContacts(character: self)
+        self.assets = EveAssets(character: self)
     }
 
     init(token: SSOToken) {
@@ -58,6 +67,9 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.characterData = EveCharacterData(character: self)
         self.walletJournal = EveWalletJournal(character: self)
         self.mail = EveMail(character: self)
+        self.notifications = EveNotifications(character: self)
+        self.contacts = EveContacts(character: self)
+        self.assets = EveAssets(character: self)
     }
 
     static func ==(lhs: EveCharacter, rhs: EveCharacter) -> Bool {
@@ -105,14 +117,6 @@ extension EveCharacter {
             if let result = response.result as? [String: Any] {
                 self.wallet = EveWallet(character: self, json: result)
                 completion(self.wallet!)
-            }
-        }
-    }
-
-    func fetchWalletJournal(completion: @escaping (EveWalletJournal) -> ()) {
-        self.esi.invoke(endPoint: "/v4/characters/\(self.id)/wallet/journal", token: self.token) { response in
-            if let result = response.result as? [String: Any] {
-
             }
         }
     }

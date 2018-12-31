@@ -70,6 +70,7 @@
 		C0D8F9A86699B29E18568F3D /* EvePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FEB02EF7722E6ABD310D /* EvePosition.swift */; };
 		C0D8F9AD21E86BED2AB69390 /* TokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */; };
 		C0D8F9F6E07F7AD0E670E8F9 /* MailRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F84D9961DAD2EFFFFFEC /* MailRecipientViewController.swift */; };
+		C0D8FA47488DDC436D62E4A1 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F293307CE20BE59F330C /* readme.md */; };
 		C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */; };
 		C0D8FA877308C205BCE85753 /* InterbusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */; };
 		C0D8FA8C0553400B1FE307B6 /* EveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */; };
@@ -146,6 +147,7 @@
 		C0D8F2007066F7D2E5D48D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D8F2117FCC6D3F25733FE0 /* EveNotificationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveNotificationItem.swift; sourceTree = "<group>"; };
 		C0D8F24BC3EA899DED436F3F /* ESIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIClient.swift; sourceTree = "<group>"; };
+		C0D8F293307CE20BE59F330C /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationOnline.swift; sourceTree = "<group>"; };
 		C0D8F2F717E04200A353D672 /* EveWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWallet.swift; sourceTree = "<group>"; };
 		C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterbusUITests.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				C0D8F3C7FE199BE9CC9088CE /* InterbusUITests */,
 				05E4A819977291837862A7F0 /* Pods */,
 				1504F8F727CEF8939C693C2D /* Frameworks */,
+				C0D8F293307CE20BE59F330C /* readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -842,6 +845,7 @@
 				C0D8F31A967937D0DAB53339 /* EveFleetDetails.swift in Sources */,
 				C0D8FFC12E8A03C76729CBE9 /* EveStation.swift in Sources */,
 				C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */,
+				C0D8FA47488DDC436D62E4A1 /* readme.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

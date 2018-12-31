@@ -15,74 +15,96 @@
 		6AB4F5F021C45DF800A92424 /* Interbus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F48AA32CF4CE1342989E /* Interbus.xcdatamodeld */; };
 		6AB4F5F521C4D43E00A92424 /* SelectedCharacter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB4F5F321C4D27700A92424 /* SelectedCharacter.storyboard */; };
 		C0D8F01994D855BB876184D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F9306D29F91073BBED8D /* Assets.xcassets */; };
-		C0D8F02D093293930A2C001E /* EveClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8E4BCBDB5A34306FB09 /* EveClone.swift */; };
+		C0D8F01D08F2C19EE9B7592F /* JumpCloneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F48CBCBF5516C9831CC7 /* JumpCloneViewController.swift */; };
 		C0D8F085FD0A552FD0E5CB56 /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F18CA92FF23F9EEB2A84 /* MailViewController.swift */; };
 		C0D8F0A7BDE7E0632ED86D04 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F70A4319EBD3F7CDEEE4 /* String.swift */; };
 		C0D8F186ED6156DCECE230AC /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F4CE59927BD625163CC6 /* URL.swift */; };
+		C0D8F19AB90DD869A1160D70 /* EveKillVictim.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC322C0845983A20A188 /* EveKillVictim.swift */; };
 		C0D8F1B38E0738DB377B179E /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5AE487CDCF338378602 /* Nameable.swift */; };
 		C0D8F1D584D0B8622B34FD52 /* EveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FBEB937184EE0FB73D43 /* EveSearchResult.swift */; };
 		C0D8F1F067BF9AFCCBB482CE /* EveCharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F75C365955AE91E363EA /* EveCharacterData.swift */; };
 		C0D8F1F910EC60328D83CFFB /* CharacterSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F6FF6AA8923FB8F74D53 /* CharacterSelectorViewController.swift */; };
 		C0D8F2081904DD827D3771C5 /* EveLocationShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9A4BAEE9834871A674C /* EveLocationShip.swift */; };
+		C0D8F21ACF72A6A6903720B3 /* EveKills.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9D4492D8845948AFBE4 /* EveKills.swift */; };
 		C0D8F22B2EF516243BB86151 /* SSOToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F06F981C1ECD38116D74 /* SSOToken.swift */; };
+		C0D8F24140252F4F753FA658 /* EveMailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FF3C85ED759328D1300D /* EveMailLabel.swift */; };
+		C0D8F24E9E87BE47B0CA399B /* EveKillMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F50D472D3733A6F44DA7 /* EveKillMail.swift */; };
+		C0D8F2D1F17AF6296DA648ED /* FleetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F523B28233654DA9D05D /* FleetViewController.swift */; };
 		C0D8F2D9B446591A42EFF2C7 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F50242636E09E2FD4708 /* CharacterViewController.swift */; };
 		C0D8F2F61C98F6E980B30F96 /* ReturnResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FBBD8F6472B4E61E7AB7 /* ReturnResultCell.swift */; };
+		C0D8F31A967937D0DAB53339 /* EveFleetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F817D8DFF3D024019F4F /* EveFleetDetails.swift */; };
+		C0D8F3531CF937B4EF7825CA /* HomeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F83031377A966F138B22 /* HomeLocation.swift */; };
 		C0D8F3A39150C095AE56CD92 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9A46598A1B351417C38 /* UIImageView.swift */; };
 		C0D8F3BCBDE038D3B12992C2 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F9990F5568E1BC2FF601 /* Fetchable.swift */; };
 		C0D8F3FA84D2F6D206D0E17B /* MailRecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FA269488AD2328A3642B /* MailRecipientCell.swift */; };
-		C0D8F40CE3032A10F03EDBB8 /* EveWalletJournalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */; };
 		C0D8F4533ADFE57FA4E4E755 /* EveNotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2117FCC6D3F25733FE0 /* EveNotificationItem.swift */; };
 		C0D8F4716AF4C1E6C360C11D /* alliancePlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F66B346E8B95924D7B27 /* alliancePlaceholder32.png */; };
+		C0D8F4A72DD70BD74ABB677F /* KillMailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE32B37F8D73434CC1AB /* KillMailCell.swift */; };
 		C0D8F4C97F49E8AF4FEED9C7 /* corporationPlaceholder256.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F4B737703E7B9689DBEF /* corporationPlaceholder256.png */; };
-		C0D8F4CC207BBCEB600B7895 /* EveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F97311F5F9A1DADCCA60 /* EveType.swift */; };
+		C0D8F50C5F7A789C1D56D4CB /* EveWalletJournalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F42F864C528B13D276C3 /* EveWalletJournalItem.swift */; };
 		C0D8F51B0CEC46A800CFDF50 /* MailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F130FF8FD81043B5DAA4 /* MailItemViewController.swift */; };
 		C0D8F52EE065FD6D547DB77B /* EveAssetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */; };
-		C0D8F5B5BB84B456ABC796EA /* EveMailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F78AACF8A4E579F79F1A /* EveMailLabel.swift */; };
+		C0D8F5A1C8C1E3C32FF3233C /* LocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5E15B71F75E87867FB9 /* LocationType.swift */; };
+		C0D8F5E4D06FC5DC64BB1D5F /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5148EDC033C893BA0C5 /* EveMail.swift */; };
 		C0D8F600ECEC8B978101C0EF /* characterPlaceholder64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */; };
 		C0D8F604083088E0C24729BA /* SelectedCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0DBD73D628AA1E83E04 /* SelectedCharacterViewController.swift */; };
 		C0D8F6689FF41CE3B21DB2B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F987D6EEAC0E1034F679 /* LaunchScreen.storyboard */; };
 		C0D8F66CB308B2F2A84264EF /* EveNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F18B3E7EF8A32DEC1343 /* EveNotifications.swift */; };
-		C0D8F679E63F2ED2502E7992 /* EveWalletJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */; };
-		C0D8F71EB0F1EDD5210DAC53 /* EveWalletJournalItemParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */; };
+		C0D8F6877835C9E041BE5F77 /* EveClones.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE630F8EB25EAD662061 /* EveClones.swift */; };
+		C0D8F6EA6205C74FFCFC1310 /* EveWalletJournalItemParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F06D2B8D44A54F8FBFE8 /* EveWalletJournalItemParty.swift */; };
 		C0D8F74BA97ECB4CB3867F3B /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FBCFBBC90CF1A1FB149E /* ContactsViewController.swift */; };
 		C0D8F760E106DABBF63907FC /* EveAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F14A272EF61BBE2E81F7 /* EveAssets.swift */; };
+		C0D8F767514C2FF48D64EBF0 /* EveMailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FBAB17FA4932945B93D1 /* EveMailItem.swift */; };
 		C0D8F78F17948BD8448827A5 /* corporationPlaceholder32.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FF6BD2613CBEE99DE9B9 /* corporationPlaceholder32.png */; };
+		C0D8F79AA8BF19038F4636FC /* EveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FDE1E659D9C4888317C1 /* EveType.swift */; };
+		C0D8F7AE448B7DF5039A4E6D /* EveFleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F47A0859D796FE15BC52 /* EveFleet.swift */; };
 		C0D8F7B14115910BD6A465DB /* characterPlaceholder32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F839E63146DBF7AD72E5 /* characterPlaceholder32.jpg */; };
-		C0D8F85897B4C2F2A060C1D0 /* EveContactLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FFA4FBBD01061B7EFFAD /* EveContactLabel.swift */; };
+		C0D8F8199153AF64ABB89E04 /* KillAttackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8FFB5BAC17B93E4D613 /* KillAttackerCell.swift */; };
 		C0D8F859772FDA2DEC293BFF /* WalletJournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F69ACDD1FCA52DE797A7 /* WalletJournalCell.swift */; };
 		C0D8F866E7F67D8B911DEBD9 /* EveCorporationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE662522AD91AD616F9D /* EveCorporationData.swift */; };
+		C0D8F868C693B463D62D331A /* EveJumpClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5B96063E0AB58CDEE0E /* EveJumpClone.swift */; };
 		C0D8F87B749260C78560FF3D /* corporationPlaceholder128.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FE2AC7C5D268A6EB8C69 /* corporationPlaceholder128.png */; };
 		C0D8F8D5C34B6C400206EC99 /* corporationPlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FDF29B2B06EC5FD5950D /* corporationPlaceholder64.png */; };
+		C0D8F8E380B009FAEEF11BEC /* EveContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8376C8780C484986F88 /* EveContacts.swift */; };
 		C0D8F8ED16392DA87708B237 /* ESIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FCCA6C88BD7EFC115AFD /* ESIResponse.swift */; };
+		C0D8F9A86699B29E18568F3D /* EvePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FEB02EF7722E6ABD310D /* EvePosition.swift */; };
 		C0D8F9AD21E86BED2AB69390 /* TokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */; };
-		C0D8F9CCC0C5A82EA0150234 /* EveWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F608C40BA811F295633C /* EveWallet.swift */; };
 		C0D8F9F6E07F7AD0E670E8F9 /* MailRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F84D9961DAD2EFFFFFEC /* MailRecipientViewController.swift */; };
-		C0D8FA628F9DB56AEBC59E43 /* EveContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0C838B9BCA1E78E4605 /* EveContacts.swift */; };
 		C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */; };
 		C0D8FA877308C205BCE85753 /* InterbusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */; };
-		C0D8FA8AC6143D7F2F0030E0 /* EveName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0C51E398F10E69B295A /* EveName.swift */; };
 		C0D8FA8C0553400B1FE307B6 /* EveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */; };
 		C0D8FAC58679DEA9F5184257 /* EveLocationOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */; };
-		C0D8FAD2B4CF3B7149826A93 /* EveMailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0A4DCB9CD916C76B76E /* EveMailItem.swift */; };
-		C0D8FB11A6B36D49F683CBFB /* EveWalletTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */; };
+		C0D8FAD0B2943D583BB178AD /* EveName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F4A8AA3EEB3D5302C594 /* EveName.swift */; };
+		C0D8FAEAEB0D405C6693E52C /* EveContactLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FCEC3A1DD32E37FF1A01 /* EveContactLabel.swift */; };
+		C0D8FB577FB3C59B727E4F17 /* KillAttackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FBCE35BE9359E1A4EDA6 /* KillAttackersViewController.swift */; };
 		C0D8FB5BFE40D18147A5ED1D /* TransformDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F981EC72B1283BE2CCDD /* TransformDate.swift */; };
 		C0D8FB90B162368FF0A334E4 /* EveLocationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */; };
 		C0D8FBAB49FFBB7ACEE6C00B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F891694848D3ECE4AD69 /* Main.storyboard */; };
 		C0D8FBD35D73B92FDF715BBC /* alliancePlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F0DF95475EE4193DA09E /* alliancePlaceholder64.png */; };
+		C0D8FBFA1328A5F6732A3796 /* EveWalletTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1AC46087B48DB5B033A /* EveWalletTransactions.swift */; };
+		C0D8FC3C43508326A9C37B45 /* UIFleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F714B905911925E28CF8 /* UIFleetController.swift */; };
+		C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE0E3400F18CF8A5594D /* EvePlanet.swift */; };
+		C0D8FCA7EF6638E6CF222C92 /* EveWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2F717E04200A353D672 /* EveWallet.swift */; };
+		C0D8FCEB6E527945F19F432A /* EveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FAE3F015F390BB0884A9 /* EveSystem.swift */; };
 		C0D8FD0753E75530617004B8 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC10389240B4F7ECDEF9 /* NotificationsViewController.swift */; };
+		C0D8FD523A5286873587DCE9 /* EveContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8D1F7FB72F4D1D5D535 /* EveContactItem.swift */; };
+		C0D8FD5D97CA74D79D53A5E8 /* FleetLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F13676808C226250BA52 /* FleetLayoutViewController.swift */; };
 		C0D8FD61A71EC4A902C42D3C /* InterbusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F80C00F889194CB21675 /* InterbusTests.swift */; };
+		C0D8FDA4A75496C899D03A3F /* EveWalletJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FED0E0B832E2A0D73C7B /* EveWalletJournal.swift */; };
 		C0D8FE233B40B994EE11F5BB /* ESIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F24BC3EA899DED436F3F /* ESIClient.swift */; };
 		C0D8FE4BF8E7F67F8F638697 /* WalletJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FD336D1444DEDEFB2881 /* WalletJournalViewController.swift */; };
 		C0D8FE4EEBACCE331B686BA8 /* EVEImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F6C3685A3706259264C7 /* EVEImage.swift */; };
 		C0D8FE57158FBDDBE685640F /* EveSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5585101EA5244A16F93 /* EveSearch.swift */; };
+		C0D8FE58B6BABA2BCA802C26 /* KillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F629F363D9C4505E39C0 /* KillsViewController.swift */; };
 		C0D8FE5F46B44DAF7C82CE6F /* characterPlaceholder256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FA909057E5AED799A8E1 /* characterPlaceholder256.jpg */; };
 		C0D8FE9CB47ACECE60ACBA8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F2007066F7D2E5D48D71 /* AppDelegate.swift */; };
 		C0D8FF135003616DABE29930 /* alliancePlaceholder128.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F885FB0DBC0AC3A361F4 /* alliancePlaceholder128.png */; };
 		C0D8FF137940F8E31E8DD461 /* SendMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FC1B9F35A6DF25272959 /* SendMailViewController.swift */; };
-		C0D8FF24638F7EBC130E094C /* EveContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FDA7326B6336F31CE045 /* EveContactItem.swift */; };
 		C0D8FF6BE59108B383124A1B /* characterPlaceholder128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F864085F8431EFEB4F96 /* characterPlaceholder128.jpg */; };
-		C0D8FF8A93FED7EC8935961F /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F3769E43ED439E575295 /* EveMail.swift */; };
 		C0D8FF9BE946F6621BCE9226 /* EveAllianceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F688A5134A3C85D9E16F /* EveAllianceData.swift */; };
+		C0D8FFAAAF132E060350C235 /* EveKillMailAttacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FB4EFDA392F0A04EBF06 /* EveKillMailAttacker.swift */; };
+		C0D8FFC12E8A03C76729CBE9 /* EveStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FDAD4C9ABEE6C55FCD19 /* EveStation.swift */; };
+		C0D8FFE1EA4AC5CBF31A77DA /* FleetCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FD2B9FF4DBB2D8E4FBAC /* FleetCompositionViewController.swift */; };
 		C0D8FFF4222ED759FF5300DF /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F4E6560FFC695D8744FA /* AssetsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,81 +133,103 @@
 		6AB4F5F321C4D27700A92424 /* SelectedCharacter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SelectedCharacter.storyboard; path = "/Users/tristan/iOS Projects/Interbus/Interbus/SelectedCharacter.storyboard"; sourceTree = "<absolute>"; };
 		ABAA6119BDBD218773F9AD74 /* Pods_Interbus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Interbus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTableViewCell.swift; sourceTree = "<group>"; };
+		C0D8F06D2B8D44A54F8FBFE8 /* EveWalletJournalItemParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItemParty.swift; sourceTree = "<group>"; };
 		C0D8F06F981C1ECD38116D74 /* SSOToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSOToken.swift; sourceTree = "<group>"; };
-		C0D8F0A4DCB9CD916C76B76E /* EveMailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailItem.swift; sourceTree = "<group>"; };
-		C0D8F0C51E398F10E69B295A /* EveName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveName.swift; sourceTree = "<group>"; };
-		C0D8F0C838B9BCA1E78E4605 /* EveContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContacts.swift; sourceTree = "<group>"; };
 		C0D8F0DBD73D628AA1E83E04 /* SelectedCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCharacterViewController.swift; sourceTree = "<group>"; };
 		C0D8F0DF95475EE4193DA09E /* alliancePlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder64.png; sourceTree = "<group>"; };
 		C0D8F130FF8FD81043B5DAA4 /* MailItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailItemViewController.swift; sourceTree = "<group>"; };
+		C0D8F13676808C226250BA52 /* FleetLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetLayoutViewController.swift; sourceTree = "<group>"; };
 		C0D8F14A272EF61BBE2E81F7 /* EveAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssets.swift; sourceTree = "<group>"; };
 		C0D8F18B3E7EF8A32DEC1343 /* EveNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveNotifications.swift; sourceTree = "<group>"; };
 		C0D8F18CA92FF23F9EEB2A84 /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
+		C0D8F1AC46087B48DB5B033A /* EveWalletTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletTransactions.swift; sourceTree = "<group>"; };
 		C0D8F2007066F7D2E5D48D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D8F2117FCC6D3F25733FE0 /* EveNotificationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveNotificationItem.swift; sourceTree = "<group>"; };
 		C0D8F24BC3EA899DED436F3F /* ESIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIClient.swift; sourceTree = "<group>"; };
 		C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationOnline.swift; sourceTree = "<group>"; };
-		C0D8F3769E43ED439E575295 /* EveMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMail.swift; sourceTree = "<group>"; };
+		C0D8F2F717E04200A353D672 /* EveWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWallet.swift; sourceTree = "<group>"; };
 		C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterbusUITests.swift; sourceTree = "<group>"; };
+		C0D8F42F864C528B13D276C3 /* EveWalletJournalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItem.swift; sourceTree = "<group>"; };
+		C0D8F47A0859D796FE15BC52 /* EveFleet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveFleet.swift; sourceTree = "<group>"; };
 		C0D8F47BDD8EA9BD0FF99605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		C0D8F48CBCBF5516C9831CC7 /* JumpCloneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpCloneViewController.swift; sourceTree = "<group>"; };
+		C0D8F4A8AA3EEB3D5302C594 /* EveName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveName.swift; sourceTree = "<group>"; };
 		C0D8F4B737703E7B9689DBEF /* corporationPlaceholder256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder256.png; sourceTree = "<group>"; };
 		C0D8F4CE59927BD625163CC6 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		C0D8F4E6560FFC695D8744FA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
-		C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournal.swift; sourceTree = "<group>"; };
 		C0D8F50242636E09E2FD4708 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		C0D8F50D472D3733A6F44DA7 /* EveKillMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKillMail.swift; sourceTree = "<group>"; };
+		C0D8F5148EDC033C893BA0C5 /* EveMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMail.swift; sourceTree = "<group>"; };
+		C0D8F523B28233654DA9D05D /* FleetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetViewController.swift; sourceTree = "<group>"; };
 		C0D8F5585101EA5244A16F93 /* EveSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSearch.swift; sourceTree = "<group>"; };
 		C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAssetItem.swift; sourceTree = "<group>"; };
 		C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder512.jpg; sourceTree = "<group>"; };
 		C0D8F5AE487CDCF338378602 /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		C0D8F5B96063E0AB58CDEE0E /* EveJumpClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveJumpClone.swift; sourceTree = "<group>"; };
 		C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationSystem.swift; sourceTree = "<group>"; };
-		C0D8F608C40BA811F295633C /* EveWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWallet.swift; sourceTree = "<group>"; };
+		C0D8F5E15B71F75E87867FB9 /* LocationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationType.swift; sourceTree = "<group>"; };
+		C0D8F629F363D9C4505E39C0 /* KillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillsViewController.swift; sourceTree = "<group>"; };
 		C0D8F66B346E8B95924D7B27 /* alliancePlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder32.png; sourceTree = "<group>"; };
 		C0D8F688A5134A3C85D9E16F /* EveAllianceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveAllianceData.swift; sourceTree = "<group>"; };
 		C0D8F69ACDD1FCA52DE797A7 /* WalletJournalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletJournalCell.swift; sourceTree = "<group>"; };
 		C0D8F6C3685A3706259264C7 /* EVEImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVEImage.swift; sourceTree = "<group>"; };
 		C0D8F6FF6AA8923FB8F74D53 /* CharacterSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectorViewController.swift; sourceTree = "<group>"; };
 		C0D8F70A4319EBD3F7CDEEE4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C0D8F714B905911925E28CF8 /* UIFleetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFleetController.swift; sourceTree = "<group>"; };
 		C0D8F75C365955AE91E363EA /* EveCharacterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacterData.swift; sourceTree = "<group>"; };
-		C0D8F78AACF8A4E579F79F1A /* EveMailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailLabel.swift; sourceTree = "<group>"; };
 		C0D8F80C00F889194CB21675 /* InterbusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterbusTests.swift; sourceTree = "<group>"; };
-		C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletTransactions.swift; sourceTree = "<group>"; };
+		C0D8F817D8DFF3D024019F4F /* EveFleetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveFleetDetails.swift; sourceTree = "<group>"; };
+		C0D8F83031377A966F138B22 /* HomeLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLocation.swift; sourceTree = "<group>"; };
+		C0D8F8376C8780C484986F88 /* EveContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContacts.swift; sourceTree = "<group>"; };
 		C0D8F839E63146DBF7AD72E5 /* characterPlaceholder32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder32.jpg; sourceTree = "<group>"; };
 		C0D8F84D9961DAD2EFFFFFEC /* MailRecipientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRecipientViewController.swift; sourceTree = "<group>"; };
 		C0D8F864085F8431EFEB4F96 /* characterPlaceholder128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder128.jpg; sourceTree = "<group>"; };
 		C0D8F885FB0DBC0AC3A361F4 /* alliancePlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder128.png; sourceTree = "<group>"; };
 		C0D8F8B89A19E9A439CD1CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C0D8F8E4BCBDB5A34306FB09 /* EveClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveClone.swift; sourceTree = "<group>"; };
+		C0D8F8D1F7FB72F4D1D5D535 /* EveContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactItem.swift; sourceTree = "<group>"; };
+		C0D8F8FFB5BAC17B93E4D613 /* KillAttackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillAttackerCell.swift; sourceTree = "<group>"; };
 		C0D8F9306D29F91073BBED8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C0D8F97311F5F9A1DADCCA60 /* EveType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveType.swift; sourceTree = "<group>"; };
 		C0D8F981EC72B1283BE2CCDD /* TransformDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformDate.swift; sourceTree = "<group>"; };
 		C0D8F9990F5568E1BC2FF601 /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		C0D8F9A46598A1B351417C38 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C0D8F9A4BAEE9834871A674C /* EveLocationShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationShip.swift; sourceTree = "<group>"; };
+		C0D8F9D4492D8845948AFBE4 /* EveKills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKills.swift; sourceTree = "<group>"; };
 		C0D8FA269488AD2328A3642B /* MailRecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailRecipientCell.swift; sourceTree = "<group>"; };
 		C0D8FA909057E5AED799A8E1 /* characterPlaceholder256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder256.jpg; sourceTree = "<group>"; };
 		C0D8FA943C2A1DF528D7DA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		C0D8FAE3F015F390BB0884A9 /* EveSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSystem.swift; sourceTree = "<group>"; };
 		C0D8FB2672F7539F2C951F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		C0D8FB4EFDA392F0A04EBF06 /* EveKillMailAttacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKillMailAttacker.swift; sourceTree = "<group>"; };
 		C0D8FB7660D7D2AE95C4573B /* Interbus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Interbus.xcdatamodel; sourceTree = "<group>"; };
+		C0D8FBAB17FA4932945B93D1 /* EveMailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailItem.swift; sourceTree = "<group>"; };
 		C0D8FBBD8F6472B4E61E7AB7 /* ReturnResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnResultCell.swift; sourceTree = "<group>"; };
+		C0D8FBCE35BE9359E1A4EDA6 /* KillAttackersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillAttackersViewController.swift; sourceTree = "<group>"; };
 		C0D8FBCFBBC90CF1A1FB149E /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		C0D8FBEB937184EE0FB73D43 /* EveSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveSearchResult.swift; sourceTree = "<group>"; };
 		C0D8FC10389240B4F7ECDEF9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		C0D8FC1B9F35A6DF25272959 /* SendMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailViewController.swift; sourceTree = "<group>"; };
-		C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItem.swift; sourceTree = "<group>"; };
-		C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournalItemParty.swift; sourceTree = "<group>"; };
+		C0D8FC322C0845983A20A188 /* EveKillVictim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveKillVictim.swift; sourceTree = "<group>"; };
 		C0D8FCCA6C88BD7EFC115AFD /* ESIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESIResponse.swift; sourceTree = "<group>"; };
+		C0D8FCEC3A1DD32E37FF1A01 /* EveContactLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactLabel.swift; sourceTree = "<group>"; };
+		C0D8FD2B9FF4DBB2D8E4FBAC /* FleetCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetCompositionViewController.swift; sourceTree = "<group>"; };
 		C0D8FD336D1444DEDEFB2881 /* WalletJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletJournalViewController.swift; sourceTree = "<group>"; };
 		C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder64.jpg; sourceTree = "<group>"; };
 		C0D8FD82188D3DE55A032D4A /* InterbusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterbusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0D8FDA7326B6336F31CE045 /* EveContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactItem.swift; sourceTree = "<group>"; };
+		C0D8FDAD4C9ABEE6C55FCD19 /* EveStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveStation.swift; sourceTree = "<group>"; };
+		C0D8FDE1E659D9C4888317C1 /* EveType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveType.swift; sourceTree = "<group>"; };
 		C0D8FDF29B2B06EC5FD5950D /* corporationPlaceholder64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder64.png; sourceTree = "<group>"; };
+		C0D8FE0E3400F18CF8A5594D /* EvePlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvePlanet.swift; sourceTree = "<group>"; };
 		C0D8FE2AC7C5D268A6EB8C69 /* corporationPlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder128.png; sourceTree = "<group>"; };
+		C0D8FE32B37F8D73434CC1AB /* KillMailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillMailCell.swift; sourceTree = "<group>"; };
 		C0D8FE47DED7CB1D3792516C /* Interbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D8FE57ABFBEB3311DBE088 /* InterbusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterbusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D8FE630F8EB25EAD662061 /* EveClones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveClones.swift; sourceTree = "<group>"; };
 		C0D8FE662522AD91AD616F9D /* EveCorporationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCorporationData.swift; sourceTree = "<group>"; };
+		C0D8FEB02EF7722E6ABD310D /* EvePosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvePosition.swift; sourceTree = "<group>"; };
+		C0D8FED0E0B832E2A0D73C7B /* EveWalletJournal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveWalletJournal.swift; sourceTree = "<group>"; };
+		C0D8FF3C85ED759328D1300D /* EveMailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailLabel.swift; sourceTree = "<group>"; };
 		C0D8FF69A591A7A7E5D0DC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0D8FF6BD2613CBEE99DE9B9 /* corporationPlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder32.png; sourceTree = "<group>"; };
-		C0D8FFA4FBBD01061B7EFFAD /* EveContactLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactLabel.swift; sourceTree = "<group>"; };
 		C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacter.swift; sourceTree = "<group>"; };
 		EAE5A3BC6AABC6E3B2397C69 /* Pods-Interbus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interbus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Interbus/Pods-Interbus.debug.xcconfig"; sourceTree = "<group>"; };
 		FD3A5AB8E179D892670AD73B /* Pods-Interbus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interbus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Interbus/Pods-Interbus.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +301,13 @@
 				C0D8FBCFBBC90CF1A1FB149E /* ContactsViewController.swift */,
 				C0D8F4E6560FFC695D8744FA /* AssetsViewController.swift */,
 				C0D8F50242636E09E2FD4708 /* CharacterViewController.swift */,
+				C0D8F523B28233654DA9D05D /* FleetViewController.swift */,
+				C0D8F13676808C226250BA52 /* FleetLayoutViewController.swift */,
+				C0D8FD2B9FF4DBB2D8E4FBAC /* FleetCompositionViewController.swift */,
+				C0D8F714B905911925E28CF8 /* UIFleetController.swift */,
+				C0D8F629F363D9C4505E39C0 /* KillsViewController.swift */,
+				C0D8FBCE35BE9359E1A4EDA6 /* KillAttackersViewController.swift */,
+				C0D8F48CBCBF5516C9831CC7 /* JumpCloneViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,8 +329,20 @@
 				C0D8F69ACDD1FCA52DE797A7 /* WalletJournalCell.swift */,
 				C0D8FA269488AD2328A3642B /* MailRecipientCell.swift */,
 				C0D8FBBD8F6472B4E61E7AB7 /* ReturnResultCell.swift */,
+				C0D8FE32B37F8D73434CC1AB /* KillMailCell.swift */,
+				C0D8F8FFB5BAC17B93E4D613 /* KillAttackerCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C0D8F48F0F7A540A1E367017 /* Clones */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8FE630F8EB25EAD662061 /* EveClones.swift */,
+				C0D8F83031377A966F138B22 /* HomeLocation.swift */,
+				C0D8F5B96063E0AB58CDEE0E /* EveJumpClone.swift */,
+			);
+			path = Clones;
 			sourceTree = "<group>";
 		};
 		C0D8F564C66BCDFD66ED0286 /* Products */ = {
@@ -313,6 +376,17 @@
 				C0D8FC1B9F35A6DF25272959 /* SendMailViewController.swift */,
 			);
 			path = Mail;
+			sourceTree = "<group>";
+		};
+		C0D8F864BABC794953F63C55 /* Kills */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8F9D4492D8845948AFBE4 /* EveKills.swift */,
+				C0D8F50D472D3733A6F44DA7 /* EveKillMail.swift */,
+				C0D8FB4EFDA392F0A04EBF06 /* EveKillMailAttacker.swift */,
+				C0D8FC322C0845983A20A188 /* EveKillVictim.swift */,
+			);
+			path = Kills;
 			sourceTree = "<group>";
 		};
 		C0D8F89D2D25725527531E91 /* InterbusTests */ = {
@@ -376,26 +450,19 @@
 				C0D8F2E0FFC2F765310E6AD5 /* EveLocationOnline.swift */,
 				C0D8F9A4BAEE9834871A674C /* EveLocationShip.swift */,
 				C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */,
-				C0D8F608C40BA811F295633C /* EveWallet.swift */,
-				C0D8F50056BC7467736F9313 /* EveWalletJournal.swift */,
-				C0D8F8134B85B9000B69D045 /* EveWalletTransactions.swift */,
-				C0D8FC5C6758F693CBA03262 /* EveWalletJournalItem.swift */,
-				C0D8F0C51E398F10E69B295A /* EveName.swift */,
-				C0D8FC9AC79910937A6C1535 /* EveWalletJournalItemParty.swift */,
-				C0D8F3769E43ED439E575295 /* EveMail.swift */,
-				C0D8F0A4DCB9CD916C76B76E /* EveMailItem.swift */,
-				C0D8F78AACF8A4E579F79F1A /* EveMailLabel.swift */,
 				C0D8FBEB937184EE0FB73D43 /* EveSearchResult.swift */,
 				C0D8F5585101EA5244A16F93 /* EveSearch.swift */,
-				C0D8F8E4BCBDB5A34306FB09 /* EveClone.swift */,
-				C0D8F97311F5F9A1DADCCA60 /* EveType.swift */,
 				C0D8F2117FCC6D3F25733FE0 /* EveNotificationItem.swift */,
 				C0D8F18B3E7EF8A32DEC1343 /* EveNotifications.swift */,
-				C0D8F0C838B9BCA1E78E4605 /* EveContacts.swift */,
-				C0D8FDA7326B6336F31CE045 /* EveContactItem.swift */,
-				C0D8FFA4FBBD01061B7EFFAD /* EveContactLabel.swift */,
 				C0D8F14A272EF61BBE2E81F7 /* EveAssets.swift */,
 				C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */,
+				C0D8F864BABC794953F63C55 /* Kills */,
+				C0D8FD16F47405E35E8C82BE /* Universe */,
+				C0D8F48F0F7A540A1E367017 /* Clones */,
+				C0D8FE6E2A63DE09CAC57DCA /* Contacts */,
+				C0D8FC9DF963D237CAA2E2E1 /* Mail */,
+				C0D8FCA5FC4548E0C64D52D8 /* Wallet */,
+				C0D8FCD5A7C8B2F5A4C9D7C7 /* Fleet */,
 			);
 			path = EveModels;
 			sourceTree = "<group>";
@@ -417,6 +484,51 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C0D8FC9DF963D237CAA2E2E1 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8F5148EDC033C893BA0C5 /* EveMail.swift */,
+				C0D8FBAB17FA4932945B93D1 /* EveMailItem.swift */,
+				C0D8FF3C85ED759328D1300D /* EveMailLabel.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		C0D8FCA5FC4548E0C64D52D8 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8F06D2B8D44A54F8FBFE8 /* EveWalletJournalItemParty.swift */,
+				C0D8FED0E0B832E2A0D73C7B /* EveWalletJournal.swift */,
+				C0D8F1AC46087B48DB5B033A /* EveWalletTransactions.swift */,
+				C0D8F2F717E04200A353D672 /* EveWallet.swift */,
+				C0D8F42F864C528B13D276C3 /* EveWalletJournalItem.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		C0D8FCD5A7C8B2F5A4C9D7C7 /* Fleet */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8F47A0859D796FE15BC52 /* EveFleet.swift */,
+				C0D8F817D8DFF3D024019F4F /* EveFleetDetails.swift */,
+			);
+			path = Fleet;
+			sourceTree = "<group>";
+		};
+		C0D8FD16F47405E35E8C82BE /* Universe */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8FAE3F015F390BB0884A9 /* EveSystem.swift */,
+				C0D8FEB02EF7722E6ABD310D /* EvePosition.swift */,
+				C0D8F5E15B71F75E87867FB9 /* LocationType.swift */,
+				C0D8FDE1E659D9C4888317C1 /* EveType.swift */,
+				C0D8F4A8AA3EEB3D5302C594 /* EveName.swift */,
+				C0D8FDAD4C9ABEE6C55FCD19 /* EveStation.swift */,
+				C0D8FE0E3400F18CF8A5594D /* EvePlanet.swift */,
+			);
+			path = Universe;
+			sourceTree = "<group>";
+		};
 		C0D8FD3E75EC0A6823EF24F5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +546,16 @@
 				C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		C0D8FE6E2A63DE09CAC57DCA /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8F8D1F7FB72F4D1D5D535 /* EveContactItem.swift */,
+				C0D8FCEC3A1DD32E37FF1A01 /* EveContactLabel.swift */,
+				C0D8F8376C8780C484986F88 /* EveContacts.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,17 +788,8 @@
 				C0D8FAC58679DEA9F5184257 /* EveLocationOnline.swift in Sources */,
 				C0D8F2081904DD827D3771C5 /* EveLocationShip.swift in Sources */,
 				C0D8FB90B162368FF0A334E4 /* EveLocationSystem.swift in Sources */,
-				C0D8F9CCC0C5A82EA0150234 /* EveWallet.swift in Sources */,
-				C0D8F679E63F2ED2502E7992 /* EveWalletJournal.swift in Sources */,
-				C0D8FB11A6B36D49F683CBFB /* EveWalletTransactions.swift in Sources */,
-				C0D8F40CE3032A10F03EDBB8 /* EveWalletJournalItem.swift in Sources */,
 				C0D8FE4BF8E7F67F8F638697 /* WalletJournalViewController.swift in Sources */,
-				C0D8FA8AC6143D7F2F0030E0 /* EveName.swift in Sources */,
-				C0D8F71EB0F1EDD5210DAC53 /* EveWalletJournalItemParty.swift in Sources */,
 				C0D8F859772FDA2DEC293BFF /* WalletJournalCell.swift in Sources */,
-				C0D8FF8A93FED7EC8935961F /* EveMail.swift in Sources */,
-				C0D8FAD2B4CF3B7149826A93 /* EveMailItem.swift in Sources */,
-				C0D8F5B5BB84B456ABC796EA /* EveMailLabel.swift in Sources */,
 				C0D8F3FA84D2F6D206D0E17B /* MailRecipientCell.swift in Sources */,
 				C0D8F2F61C98F6E980B30F96 /* ReturnResultCell.swift in Sources */,
 				C0D8F1D584D0B8622B34FD52 /* EveSearchResult.swift in Sources */,
@@ -685,19 +798,50 @@
 				C0D8F085FD0A552FD0E5CB56 /* MailViewController.swift in Sources */,
 				C0D8F51B0CEC46A800CFDF50 /* MailItemViewController.swift in Sources */,
 				C0D8FF137940F8E31E8DD461 /* SendMailViewController.swift in Sources */,
-				C0D8F02D093293930A2C001E /* EveClone.swift in Sources */,
-				C0D8F4CC207BBCEB600B7895 /* EveType.swift in Sources */,
 				C0D8FD0753E75530617004B8 /* NotificationsViewController.swift in Sources */,
 				C0D8F4533ADFE57FA4E4E755 /* EveNotificationItem.swift in Sources */,
 				C0D8F66CB308B2F2A84264EF /* EveNotifications.swift in Sources */,
-				C0D8FA628F9DB56AEBC59E43 /* EveContacts.swift in Sources */,
-				C0D8FF24638F7EBC130E094C /* EveContactItem.swift in Sources */,
 				C0D8F74BA97ECB4CB3867F3B /* ContactsViewController.swift in Sources */,
-				C0D8F85897B4C2F2A060C1D0 /* EveContactLabel.swift in Sources */,
 				C0D8F760E106DABBF63907FC /* EveAssets.swift in Sources */,
 				C0D8F52EE065FD6D547DB77B /* EveAssetItem.swift in Sources */,
 				C0D8FFF4222ED759FF5300DF /* AssetsViewController.swift in Sources */,
 				C0D8F2D9B446591A42EFF2C7 /* CharacterViewController.swift in Sources */,
+				C0D8F2D1F17AF6296DA648ED /* FleetViewController.swift in Sources */,
+				C0D8FD5D97CA74D79D53A5E8 /* FleetLayoutViewController.swift in Sources */,
+				C0D8FFE1EA4AC5CBF31A77DA /* FleetCompositionViewController.swift in Sources */,
+				C0D8FC3C43508326A9C37B45 /* UIFleetController.swift in Sources */,
+				C0D8FE58B6BABA2BCA802C26 /* KillsViewController.swift in Sources */,
+				C0D8F21ACF72A6A6903720B3 /* EveKills.swift in Sources */,
+				C0D8F24E9E87BE47B0CA399B /* EveKillMail.swift in Sources */,
+				C0D8FFAAAF132E060350C235 /* EveKillMailAttacker.swift in Sources */,
+				C0D8F19AB90DD869A1160D70 /* EveKillVictim.swift in Sources */,
+				C0D8F4A72DD70BD74ABB677F /* KillMailCell.swift in Sources */,
+				C0D8FCEB6E527945F19F432A /* EveSystem.swift in Sources */,
+				C0D8F9A86699B29E18568F3D /* EvePosition.swift in Sources */,
+				C0D8FB577FB3C59B727E4F17 /* KillAttackersViewController.swift in Sources */,
+				C0D8F8199153AF64ABB89E04 /* KillAttackerCell.swift in Sources */,
+				C0D8F01D08F2C19EE9B7592F /* JumpCloneViewController.swift in Sources */,
+				C0D8F5A1C8C1E3C32FF3233C /* LocationType.swift in Sources */,
+				C0D8F6877835C9E041BE5F77 /* EveClones.swift in Sources */,
+				C0D8F3531CF937B4EF7825CA /* HomeLocation.swift in Sources */,
+				C0D8F868C693B463D62D331A /* EveJumpClone.swift in Sources */,
+				C0D8FD523A5286873587DCE9 /* EveContactItem.swift in Sources */,
+				C0D8FAEAEB0D405C6693E52C /* EveContactLabel.swift in Sources */,
+				C0D8F8E380B009FAEEF11BEC /* EveContacts.swift in Sources */,
+				C0D8F5E4D06FC5DC64BB1D5F /* EveMail.swift in Sources */,
+				C0D8F767514C2FF48D64EBF0 /* EveMailItem.swift in Sources */,
+				C0D8F24140252F4F753FA658 /* EveMailLabel.swift in Sources */,
+				C0D8F6EA6205C74FFCFC1310 /* EveWalletJournalItemParty.swift in Sources */,
+				C0D8FDA4A75496C899D03A3F /* EveWalletJournal.swift in Sources */,
+				C0D8FBFA1328A5F6732A3796 /* EveWalletTransactions.swift in Sources */,
+				C0D8FCA7EF6638E6CF222C92 /* EveWallet.swift in Sources */,
+				C0D8F50C5F7A789C1D56D4CB /* EveWalletJournalItem.swift in Sources */,
+				C0D8F79AA8BF19038F4636FC /* EveType.swift in Sources */,
+				C0D8FAD0B2943D583BB178AD /* EveName.swift in Sources */,
+				C0D8F7AE448B7DF5039A4E6D /* EveFleet.swift in Sources */,
+				C0D8F31A967937D0DAB53339 /* EveFleetDetails.swift in Sources */,
+				C0D8FFC12E8A03C76729CBE9 /* EveStation.swift in Sources */,
+				C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

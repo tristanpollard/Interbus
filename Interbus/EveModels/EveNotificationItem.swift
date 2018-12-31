@@ -24,7 +24,7 @@ class EveNotificationItem: Mappable {
         self.notification_id <- map["notification_id"]
         self.sender_id <- map["sender_id"]
         self.text <- map["text"]
-        self.timestamp <- (map["timestamp"], DateTransform())
+        self.timestamp <- (map["timestamp"], TransformDate())
         self.type <- map["type"]
     }
 }

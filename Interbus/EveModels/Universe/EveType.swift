@@ -20,7 +20,7 @@ class EveType: Mappable, Nameable, EVEImage {
         }
     }
     var imageExtension: String = "png"
-    var placeholder: UIImage = UIImage(named: "corporationPlaceholder256.jpg")!
+    var placeholder: UIImage = UIImage(named: "corporationPlaceholder256.png")!
 
     var type_id: Int64!
 

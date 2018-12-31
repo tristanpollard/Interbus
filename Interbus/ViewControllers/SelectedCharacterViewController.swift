@@ -8,9 +8,9 @@ import UIKit
 class SelectedCharacterViewController: UIViewController {
 
     var character: EveCharacter!
+    var fetchingFleet: Bool = false
 
-    let options = ["Assets", "Clones", "Contacts", "Fleet", "Mail", "Journal", /*"Notifications",*/ "Wallet"]
-    var selectedOption: String?
+    let options = ["Assets", "Clones", "Contacts", "Fleet", "Kills", "Mail", "Market", "Journal", /*"Notifications", "Wallet"*/]
 
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var corporationImage: UIImageView!
@@ -41,13 +41,23 @@ class SelectedCharacterViewController: UIViewController {
             self.allianceImage.fetchAndSetImage(eve: alliance)
             self.allianceLabel.text = alliance.name?.name
         }
+
+        self.fetchFleet()
     }
 
-    func getSegueIdentifier() -> String? {
-        guard let selected = self.selectedOption else {
-            return nil
+    func fetchFleet() {
+        self.fetchingFleet = true
+        self.reloadFleetCell()
+        self.character.fetchFleet { fleet in
+            self.fetchingFleet = false
+            self.reloadFleetCell()
         }
-        return "selectedCharacterTo\(selected)"
+    }
+
+    func reloadFleetCell() {
+        let fleetIndex = self.options.firstIndex(of: "Fleet")!
+        let indexPath = IndexPath(row: fleetIndex, section: 0)
+        self.navigationTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,10 +70,20 @@ class SelectedCharacterViewController: UIViewController {
             notifications.notifications = self.character.notifications
         } else if let contacts = segue.destination as? ContactsViewController {
             contacts.contacts = self.character.contacts
-        }
-
-        if let assets = segue.destination as? AssetsViewController {
+        } else if let assets = segue.destination as? AssetsViewController {
             assets.assets = self.character.assets
+        } else if let fleet = segue.destination as? FleetViewController {
+            if let fleetViewControllers = fleet.viewControllers {
+                for fleetVC in fleetViewControllers {
+                    if let uiFleetController = fleetVC as? UIFleetController {
+                        uiFleetController.fleet = self.character.fleet!
+                    }
+                }
+            }
+        } else if let kills = segue.destination as? KillsViewController {
+            kills.kills = self.character.kills
+        } else if let clones = segue.destination as? JumpCloneViewController {
+            clones.clones = self.character.clones
         }
     }
 }
@@ -71,8 +91,12 @@ class SelectedCharacterViewController: UIViewController {
 extension SelectedCharacterViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedOption = self.options[indexPath.row]
-        self.performSegue(withIdentifier: "selectedCharacterTo\(self.selectedOption!)", sender: self)
+        let selectedOption = self.options[indexPath.row].replacingOccurrences(of: " ", with: "")
+        if selectedOption == "Fleet" && self.character.fleet == nil {
+            self.fetchFleet()
+            return
+        }
+        self.performSegue(withIdentifier: "selectedCharacterTo\(selectedOption)", sender: self)
     }
 }
 
@@ -89,6 +113,19 @@ extension SelectedCharacterViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "navigationOptionCell", for: indexPath)
 
         cell.textLabel?.text = options[indexPath.row]
+        cell.accessoryView = nil
+        cell.accessoryType = .disclosureIndicator
+
+        if cell.textLabel?.text == "Fleet" {
+            if self.fetchingFleet {
+                let indicator = UIActivityIndicatorView(style: .gray)
+                cell.accessoryView = indicator
+                indicator.startAnimating()
+            } else if self.character.fleet == nil {
+                cell.accessoryType = .none
+            }
+        }
+
         return cell
     }
 }

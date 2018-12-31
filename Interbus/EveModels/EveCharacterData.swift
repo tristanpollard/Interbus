@@ -86,7 +86,7 @@ class EveCharacterData: Mappable, EVEImage {
 
     func mapping(map: Map) {
         self.ancestry_id <- map["ancestry_id"]
-        self.birthday <- (map["birthday"], DateTransform())
+        self.birthday <- (map["birthday"], TransformDate())
         self.bloodline_id <- map["bloodline_id"]
         self.corporation_id <- map["corporation_id"]
         self.description <- map["description"]
@@ -95,7 +95,6 @@ class EveCharacterData: Mappable, EVEImage {
         self.name <- map["name"]
         self.race_id <- map["race_id"]
         self.security_stats <- map["security_status"]
-
         self.alliance_id <- map["alliance_id"]
         self.lastUpdate = Date()
     }

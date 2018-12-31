@@ -24,8 +24,8 @@ class EveLocationOnline: Mappable {
     }
 
     func mapping(map: Map) {
-        self.last_login <- (map["last_login"], DateTransform())
-        self.last_logout <- (map["last_logout"], DateTransform())
+        self.last_login <- (map["last_login"], TransformDate())
+        self.last_logout <- (map["last_logout"], TransformDate())
         self.logins <- map["logins"]
         self.online <- map["online"]
     }

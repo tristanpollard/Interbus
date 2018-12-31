@@ -77,7 +77,7 @@ class EveAllianceData: Nameable, Mappable, EVEImage {
         self.executor_corporation_id <- map["executor_corporation_id"]
         self.faction_id <- map["faction_id"]
         self.ticker <- map["ticker"]
-        self.date_founded <- (map["date_founded"], DateTransform())
+        self.date_founded <- (map["date_founded"], TransformDate())
 
         self.lastUpdate = Date()
     }

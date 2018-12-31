@@ -34,7 +34,7 @@ class EveWalletJournalItem: Mappable {
         self.balance <- map["balance"]
         self.context_id <- map["context_id"]
         self.context_id_type <- map["context_id_type"]
-        self.date <- (map["date"], DateTransform())
+        self.date <- (map["date"], TransformDate())
         self.description <- map["description"]
         self.first_party_id <- map["first_party_id"]
         self.id <- map["id"]

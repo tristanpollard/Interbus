@@ -6,9 +6,13 @@
 import Foundation
 import ObjectMapper
 
+struct MailInboxContext: MapContext {
+    var inbox: EveMail
+}
+
 class EveMailItem: Mappable {
 
-    weak var inbox: EveMail?
+    unowned var inbox: EveMail
 
     var from: Int64?
     var is_read: Bool?
@@ -22,7 +26,8 @@ class EveMailItem: Mappable {
     var body: String?
 
     required init?(map: Map) {
-
+        let context = map.context as! MailInboxContext
+        self.inbox = context.inbox
     }
 
     func mapping(map: Map) {
@@ -34,7 +39,7 @@ class EveMailItem: Mappable {
         if self.recipients == nil { // Don't overwrite recipients in the event we have fetched their name
             self.recipients <- map["recipients"]
         }
-        self.timestamp <- (map["timestamp"], DateTransform())
+        self.timestamp <- (map["timestamp"], TransformDate())
         self.body <- map["body"]
         if let from = self.from {
             if let sender = self.sender, sender.id == self.from {
@@ -46,8 +51,8 @@ class EveMailItem: Mappable {
 
     func fetchMail(completion: @escaping (EveMailItem) -> ()) {
         let esi = ESIClient.sharedInstance
-        if let id = self.mail_id, let inbox = self.inbox {
-            esi.invoke(endPoint: "/v1/characters/\(inbox.character.id)/mail/\(id)", token: inbox.character.token) { response in
+        if let id = self.mail_id {
+            esi.invoke(endPoint: "/v1/characters/\(self.inbox.character.id)/mail/\(id)", token: self.inbox.character.token) { response in
                 if let result = response.result as? [String: Any] {
                     Mapper<EveMailItem>().map(JSON: result, toObject: self)
                     completion(self)
@@ -58,13 +63,11 @@ class EveMailItem: Mappable {
 
     func deleteMail(completion: @escaping (Bool) -> ()) {
         let esi = ESIClient.sharedInstance
-        if let id = self.mail_id, let inbox = self.inbox {
-            esi.invoke(endPoint: "/v1/characters/\(inbox.character.id)/mail/\(id)", httpMethod: .delete, token: inbox.character.token) { response in
+        if let id = self.mail_id {
+            esi.invoke(endPoint: "/v1/characters/\(self.inbox.character.id)/mail/\(id)", httpMethod: .delete, token: self.inbox.character.token) { response in
                 if response.statusCode == 204 {
-                    if let inbox = self.inbox {
-                        inbox.mail = inbox.mail.filter {
-                            $0.mail_id != id
-                        }
+                    self.inbox.mail = self.inbox.mail.filter {
+                        $0.mail_id != id
                     }
                     completion(true)
                 } else {

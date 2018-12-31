@@ -31,6 +31,8 @@ class EveCharacter: Nameable, EVEImage, Equatable {
 
     var assets: EveAssets!
 
+    var clones: EveClones!
+
     var character_id: Int64!
     var character_name: String = ""
     var token: SSOToken?
@@ -38,6 +40,10 @@ class EveCharacter: Nameable, EVEImage, Equatable {
     var characterData: EveCharacterData!
 
     var contacts: EveContacts!
+
+    var fleet: EveFleet?
+
+    var kills: EveKills!
 
     var locationOnline: EveLocationOnline?
     var locationShip: EveLocationShip?
@@ -58,6 +64,8 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.notifications = EveNotifications(character: self)
         self.contacts = EveContacts(character: self)
         self.assets = EveAssets(character: self)
+        self.kills = EveKills(character: self)
+        self.clones = EveClones(character: self)
     }
 
     init(token: SSOToken) {
@@ -70,6 +78,8 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.notifications = EveNotifications(character: self)
         self.contacts = EveContacts(character: self)
         self.assets = EveAssets(character: self)
+        self.kills = EveKills(character: self)
+        self.clones = EveClones(character: self)
     }
 
     static func ==(lhs: EveCharacter, rhs: EveCharacter) -> Bool {
@@ -110,6 +120,7 @@ extension EveCharacter {
     }
 }
 
+
 // Wallet
 extension EveCharacter {
     func fetchWalletBalance(completion: @escaping (EveWallet) -> ()) {
@@ -118,6 +129,23 @@ extension EveCharacter {
                 self.wallet = EveWallet(character: self, json: result)
                 completion(self.wallet!)
             }
+        }
+    }
+}
+
+// Fleet
+extension EveCharacter {
+    func fetchFleet(completion: @escaping (EveFleet?) -> ()) {
+        self.fleet = nil
+        self.esi.invoke(endPoint: "/v1/characters/\(self.id)/fleet/", token: self.token) { response in
+            if let result = response.result as? [String: Any] {
+                let context = CharacterContext(character: self)
+                self.fleet = Mapper<EveFleet>(context: context).map(JSON: result)
+                if self.fleet?.fleet_id == nil {
+                    self.fleet = nil
+                }
+            }
+            completion(self.fleet)
         }
     }
 }

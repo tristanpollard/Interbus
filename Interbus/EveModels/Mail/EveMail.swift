@@ -7,12 +7,18 @@ import Foundation
 import ObjectMapper
 import Alamofire
 
+struct MailGroup {
+    var date: Date
+    var items: [EveMailItem]
+}
+
 class EveMail {
 
     unowned var character: EveCharacter
 
     var labels: [EveMailLabel] = []
     var mail: [EveMailItem] = []
+
     var lastMailId = Int64(Int32.max)
     var newestMailId: Int64 = 0
     var hasFetchedAll = false
@@ -57,7 +63,8 @@ class EveMail {
         ]
         esi.invoke(endPoint: "/v1/characters/\(self.character.id)/mail", token: self.character.token, options: options) { response in
             if let result = response.result as? [[String: Any]] {
-                let items = Mapper<EveMailItem>().mapArray(JSONArray: result)
+                let inboxContext = MailInboxContext(inbox: self)
+                let items = Mapper<EveMailItem>(context: inboxContext).mapArray(JSONArray: result)
                 if items.count < 50 {
                     self.hasFetchedAll = true
                 }
@@ -75,10 +82,6 @@ class EveMail {
                 group.enter()
                 items.fetchRecipients {
                     group.leave()
-                }
-
-                items.forEach { item in
-                    item.inbox = self
                 }
 
                 group.notify(queue: .main) {

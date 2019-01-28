@@ -144,7 +144,7 @@ class SendMailViewController: FormViewController {
     func getAllKeys() -> [String] {
         var keys = [String]()
         let values = self.form.values()
-        for (key, value) in values {
+        for (key, _) in values {
             keys.append(key)
         }
         return keys

@@ -16,6 +16,7 @@
 		6AB4F5F521C4D43E00A92424 /* SelectedCharacter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB4F5F321C4D27700A92424 /* SelectedCharacter.storyboard */; };
 		C0D8F01994D855BB876184D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F9306D29F91073BBED8D /* Assets.xcassets */; };
 		C0D8F01D08F2C19EE9B7592F /* JumpCloneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F48CBCBF5516C9831CC7 /* JumpCloneViewController.swift */; };
+		C0D8F06637096A198BF7F061 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F5C8103FC0CA10DFEA16 /* .gitignore */; };
 		C0D8F085FD0A552FD0E5CB56 /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F18CA92FF23F9EEB2A84 /* MailViewController.swift */; };
 		C0D8F0A7BDE7E0632ED86D04 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F70A4319EBD3F7CDEEE4 /* String.swift */; };
 		C0D8F186ED6156DCECE230AC /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F4CE59927BD625163CC6 /* URL.swift */; };
@@ -44,6 +45,7 @@
 		C0D8F50C5F7A789C1D56D4CB /* EveWalletJournalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F42F864C528B13D276C3 /* EveWalletJournalItem.swift */; };
 		C0D8F51B0CEC46A800CFDF50 /* MailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F130FF8FD81043B5DAA4 /* MailItemViewController.swift */; };
 		C0D8F52EE065FD6D547DB77B /* EveAssetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */; };
+		C0D8F59165360216545746F4 /* Environment.Example.swift in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FF8B345B9B46E21A0102 /* Environment.Example.swift */; };
 		C0D8F5A1C8C1E3C32FF3233C /* LocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5E15B71F75E87867FB9 /* LocationType.swift */; };
 		C0D8F5E4D06FC5DC64BB1D5F /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5148EDC033C893BA0C5 /* EveMail.swift */; };
 		C0D8F600ECEC8B978101C0EF /* characterPlaceholder64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */; };
@@ -82,6 +84,7 @@
 		C0D8FB90B162368FF0A334E4 /* EveLocationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */; };
 		C0D8FBAB49FFBB7ACEE6C00B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F891694848D3ECE4AD69 /* Main.storyboard */; };
 		C0D8FBD35D73B92FDF715BBC /* alliancePlaceholder64.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F0DF95475EE4193DA09E /* alliancePlaceholder64.png */; };
+		C0D8FBDF17CA7E851DBA2576 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8C8A5F415E4EECDEA48 /* Environment.swift */; };
 		C0D8FBFA1328A5F6732A3796 /* EveWalletTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F1AC46087B48DB5B033A /* EveWalletTransactions.swift */; };
 		C0D8FC3C43508326A9C37B45 /* UIFleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F714B905911925E28CF8 /* UIFleetController.swift */; };
 		C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FE0E3400F18CF8A5594D /* EvePlanet.swift */; };
@@ -168,6 +171,7 @@
 		C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder512.jpg; sourceTree = "<group>"; };
 		C0D8F5AE487CDCF338378602 /* Nameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		C0D8F5B96063E0AB58CDEE0E /* EveJumpClone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveJumpClone.swift; sourceTree = "<group>"; };
+		C0D8F5C8103FC0CA10DFEA16 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		C0D8F5C9EE800690893F92D5 /* EveLocationSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveLocationSystem.swift; sourceTree = "<group>"; };
 		C0D8F5E15B71F75E87867FB9 /* LocationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationType.swift; sourceTree = "<group>"; };
 		C0D8F629F363D9C4505E39C0 /* KillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillsViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		C0D8F864085F8431EFEB4F96 /* characterPlaceholder128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = characterPlaceholder128.jpg; sourceTree = "<group>"; };
 		C0D8F885FB0DBC0AC3A361F4 /* alliancePlaceholder128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliancePlaceholder128.png; sourceTree = "<group>"; };
 		C0D8F8B89A19E9A439CD1CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C0D8F8C8A5F415E4EECDEA48 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C0D8F8D1F7FB72F4D1D5D535 /* EveContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveContactItem.swift; sourceTree = "<group>"; };
 		C0D8F8FFB5BAC17B93E4D613 /* KillAttackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KillAttackerCell.swift; sourceTree = "<group>"; };
 		C0D8F9306D29F91073BBED8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 		C0D8FF3C85ED759328D1300D /* EveMailLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveMailLabel.swift; sourceTree = "<group>"; };
 		C0D8FF69A591A7A7E5D0DC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0D8FF6BD2613CBEE99DE9B9 /* corporationPlaceholder32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporationPlaceholder32.png; sourceTree = "<group>"; };
+		C0D8FF8B345B9B46E21A0102 /* Environment.Example.swift */ = {isa = PBXFileReference; lastKnownFileType = file.Example; path = Environment.Example.swift; sourceTree = "<group>"; };
 		C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveCharacter.swift; sourceTree = "<group>"; };
 		EAE5A3BC6AABC6E3B2397C69 /* Pods-Interbus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interbus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Interbus/Pods-Interbus.debug.xcconfig"; sourceTree = "<group>"; };
 		FD3A5AB8E179D892670AD73B /* Pods-Interbus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interbus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Interbus/Pods-Interbus.release.xcconfig"; sourceTree = "<group>"; };
@@ -419,6 +425,9 @@
 				C0D8FB2590079DD92999BB07 /* EveModels */,
 				C0D8F981EC72B1283BE2CCDD /* TransformDate.swift */,
 				C0D8F361343F3318C6B4F157 /* ViewControllers */,
+				C0D8F8C8A5F415E4EECDEA48 /* Environment.swift */,
+				C0D8F5C8103FC0CA10DFEA16 /* .gitignore */,
+				C0D8FF8B345B9B46E21A0102 /* Environment.Example.swift */,
 			);
 			path = Interbus;
 			sourceTree = "<group>";
@@ -690,6 +699,8 @@
 				C0D8FE5F46B44DAF7C82CE6F /* characterPlaceholder256.jpg in Resources */,
 				C0D8F87B749260C78560FF3D /* corporationPlaceholder128.png in Resources */,
 				C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */,
+				C0D8F06637096A198BF7F061 /* .gitignore in Resources */,
+				C0D8F59165360216545746F4 /* Environment.Example.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +739,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Interbus/Pods-Interbus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/AppSpectorSDK/AppSpectorSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
@@ -741,6 +753,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppSpectorSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
@@ -846,6 +859,7 @@
 				C0D8FFC12E8A03C76729CBE9 /* EveStation.swift in Sources */,
 				C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */,
 				C0D8FA47488DDC436D62E4A1 /* readme.md in Sources */,
+				C0D8FBDF17CA7E851DBA2576 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

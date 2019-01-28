@@ -10,7 +10,11 @@ import UIKit
 
 class CharacterSelectorViewController: UIViewController {
 
-    @IBOutlet weak var tokenTableView: UITableView!
+    @IBOutlet weak var tokenTableView: UITableView! {
+        didSet {
+            self.tokenTableView.refreshControl = self.refreshControl
+        }
+    }
     var characters: [EveCharacter] = []
     var selectedCharacter: EveCharacter?
     private let refreshControl = UIRefreshControl()
@@ -24,7 +28,6 @@ class CharacterSelectorViewController: UIViewController {
         ];
 
         refreshControl.addTarget(self, action: #selector(refreshAllCharacters), for: .valueChanged)
-        self.tokenTableView.refreshControl = self.refreshControl
 
         let tokens = SSOToken.loadAllTokens()
         self.characters = tokens.map { token in

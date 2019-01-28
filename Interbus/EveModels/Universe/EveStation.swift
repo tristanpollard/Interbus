@@ -72,7 +72,7 @@ class EveStation: Mappable, Nameable {
         let esi = ESIClient.sharedInstance
         esi.invoke(endPoint: "/v2/universe/stations/\(self.station_id!)/") { response in
             if let result = response.result as? [String: Any] {
-                Mapper<EveStation>().map(JSON: result, toObject: self)
+                let _ = Mapper<EveStation>().map(JSON: result, toObject: self)
             }
             completion()
         }

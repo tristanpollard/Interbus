@@ -6,7 +6,7 @@
 
 import Eureka
 
-public final class MailRecipientCell: Cell<EveSearchResult>, CellType {
+final class MailRecipientCell: Cell<EveSearchResult>, CellType {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var searchImageView: UIImageView!

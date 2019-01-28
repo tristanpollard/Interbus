@@ -22,7 +22,7 @@ class EveLocationSystem: Mappable, Nameable {
 
     init(character: EveCharacter, json: [String: Any]) {
         self.character = character
-        Mapper<EveLocationSystem>().map(JSON: json, toObject: self)
+        let _ = Mapper<EveLocationSystem>().map(JSON: json, toObject: self)
     }
 
     required init?(map: Map) {

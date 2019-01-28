@@ -54,7 +54,7 @@ class EveMailItem: Mappable {
         if let id = self.mail_id {
             esi.invoke(endPoint: "/v1/characters/\(self.inbox.character.id)/mail/\(id)", token: self.inbox.character.token) { response in
                 if let result = response.result as? [String: Any] {
-                    Mapper<EveMailItem>().map(JSON: result, toObject: self)
+                    let _ = Mapper<EveMailItem>().map(JSON: result, toObject: self)
                     completion(self)
                 }
             }
@@ -92,7 +92,7 @@ class EveMailItem: Mappable {
 
 extension Array where Element == EveMailItem {
     func fetchSenders(completion: @escaping () -> ()) {
-        let senders: [EveCharacter] = self.flatMap {
+        let senders: [EveCharacter] = self.compactMap {
             $0.sender
         }
         senders.fetchNames {
@@ -103,7 +103,7 @@ extension Array where Element == EveMailItem {
     func fetchRecipients(completion: @escaping () -> ()) {
         var recipients: [EveMailRecipient] = []
         self.forEach { mail in
-            if let recip = mail.recipients.flatMap({ $0 }) {
+            if let recip = mail.recipients?.compactMap({ $0 }) {
                 recipients += recip
             }
         }

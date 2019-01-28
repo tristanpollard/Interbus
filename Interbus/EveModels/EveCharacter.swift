@@ -90,9 +90,6 @@ class EveCharacter: Nameable, EVEImage, Equatable {
 // Location related
 extension EveCharacter {
     func fetchLocationOnline(completion: @escaping (EveLocationOnline) -> ()) {
-        let options = [
-            "token": self.token
-        ]
         self.esi.invoke(endPoint: "/v2/characters/\(self.id)/online/", token: self.token) { response in
             if let result = response.result as? [String: Any] {
                 self.locationOnline = EveLocationOnline(character: self, json: result)

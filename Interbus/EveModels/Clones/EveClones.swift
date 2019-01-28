@@ -35,7 +35,7 @@ class EveClones: Mappable {
         esi.invoke(endPoint: "/v3/characters/\(self.character.id)/clones/", token: self.character.token) { response in
             if let result = response.result as? [String: Any] {
                 let characterContext = CharacterContext(character: self.character)
-                Mapper<EveClones>(context: characterContext).map(JSON: result, toObject: self)
+                let _ = Mapper<EveClones>(context: characterContext).map(JSON: result, toObject: self)
             }
             completion()
         }

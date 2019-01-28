@@ -10,6 +10,7 @@ target 'Interbus' do
 #	pod 'SwiftyJWT'
   pod 'KTVJSONWebToken'
   pod 'Eureka'
+  pod 'AppSpectorSDK'
 #	pod 'OAuthSwiftAlamofire'
 #	pod 'AlamofireImage', '~> 3.5'
 end

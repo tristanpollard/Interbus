@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.0.beta.1)
+  - AppSpectorSDK (1.1.5)
   - Eureka (4.3.0)
   - FLAnimatedImage (1.0.12)
   - JWTDecode (2.1.1)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0.beta.1)
+  - AppSpectorSDK
   - Eureka
   - JWTDecode (~> 2.1)
   - KTVJSONWebToken
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AppSpectorSDK
     - Eureka
     - FLAnimatedImage
     - JWTDecode
@@ -35,6 +38,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
+  AppSpectorSDK: 210091a50e4db5e7bfe58ff56289a1df0521e2ab
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 06ff15fdc58171712edbcffc8e203e3bec3cbbd5
+PODFILE CHECKSUM: 60f7beea7040b5a9a370e01d345c8ae6daa55834
 
 COCOAPODS: 1.5.3

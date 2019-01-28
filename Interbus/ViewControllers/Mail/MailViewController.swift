@@ -11,7 +11,11 @@ class MailViewController: UIViewController {
     var refreshControl = UIRefreshControl()
     var lastSelected: IndexPath?
 
-    @IBOutlet weak var mailTable: UITableView!
+    @IBOutlet weak var mailTable: UITableView! {
+        didSet {
+            self.mailTable.refreshControl = self.refreshControl
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +24,6 @@ class MailViewController: UIViewController {
             UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(segueNewMail))
         ]
 
-        self.mailTable.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(fetchNewMail), for: .valueChanged)
 
         self.fetchAllMail()

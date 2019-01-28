@@ -86,7 +86,7 @@ class EveAllianceData: Nameable, Mappable, EVEImage {
         let esi = ESIClient.sharedInstance
         esi.invoke(endPoint: "/v3/alliances/\(self.id)") { response in
             if let json = response.result as? [String: Any] {
-                Mapper<EveAllianceData>().map(JSON: json, toObject: self)
+                let _ = Mapper<EveAllianceData>().map(JSON: json, toObject: self)
                 completion(self)
             }
         }

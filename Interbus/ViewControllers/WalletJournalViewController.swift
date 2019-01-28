@@ -37,8 +37,8 @@ class WalletJournalViewController: UIViewController {
 extension WalletJournalViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let entry = self.walletJournal.entries[indexPath.row]
-        print(entry.description, entry.first_party_id, entry.second_party_id)
+//        let entry = self.walletJournal.entries[indexPath.row]
+//        print(entry.description, entry.first_party_id, entry.second_party_id)
     }
 }
 

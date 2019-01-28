@@ -44,6 +44,31 @@ class EveContacts {
         }
     }
 
+    func removeContact(contact: EveContactItem, completion: @escaping () -> ()) {
+        self.removeContacts(contacts: [contact]) {
+            completion()
+        }
+    }
+
+    func removeContacts(contacts: [EveContactItem], completion: @escaping () -> ()) {
+        let esi = ESIClient.sharedInstance
+        let ids = contacts.compactMap {
+            $0.contact_id
+        }
+        let options: [String: Any] = [
+            "parameters": ids
+        ]
+        esi.invoke(endPoint: "/v2/characters/\(self.character.id)/contacts/", httpMethod: .delete, token: self.character.token, options: options) { response in
+            if response.statusCode == 204 {
+                debugPrint("Contacts Deleted:", contacts)
+                self.contacts = self.contacts.filter {
+                    !ids.contains($0.contact_id)
+                }
+            }
+            completion()
+        }
+    }
+
     func fetchContacts(completion: @escaping () -> ()) {
         let esi = ESIClient.sharedInstance
         esi.invoke(endPoint: "/v2/characters/\(self.character.id)/contacts/", token: self.character.token) { response in

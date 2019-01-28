@@ -101,13 +101,13 @@ class EveCharacterData: Mappable, EVEImage {
 
     func fetchCharacterData(completion: @escaping (EveCharacterData) -> ()) {
         let esi = ESIClient.sharedInstance
-        guard let character = self.character else {
+        guard self.character != nil else {
             return
         }
 
         esi.invoke(endPoint: "/v4/characters/\(self.id)") { response in
             if let json = response.result as? [String: Any] {
-                Mapper<EveCharacterData>().map(JSON: json, toObject: self)
+                let _ = Mapper<EveCharacterData>().map(JSON: json, toObject: self)
                 completion(self)
             }
         }
@@ -117,13 +117,13 @@ class EveCharacterData: Mappable, EVEImage {
         let group = DispatchGroup()
         group.enter()
         self.fetchCharacterData { data in
-            if let corp = self.corporation {
+            if self.corporation != nil {
                 group.enter()
                 self.corporation?.fetchCorporationData { corp in
                     group.leave()
                 }
             }
-            if let alliance = self.alliance {
+            if self.alliance != nil {
                 group.enter()
                 self.alliance?.fetchAllianceData { alliance in
                     group.leave()

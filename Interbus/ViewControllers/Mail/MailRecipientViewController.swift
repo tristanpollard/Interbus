@@ -57,9 +57,7 @@ extension MailRecipientViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipientCell", for: indexPath)
 
-        let placeHolder = UIImage(named: "characterPlaceholder64.jpg")!
         cell.imageView?.roundImageWithBorder(color: .clear)
-
         let result = searchResults[indexPath.row]
         cell.textLabel?.text = result.name?.name
         cell.imageView?.fetchAndSetImage(eve: result)

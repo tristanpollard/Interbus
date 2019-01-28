@@ -61,11 +61,24 @@ extension ContactsViewController: UITableViewDataSource {
 
         return cell
     }
+
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let contact = self.contacts.contacts[indexPath.row]
+            self.contacts.removeContact(contact: contact) {
+                self.contactsTable.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
 }
 
 extension ContactsViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(self.contacts.contacts[indexPath.row].name)
+//        let contact = self.contacts.contacts[indexPath.row].name
     }
 }

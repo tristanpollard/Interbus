@@ -13,7 +13,7 @@ class EveWallet: Mappable {
 
     init(character: EveCharacter, json: [String: Any]) {
         self.character = character
-        Mapper<EveWallet>().map(JSON: json, toObject: self)
+        let _ = Mapper<EveWallet>().map(JSON: json, toObject: self)
     }
 
     required init?(map: Map) {

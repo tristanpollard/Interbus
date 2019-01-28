@@ -16,7 +16,7 @@ class EveLocationOnline: Mappable {
 
     init(character: EveCharacter, json: [String: Any]) {
         self.character = character
-        Mapper<EveLocationOnline>().map(JSON: json, toObject: self)
+        let _ = Mapper<EveLocationOnline>().map(JSON: json, toObject: self)
     }
 
     required init?(map: Map) {

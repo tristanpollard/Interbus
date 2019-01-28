@@ -58,7 +58,7 @@ class EveKillMail: Mappable {
         let esi = ESIClient.sharedInstance
         esi.invoke(endPoint: "/v1/killmails/\(self.killmail_id!)/\(self.killmail_hash!)/") { response in
             if let result = response.result as? [String: Any] {
-                Mapper<EveKillMail>().map(JSON: result, toObject: self)
+                let _ = Mapper<EveKillMail>().map(JSON: result, toObject: self)
             }
             completion()
         }
@@ -86,7 +86,7 @@ extension Array where Element == EveKillMail {
     func fetchNames(completion: @escaping () -> ()) {
         let group = DispatchGroup()
 
-        let names: [EveKillVictim] = self.flatMap {
+        let names: [EveKillVictim] = self.compactMap {
             $0.victim
         }
         group.enter()

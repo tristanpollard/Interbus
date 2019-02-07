@@ -113,8 +113,6 @@ final class ESIClient {
         let options: [String: Any] = [
             "baseURI": ESIClient.baseURI.login
         ]
-        let group = DispatchGroup()
-        group.enter()
         self.invoke(endPoint: "/oauth/jwks", options: options) { response in
             if let result = response.result as? [String: Any] {
                 if let keys = result["keys"] as? [[String: String]] {
@@ -126,12 +124,8 @@ final class ESIClient {
                     }
                 }
             }
-            group.leave()
-        }
 
-        group.notify(queue: .main) {
             guard let jwks = key else {
-                //throw TokenError.noJWKSKey
                 completion(nil)
                 return
             }
@@ -246,7 +240,11 @@ final class ESIClient {
         }
         self.lastCodeChallenge = nil
 
-        var parameters: Parameters = ["grant_type": "authorization_code", "code": code, "client_id": ESIClient.client_id, "code_verifier": challenge.data(using: .utf8)!.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!]
+        var parameters: Parameters = [
+            "grant_type": "authorization_code",
+            "code": code, "client_id": ESIClient.client_id,
+            "code_verifier": challenge.data(using: .utf8)!.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        ]
         let options: [String: Any] = [
             "baseURI": ESIClient.baseURI.loginV2,
             "parameters": parameters,

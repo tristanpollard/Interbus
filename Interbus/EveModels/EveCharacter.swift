@@ -41,7 +41,7 @@ class EveCharacter: Nameable, EVEImage, Equatable {
 
     var contacts: EveContacts!
 
-    var fleet: EveFleet?
+    var fleet: Fleet?
 
     var kills: EveKills!
 
@@ -132,13 +132,13 @@ extension EveCharacter {
 
 // Fleet
 extension EveCharacter {
-    func fetchFleet(completion: @escaping (EveFleet?) -> ()) {
+    func fetchFleet(completion: @escaping (Fleet?) -> ()) {
         self.fleet = nil
         self.esi.invoke(endPoint: "/v1/characters/\(self.id)/fleet/", token: self.token) { response in
             if let result = response.result as? [String: Any] {
                 let context = CharacterContext(character: self)
-                self.fleet = Mapper<EveFleet>(context: context).map(JSON: result)
-                if self.fleet?.fleet_id == nil {
+                self.fleet = Mapper<Fleet>(context: context).map(JSON: result)
+                if self.fleet?.fleetId == nil {
                     self.fleet = nil
                 }
             }

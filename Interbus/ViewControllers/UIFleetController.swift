@@ -7,6 +7,6 @@ import UIKit
 
 class UIFleetController: UIViewController {
 
-    var fleet: EveFleet!
+    var fleet: Fleet!
 
 }

@@ -24,12 +24,14 @@ class MailRecipientViewController: UIViewController {
     }
 
     func performSearch() {
+        self.searchResults = [:]
+        self.recipientTable.reloadData()
         if let q = self.searchBar.text, q.count > 0 {
             EveSearch.search(q, categories: searchScopes[searchBar.selectedScopeButtonIndex]) { results in
                 results.fetchNames {
                     var newSearchResults: [EveSearchCategory: [EveSearchResult]] = [:]
                     let fetchedResults = results.sorted {
-                        $0.name!.name < $1.name!.name
+                        $0.name!.name.lowercased() < $1.name!.name.lowercased()
                     }.forEach { result in
                         if newSearchResults[result.category] != nil {
                             newSearchResults[result.category]!.append(result)
@@ -45,9 +47,6 @@ class MailRecipientViewController: UIViewController {
                     }
                 }
             }
-        } else {
-            self.searchResults = [:]
-            self.recipientTable.reloadData()
         }
     }
 

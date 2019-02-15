@@ -1,8 +1,3 @@
-//
-// Created by Tristan Pollard on 2017-10-04.
-// Copyright (c) 2017 Sumo. All rights reserved.
-//
-
 import Eureka
 
 class SendMailViewController: FormViewController {
@@ -22,66 +17,35 @@ class SendMailViewController: FormViewController {
         }
 
         form +++
+        MultivaluedSection(multivaluedOptions: [.Insert, .Delete]) {
+            $0.tag = "recipMultiTag"
 
-                MultivaluedSection(multivaluedOptions: [.Insert, .Delete]) {
-                    $0.tag = "recipMultiTag"
+            $0.addButtonProvider = { section in
+                return ButtonRow() {
+                    $0.title = "New Recipient"
+                }.onChange() { row in
+                    self.evaluateSend()
+                }
+            }
 
-
-                    $0.addButtonProvider = { section in
-                        return ButtonRow() {
-                            $0.title = "New Recipient"
-                        }.onChange() { row in
-                            self.evaluateSend()
-                        }
-                    }
-
-                    $0.multivaluedRowToInsertAt = { index in
-                        return MailRecipientRow("recipientTag_\(index)") {
-                            $0.add(rule: RuleRequired())
-                        }.onChange() { row in
-                            self.evaluateSend()
-                        }.cellSetup() { cell, row in
-                            self.evaluateSend()
-                        }
-                    }
-//
-//            //reply all, add all recipients as well
-                    if let recipentsArray = mailItem?.recipients {
-                        for (nameIndex, recip) in recipentsArray.enumerated() {
-                            if recip.id != self.mail.character.id {
-                                $0 <<< MailRecipientRow("recipientFromTag_\(nameIndex)") { row in
-                                    let result = EveSearchResult(recip.id, category: EveSearchCategory(rawValue: recip.recipient_type)!)
-                                    let name = EveName(recip.id, name: recip.name!.name, category: EveNameCategory(rawValue: recip.recipient_type)!)
-                                    result.name = name
-                                    row.value = result
-                                }.onChange() { row in
-                                    self.evaluateSend()
-                                }.cellSetup() { cell, row in
-                                    self.evaluateSend()
-                                }
-                            }
-                        }
-                    }
-
-//            //add reply to sender
-                    if let sender = mailItem?.sender {
-                        if sender.id != self.mail.character.id {
-                            $0 <<< MailRecipientRow("recipientFromTag") { row in
-                                let result = EveSearchResult(sender.id, category: .character)
-                                let name = EveName(sender.id, name: sender.name!.name, category: .character)
-                                result.name = name
-                                row.value = result
-                            }.onChange() { row in
-                                self.evaluateSend()
-                            }.cellSetup() { cell, row in
-                                self.evaluateSend()
-                            }
-                        }
-                    }
-
-                    if self.mailItem == nil {
-                        $0 <<< MailRecipientRow("recipientTag_\(index)") {
-                            $0.add(rule: RuleRequired())
+            $0.multivaluedRowToInsertAt = { index in
+                return MailRecipientRow("recipientTag_\(index)") {
+                    $0.add(rule: RuleRequired())
+                }.onChange() { row in
+                    self.evaluateSend()
+                }.cellSetup() { cell, row in
+                    self.evaluateSend()
+                }
+            }
+            // reply all, add all recipients as well
+            if let recipentsArray = mailItem?.recipients {
+                for (nameIndex, recip) in recipentsArray.enumerated() {
+                    if recip.id != self.mail.character.id {
+                        $0 <<< MailRecipientRow("recipientFromTag_\(nameIndex)") { row in
+                            let result = EveSearchResult(recip.id, category: EveSearchCategory(rawValue: recip.recipient_type)!)
+                            let name = EveName(recip.id, name: recip.name!.name, category: EveNameCategory(rawValue: recip.recipient_type)!)
+                            result.name = name
+                            row.value = result
                         }.onChange() { row in
                             self.evaluateSend()
                         }.cellSetup() { cell, row in
@@ -89,7 +53,35 @@ class SendMailViewController: FormViewController {
                         }
                     }
                 }
-                +++ TextRow("subjectTag") {
+            }
+
+            // add reply to sender
+            if let sender = mailItem?.sender {
+                if sender.id != self.mail.character.id {
+                    $0 <<< MailRecipientRow("recipientFromTag") { row in
+                        let result = EveSearchResult(sender.id, category: .character)
+                        let name = EveName(sender.id, name: sender.name!.name, category: .character)
+                        result.name = name
+                        row.value = result
+                    }.onChange() { row in
+                        self.evaluateSend()
+                    }.cellSetup() { cell, row in
+                        self.evaluateSend()
+                    }
+                }
+            }
+
+            if self.mailItem == nil {
+                $0 <<< MailRecipientRow("recipientTag_\(index)") {
+                    $0.add(rule: RuleRequired())
+                }.onChange() { row in
+                    self.evaluateSend()
+                }.cellSetup() { cell, row in
+                    self.evaluateSend()
+                }
+            }
+        }
+        +++ TextRow("subjectTag") {
             $0.title = "Subject:"
             $0.add(rule: RuleRequired())
             if let mail = self.mailItem {
@@ -98,7 +90,7 @@ class SendMailViewController: FormViewController {
         }.cellSetup { (cell, row) in
             cell.textField.autocorrectionType = .no
         }
-                +++ TextAreaRow("bodyTag") {
+        +++ TextAreaRow("bodyTag") {
             $0.textAreaHeight = .dynamic(initialTextViewHeight: 120)
             $0.add(rule: RuleRequired())
             if let mail = self.mailItem {
@@ -109,17 +101,16 @@ class SendMailViewController: FormViewController {
         }.cellSetup { (cell, row) in
             cell.textView.autocorrectionType = .no
         }
-                +++ ButtonRow("sendTag") {
+        +++ ButtonRow("sendTag") {
             $0.title = "Send"
             $0.disabled = Condition.function(self.getAllKeys()) { form in
                 return form.validate().count != 0
             }
+        }.onCellSelection() { cell, row in
+            if !row.isDisabled {
+                self.sendMail()
+            }
         }
-                .onCellSelection() { cell, row in
-                    if !row.isDisabled {
-                        self.sendMail()
-                    }
-                }
 
     }
 

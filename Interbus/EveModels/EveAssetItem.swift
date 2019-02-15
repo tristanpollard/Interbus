@@ -70,9 +70,9 @@ extension Array where Element == EveAssetItem {
             let end = unique.index(sIndex, offsetBy: 200)
             let endIndex = Swift.min(end, unique.count)
             let items = Swift.Array(unique[sIndex..<endIndex])
-            let options: [String: Any] = [
-                "parameters": items.asParameters(),
-                "encoding": ArrayEncoding()
+            let options: [ESIClientOptions: Any] = [
+                .parameters: items.asParameters(),
+                .encoding: ArrayEncoding()
             ]
             group.enter()
             esi.invoke(endPoint: "/v1/characters/\(character.id)/assets/names", httpMethod: .post, token: character.token, options: options) { response in

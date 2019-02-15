@@ -56,8 +56,8 @@ class EveMail {
         self.isFetching = true
 
         let esi = ESIClient.sharedInstance
-        let options = [
-            "parameters": [
+        let options: [ESIClientOptions: Any] = [
+            .parameters: [
                 "last_mail_id": self.lastMailId
             ]
         ]
@@ -120,13 +120,13 @@ class EveMail {
     func sendMail(_ subject: String, body: String, recipients: [EveSearchResult], completion: @escaping () -> () = {
     }) {
         let esi = ESIClient.sharedInstance
-        let options: [String: Any] = [
-            "parameters": [
+        let options: [ESIClientOptions: Any] = [
+            .parameters: [
                 "body": "<font size=\"12\" color=\"#bfffffff\">\(body)</font>",
                 "subject": subject,
                 "recipients": recipients.asRecipients()
             ],
-            "encoding": JSONEncoding.default
+            .encoding: JSONEncoding.default
         ]
         esi.invoke(endPoint: "/v1/characters/\(self.character.id)/mail/", httpMethod: .post, token: self.character.token, options: options) {
             response in

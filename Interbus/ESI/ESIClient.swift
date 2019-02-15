@@ -18,6 +18,13 @@ enum ESIError: Error {
     case invalidChalllengeData
 }
 
+enum ESIClientOptions {
+    case parameters
+    case headers
+    case baseURI
+    case encoding
+}
+
 final class ESIClient {
 
     static let sharedInstance = ESIClient()
@@ -111,8 +118,8 @@ final class ESIClient {
 
     func getRSAKey(kid: String, completion: @escaping (RSAKey?) -> ()) {
         var key: [String: String]? = nil
-        let options: [String: Any] = [
-            "baseURI": ESIClient.baseURI.login
+        let options: [ESIClientOptions: Any] = [
+            .baseURI: ESIClient.baseURI.login
         ]
         self.invoke(endPoint: "/oauth/jwks", options: options) { response in
             if let result = response.result as? [String: Any] {
@@ -171,7 +178,7 @@ final class ESIClient {
         self.lastCodeChallenge = challenge
     }
 
-    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, token: SSOToken? = nil, options: [String: Any]? = nil, request: @escaping (DataRequest) -> () = { _ in
+    func invoke(endPoint: String, httpMethod: HTTPMethod = .get, token: SSOToken? = nil, options: [ESIClientOptions: Any]? = nil, request: @escaping (DataRequest) -> () = { _ in
     }, completion: @escaping (ESIResponse) -> ()) {
 
         var requestBase = ESIClient.baseURI.api
@@ -182,16 +189,16 @@ final class ESIClient {
         let group = DispatchGroup()
 
         if let opt = options {
-            if let params = opt["parameters"] as? Parameters {
+            if let params = opt[.parameters] as? Parameters {
                 parameters = params
             }
-            if let heads = opt["headers"] as? HTTPHeaders {
+            if let heads = opt[.headers] as? HTTPHeaders {
                 headers = heads
             }
-            if let base = opt["baseURI"] as? ESIClient.baseURI {
+            if let base = opt[.baseURI] as? ESIClient.baseURI {
                 requestBase = base
             }
-            if let encoding = opt["encoding"] as? ParameterEncoding {
+            if let encoding = opt[.encoding] as? ParameterEncoding {
                 parameterEncoding = encoding
             }
         }
@@ -225,9 +232,9 @@ final class ESIClient {
 
     func refreshToken(token: SSOToken, completion: @escaping (ESIResponse) -> ()) {
         let parameters: Parameters = ["grant_type": "refresh_token", "refresh_token": token.refresh_token!, "client_id": ESIClient.client_id]
-        let options: [String: Any] = [
-            "baseURI": ESIClient.baseURI.loginV2,
-            "parameters": parameters
+        let options: [ESIClientOptions: Any] = [
+            .baseURI: ESIClient.baseURI.loginV2,
+            .parameters: parameters
         ]
         self.invoke(endPoint: "/oauth/token", httpMethod: .post, options: options) { response in
             print(response.result)
@@ -250,9 +257,9 @@ final class ESIClient {
             "code": code, "client_id": ESIClient.client_id,
             "code_verifier": challengeData.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         ]
-        let options: [String: Any] = [
-            "baseURI": ESIClient.baseURI.loginV2,
-            "parameters": parameters,
+        let options: [ESIClientOptions: Any] = [
+            .baseURI: ESIClient.baseURI.loginV2,
+            .parameters: parameters,
         ]
 
         self.invoke(endPoint: "/oauth/token", httpMethod: .post, options: options) { response in

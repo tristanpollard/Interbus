@@ -5,7 +5,7 @@ class MailRecipientViewController: UIViewController {
     @IBOutlet weak var recipientTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var searchResults: [EveSearchResult] = []
+    var searchResults: [EveSearchCategory: [EveSearchResult]] = [:]
     var selectItem: ((EveSearchResult) -> (Void))?
 
     let searchScopes: [[EveSearchCategory]] = [
@@ -24,19 +24,39 @@ class MailRecipientViewController: UIViewController {
     }
 
     func performSearch() {
-        if let q = self.searchBar.text {
+        if let q = self.searchBar.text, q.count > 0 {
             EveSearch.search(q, categories: searchScopes[searchBar.selectedScopeButtonIndex]) { results in
                 results.fetchNames {
-                    self.searchResults = results.sorted {
+                    var newSearchResults: [EveSearchCategory: [EveSearchResult]] = [:]
+                    let fetchedResults = results.sorted {
                         $0.name!.name < $1.name!.name
+                    }.forEach { result in
+                        if newSearchResults[result.category] != nil {
+                            newSearchResults[result.category]!.append(result)
+                        } else {
+                            newSearchResults[result.category] = [result]
+                        }
                     }
+                    self.searchResults = newSearchResults
+
                     DispatchQueue.main.async {
                         self.recipientTable.reloadData()
                         self.recipientTable.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
                     }
                 }
             }
+        } else {
+            self.searchResults = [:]
+            self.recipientTable.reloadData()
         }
+    }
+
+    public func searchSection(_ section: Int) -> EveSearchCategory {
+        return searchResults.keys.sorted(by: { $0.rawValue < $1.rawValue })[section]
+    }
+
+    public func resultsForSection(_ section: Int) -> [EveSearchResult] {
+        return searchResults[searchSection(section)]!
     }
 }
 
@@ -53,26 +73,29 @@ extension MailRecipientViewController: UISearchBarDelegate {
     }
 
     public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        if let text = searchBar.text, text.count > 0 {
-            performSearch()
-        }
+        performSearch()
     }
 }
 
 extension MailRecipientViewController: UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let name = searchSection(section).rawValue
+        return name.prefix(1).uppercased() + name.dropFirst() + "s"
+    }
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return resultsForSection(section).count
     }
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return searchResults.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipientCell", for: indexPath)
 
         cell.imageView?.roundImageWithBorder(color: .clear)
-        let result = searchResults[indexPath.row]
+        let result = resultsForSection(indexPath.section)[indexPath.row]
         cell.textLabel?.text = result.name?.name
         cell.imageView?.fetchAndSetImage(eve: result)
 
@@ -83,7 +106,7 @@ extension MailRecipientViewController: UITableViewDataSource {
 extension MailRecipientViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedItem = self.searchResults[indexPath.row]
+        let selectedItem = resultsForSection(indexPath.section)[indexPath.row]
         if let callback = self.selectItem {
             callback(selectedItem)
         }

@@ -35,9 +35,9 @@ extension Array where Element == Int64 {
             let end = unique.index(sIndex, offsetBy: 200)
             let endIndex = Swift.min(end, unique.count)
             let items = Array(unique[sIndex..<endIndex])
-            let options: [String: Any] = [
-                "parameters": items.asParameters(),
-                "encoding": ArrayEncoding()
+            let options: [ESIClientOptions: Any] = [
+                .parameters: items.asParameters(),
+                .encoding: ArrayEncoding()
             ]
             group.enter()
             esi.invoke(endPoint: "/v2/universe/names", httpMethod: .post, options: options) { response in

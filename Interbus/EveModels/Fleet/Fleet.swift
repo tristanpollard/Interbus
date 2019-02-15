@@ -124,9 +124,9 @@ class Fleet: Mappable {
             }
             params["movement"] = movement
 
-            let options: [String: Any] = [
-                "parameters": params,
-                "encoding": JSONEncoding.default
+            let options: [ESIClientOptions: Any] = [
+                .parameters: params,
+                .encoding: JSONEncoding.default
             ]
 
             print(options)
@@ -163,11 +163,11 @@ class Fleet: Mappable {
             } else {
                 endpoint = "/v1/fleets/\(fleetId)/squads/\(structure.id)/"
             }
-            let options: [String: Any] = [
-                "parameters": [
+            let options: [ESIClientOptions: Any] = [
+                .parameters: [
                     "name": name
                 ],
-                "encoding": JSONEncoding.default
+                .encoding: JSONEncoding.default
             ]
             esi.invoke(endPoint: endpoint, httpMethod: .put, token: token, options: options) { response in
                 var success = false

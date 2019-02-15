@@ -55,8 +55,8 @@ class EveContacts {
         let ids = contacts.compactMap {
             $0.contact_id
         }
-        let options: [String: Any] = [
-            "parameters": ids
+        let options: [ESIClientOptions: Any] = [
+            .parameters: ids
         ]
         esi.invoke(endPoint: "/v2/characters/\(self.character.id)/contacts/", httpMethod: .delete, token: self.character.token, options: options) { response in
             if response.statusCode == 204 {

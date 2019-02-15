@@ -55,8 +55,8 @@ class EveAssets {
         var assets: [EveAssetItem] = []
         let esi = ESIClient.sharedInstance
         var pages = 1
-        let options = [
-            "parameters": ["page": page]
+        let options: [ESIClientOptions: Any] = [
+            .parameters: ["page": page]
         ]
         esi.invoke(endPoint: "/v3/characters/\(self.character.id)/assets/", token: character.token, options: options) { response in
             if let result = response.result as? [[String: Any]] {

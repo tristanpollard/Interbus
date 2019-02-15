@@ -22,8 +22,8 @@ class EveWalletJournal {
         var pageCount = 1
         let group = DispatchGroup()
         while page <= pageCount {
-            let options = [
-                "parameters": ["page": page]
+            let options: [ESIClientOptions: Any] = [
+                .parameters: ["page": page]
             ]
             group.enter()
             esi.invoke(endPoint: "/v4/characters/\(self.character.id)/wallet/journal", token: character.token, options: options) { response in

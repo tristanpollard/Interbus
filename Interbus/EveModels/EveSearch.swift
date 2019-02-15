@@ -4,8 +4,8 @@ import ObjectMapper
 class EveSearch {
     static func search(_ q: String, categories: [EveSearchCategory] = [.character, .corporation, .alliance], completion: @escaping ([EveSearchResult]) -> ()) {
         let esi = ESIClient.sharedInstance
-        let options = [
-            "parameters": [
+        let options: [ESIClientOptions: Any] = [
+            .parameters: [
                 "search": q,
                 "categories": categories.map {
                     $0.rawValue

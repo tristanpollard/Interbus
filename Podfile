@@ -9,4 +9,5 @@ target 'Interbus' do
   pod 'KTVJSONWebToken'
   pod 'Eureka'
   pod 'KeychainAccess'
+#  pod 'AlamofireNetworkActivityIndicator', '~> 2.3'
 end

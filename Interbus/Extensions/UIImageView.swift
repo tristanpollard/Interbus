@@ -41,24 +41,5 @@ extension UIImageView {
         self.sd_setImage(with: url, placeholderImage: eve.placeholder) { (image, error, cacheType, imageURL) in
             completion()
         }
-
-//        if let cached = cache.object(forKey: NSString(string: url)) {
-//            print("Cache:", url)
-//            self.image = cached
-//            completion()
-//            return
-//        }
-//        eve.fetchImage(url) { image in
-//            print("Fetched:", url)
-//            DispatchQueue.main.async {
-//                if let downloaded = downloadedUrl, url == downloaded {
-//                    self.image = image
-//                }
-//                if let img = image {
-//                    cache.setObject(img, forKey: NSString(string: url))
-//                }
-//                completion()
-//            }
-//        }
     }
 }

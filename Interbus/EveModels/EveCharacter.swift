@@ -41,6 +41,8 @@ class EveCharacter: Nameable, EVEImage, Equatable {
 
     var contacts: EveContacts!
 
+    var contracts: Contracts!
+
     var fleet: Fleet?
 
     var kills: EveKills!
@@ -66,6 +68,7 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.assets = EveAssets(character: self)
         self.kills = EveKills(character: self)
         self.clones = EveClones(character: self)
+        self.contracts = Contracts(character: self)
     }
 
     init(token: SSOToken) {
@@ -80,6 +83,7 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.assets = EveAssets(character: self)
         self.kills = EveKills(character: self)
         self.clones = EveClones(character: self)
+        self.contracts = Contracts(character: self)
     }
 
     static func ==(lhs: EveCharacter, rhs: EveCharacter) -> Bool {

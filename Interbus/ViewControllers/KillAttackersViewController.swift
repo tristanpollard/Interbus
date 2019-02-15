@@ -63,5 +63,7 @@ extension KillAttackersViewController: UITableViewDataSource {
 }
 
 extension KillAttackersViewController: UITableViewDelegate {
-
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

@@ -5,7 +5,7 @@ class SelectedCharacterViewController: UIViewController {
     var character: EveCharacter!
     var fetchingFleet: Bool = false
 
-    let options = ["Assets", "Clones", "Contacts", "Fleet", "Kills", "Mail", "Market", "Journal", /*"Notifications", "Wallet"*/]
+    let options = ["Assets", "Clones", "Contacts", "Contracts", "Fleet", "Kills", "Mail", "Market", "Journal", /*"Notifications", "Wallet"*/]
 
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var corporationImage: UIImageView!
@@ -55,6 +55,10 @@ class SelectedCharacterViewController: UIViewController {
         self.navigationTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 
+    func segueName(_ segue: String) -> String {
+        return "selectedCharacterTo\(segue)"
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let journal = segue.destination as? WalletJournalViewController {
@@ -79,6 +83,8 @@ class SelectedCharacterViewController: UIViewController {
             kills.kills = self.character.kills
         } else if let clones = segue.destination as? JumpCloneViewController {
             clones.clones = self.character.clones
+        } else if let contracts = segue.destination as? ContractsViewController {
+            contracts.contracts = character.contracts
         }
     }
 }

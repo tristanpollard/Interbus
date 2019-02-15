@@ -25,6 +25,12 @@ class ESIResponse {
     var statusCode: Int?
     var expires: Date?
 
+    var data: Data? {
+        get {
+            return rawResponse.data
+        }
+    }
+
     init(rawResponse: DataResponse<Any>) {
         self.rawResponse = rawResponse;
         parseResponse()

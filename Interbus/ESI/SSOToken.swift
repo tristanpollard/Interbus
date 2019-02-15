@@ -22,7 +22,6 @@ class SSOToken {
         didSet {
             if let id = character_id {
                 keychain["\(id)_access"] = access_token
-                print("KeyChain_Access: ", id, keychain["\(id)_access"])
             }
         }
     }
@@ -30,7 +29,6 @@ class SSOToken {
         didSet {
             if let refreshToken = refresh_token, let id = character_id {
                 keychain["\(id)_refresh"] = refreshToken
-                print("KeyChain_Refresh: ", id, keychain["\(id)_refresh"])
             }
         }
     }

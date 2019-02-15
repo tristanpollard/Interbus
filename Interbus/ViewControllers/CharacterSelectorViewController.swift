@@ -1,11 +1,3 @@
-//
-//  CharacterSelectorViewController.swift
-//  Interbus
-//
-//  Created by Tristan Pollard on 2018-12-13.
-//  Copyright © 2018 Tristan Pollard. All rights reserved.
-//
-
 import UIKit
 
 class CharacterSelectorViewController: UIViewController {

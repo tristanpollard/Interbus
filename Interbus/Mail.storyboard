@@ -100,11 +100,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-P2-JWM">
-                                <rect key="frame" x="0.0" y="30" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" showsScopeBar="YES" id="0MW-2l-POl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    <scopeButtonTitles>
+                                        <string>All</string>
+                                        <string>Character</string>
+                                        <string>Corporation</string>
+                                        <string>Alliance</string>
+                                    </scopeButtonTitles>
+                                    <connections>
+                                        <outlet property="delegate" destination="gix-Li-Tlg" id="hsx-1G-Eqy"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipientCell" id="p0X-tS-ttm">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p0X-tS-ttm" id="c2Q-fL-V5l">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -117,36 +131,33 @@
                                     <outlet property="delegate" destination="gix-Li-Tlg" id="4qv-tY-iz0"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="19O-oK-9Kl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="gix-Li-Tlg" id="qtG-H1-Ql6"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="leading" secondItem="sao-7b-Nt7" secondAttribute="leading" id="1Do-6g-hKe"/>
                             <constraint firstItem="Vx4-P2-JWM" firstAttribute="bottom" secondItem="sao-7b-Nt7" secondAttribute="bottom" id="7Ww-uw-8zK"/>
                             <constraint firstItem="Vx4-P2-JWM" firstAttribute="trailing" secondItem="sao-7b-Nt7" secondAttribute="trailing" id="LLa-5x-4U1"/>
-                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="top" secondItem="19O-oK-9Kl" secondAttribute="bottom" id="RCi-hK-MMq"/>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="top" secondItem="sao-7b-Nt7" secondAttribute="top" id="cy6-yo-srQ"/>
+                            <constraint firstItem="Vx4-P2-JWM" firstAttribute="top" secondItem="sao-7b-Nt7" secondAttribute="top" id="Xnh-RV-CNP"/>
                             <constraint firstItem="Vx4-P2-JWM" firstAttribute="leading" secondItem="sao-7b-Nt7" secondAttribute="leading" id="gZD-hA-UsT"/>
-                            <constraint firstItem="19O-oK-9Kl" firstAttribute="trailing" secondItem="sao-7b-Nt7" secondAttribute="trailing" id="x8T-JS-eRi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sao-7b-Nt7"/>
                     </view>
                     <connections>
                         <outlet property="recipientTable" destination="Vx4-P2-JWM" id="ABs-KO-YHa"/>
-                        <outlet property="searchField" destination="19O-oK-9Kl" id="S0D-OH-HUy"/>
+                        <outlet property="searchBar" destination="0MW-2l-POl" id="t2A-3B-XcI"/>
+                        <outlet property="searchDisplayController" destination="s2x-xy-eUj" id="Ccw-Ls-sGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mY-Ne-XRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="s2x-xy-eUj">
+                    <connections>
+                        <outlet property="delegate" destination="gix-Li-Tlg" id="mC5-ld-30L"/>
+                        <outlet property="searchContentsController" destination="gix-Li-Tlg" id="ivL-pB-b9t"/>
+                        <outlet property="searchResultsDataSource" destination="gix-Li-Tlg" id="NKN-7t-di2"/>
+                        <outlet property="searchResultsDelegate" destination="gix-Li-Tlg" id="w39-IS-X1d"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4617" y="-67"/>
+            <point key="canvasLocation" x="4616.8000000000002" y="-67.016491754122939"/>
         </scene>
         <!--Mail Item View Controller-->
         <scene sceneID="Rjk-Ib-RF4">

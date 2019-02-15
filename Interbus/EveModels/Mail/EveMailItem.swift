@@ -78,7 +78,7 @@ class EveMailItem: Mappable {
     }
 
     func markMailRead(completion: @escaping () -> ()) {
-        let esi = ESIClient.sharedInstance
+        //let esi = ESIClient.sharedInstance
     }
 
     func getBodyString() -> String? {

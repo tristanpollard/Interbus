@@ -106,7 +106,7 @@ extension Array where Element == EveKillMail {
         var ships: [EveType] = self.map {
             $0.victim.ship
         }
-        ships += attackers.flatMap {
+        ships += attackers.compactMap {
             $0.ship
         }
         group.enter()
@@ -114,7 +114,7 @@ extension Array where Element == EveKillMail {
             group.leave()
         }
 
-        let systems = self.flatMap {
+        let systems = self.compactMap {
             $0.system
         }
         group.enter()

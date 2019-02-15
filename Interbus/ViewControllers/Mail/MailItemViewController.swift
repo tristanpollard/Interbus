@@ -40,8 +40,14 @@ class MailItemViewController: UIViewController {
                 self.didDeleteMail?()
                 self.navigationController?.popViewController(animated: true)
             } else {
-                let alert = UIAlertView(title: "Failed to Delete Mail", message: "The mail was unable to be deleted. Perhaps it was already deleted?", delegate: self, cancelButtonTitle: "Ok")
-                alert.show()
+                let alert = UIAlertController(title: "Failed to Delete Mail", message: "The mail was unable to be deleted. Perhaps it was already deleted?", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default) { action in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                alert.addAction(action)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
             }
         }
     }
@@ -53,11 +59,6 @@ class MailItemViewController: UIViewController {
             sendMail.mailItem = self.mailItem
         }
     }
+
 }
 
-extension MailItemViewController: UIAlertViewDelegate {
-    public func alertView(_ alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
-    }
-}

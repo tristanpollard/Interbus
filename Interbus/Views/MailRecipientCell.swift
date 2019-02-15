@@ -45,7 +45,7 @@ final class MailRecipientCell: Cell<EveSearchResult>, CellType {
 
 }
 
-public final class MailRecipientRow: SelectorRow<MailRecipientCell>, RowType {
+final class MailRecipientRow: SelectorRow<MailRecipientCell>, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
         cellProvider = CellProvider<MailRecipientCell>(nibName: "MailSearchCell")

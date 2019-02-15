@@ -2,15 +2,11 @@ platform :ios, '12.0'
 use_frameworks!
 
 target 'Interbus' do
-  pod 'Alamofire', '~> 5.0.0.beta.1'
+  pod 'Alamofire', '~> 5.0.0-beta.1'
   pod 'ObjectMapper', '~> 3.4'
-  pod 'JWTDecode', '~> 2.1'
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage/GIF'
-#	pod 'SwiftyJWT'
   pod 'KTVJSONWebToken'
   pod 'Eureka'
-  pod 'AppSpectorSDK'
-#	pod 'OAuthSwiftAlamofire'
-#	pod 'AlamofireImage', '~> 3.5'
+  pod 'KeychainAccess'
 end

@@ -132,7 +132,6 @@ class Fleet: Mappable {
             print(options)
 
             esi.invoke(endPoint: "/v1/fleets/\(fleetId)/members/\(member.id)/", httpMethod: .put, token: token, options: options) { response in
-                print(response.result)
                 if response.statusCode == 204 {
                     completion(true)
                 } else {
@@ -209,13 +208,13 @@ class Fleet: Mappable {
                 continue
             }
 
-            if let comp = compToMember[member.squadId == -1 ? member.wingId : member.squadId] {
+            if compToMember[member.squadId == -1 ? member.wingId : member.squadId] != nil {
                 compToMember[member.squadId == -1 ? member.wingId : member.squadId]?.append(member)
             } else {
                 compToMember[member.squadId == -1 ? member.wingId : member.squadId] = [member]
             }
         }
-
+        2
         for wing in composition {
             wing.members = compToMember[wing.id] ?? []
             if let squads = wing.squads {
@@ -226,4 +225,27 @@ class Fleet: Mappable {
         }
     }
 
+
+    private(set) var isRefreshing: Bool = false
+
+    @objc
+    func refreshFleet(completion: @escaping () -> ()) {
+        if isRefreshing {
+            return
+        }
+        isRefreshing = true
+
+        let group = DispatchGroup()
+        group.enter()
+        fetchMembers {
+            group.leave()
+        }
+
+        group.enter()
+        fetchComposition {
+            group.leave()
+        }
+
+
+    }
 }

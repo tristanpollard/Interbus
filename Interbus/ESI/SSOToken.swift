@@ -7,6 +7,7 @@ import Foundation
 import Alamofire
 import CoreData
 import KTVJSONWebToken
+import KeychainAccess
 
 enum TokenError: Error {
     case noAccessToken
@@ -17,14 +18,29 @@ enum TokenError: Error {
 
 class SSOToken {
 
-    var access_token: String?
-    var refresh_token: String?
+    var access_token: String? {
+        didSet {
+            if let id = character_id {
+                keychain["\(id)_access"] = access_token
+                print("KeyChain_Access: ", id, keychain["\(id)_access"])
+            }
+        }
+    }
+    var refresh_token: String? {
+        didSet {
+            if let refreshToken = refresh_token, let id = character_id {
+                keychain["\(id)_refresh"] = refreshToken
+                print("KeyChain_Refresh: ", id, keychain["\(id)_refresh"])
+            }
+        }
+    }
     var token_type: String?
     var expires: Date?
 
     let esi = ESIClient.sharedInstance
     let refreshTime = 30 //30 seconds
-    var inRefresh = false
+
+    private let keychain = Keychain(service: "com.tristan.interbus")
 
     var jwt: JSONWebToken {
         get {
@@ -69,8 +85,10 @@ class SSOToken {
     }
 
     init(coreData: EVESSOToken) {
-        self.access_token = coreData.access_token
-        self.refresh_token = coreData.refresh_token
+//        self.access_token = coreData.access_token
+//        self.refresh_token = coreData.refresh_token
+        access_token = keychain["\(coreData.character_id)_access"]
+        refresh_token = keychain["\(coreData.character_id)_refresh"]
         self.token_type = coreData.token_type
         self.expires = coreData.expires as! Date
     }
@@ -146,7 +164,6 @@ class SSOToken {
         }
     }
 
-    //TODO if multiple requests fire at same time, it can lock up.
     func refreshIfNeeded(completion: @escaping () -> ()) {
         let now = Date().addingTimeInterval(TimeInterval(self.refreshTime))
         if now > self.expires! {
@@ -174,7 +191,6 @@ class SSOToken {
 
     func saveToken() throws {
 
-        debugPrint("SAVING TOKEN")
 
         guard self.validated else {
             throw TokenError.tokenNotValidated
@@ -192,8 +208,6 @@ class SSOToken {
 
             if fetch.count > 0 {
                 let token = fetch[0]
-                token.access_token = self.access_token!
-                token.refresh_token = self.refresh_token!
                 token.expires = self.expires!
                 token.token_type = self.token_type!
                 token.character_id = self.character_id!
@@ -219,8 +233,6 @@ class SSOToken {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.parent = parentContext
         let token = EVESSOToken(context: context)
-        token.access_token = self.access_token!
-        token.refresh_token = self.refresh_token!
         token.expires = self.expires!
         token.token_type = self.token_type!
         token.character_id = self.character_id!

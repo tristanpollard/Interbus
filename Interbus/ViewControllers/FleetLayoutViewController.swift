@@ -16,6 +16,7 @@ class FleetLayoutViewController: UIFleetController {
     }()
 
     var timer: Timer?
+    var isRefreshing: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,12 @@ class FleetLayoutViewController: UIFleetController {
 
     @objc
     func refreshFleet() {
+
+        guard isRefreshing == false else {
+            return
+        }
+        isRefreshing = true
+
         let group = DispatchGroup()
         refreshControl.beginRefreshing()
 
@@ -52,13 +59,14 @@ class FleetLayoutViewController: UIFleetController {
         }
 
         group.enter()
-        fleet.fetchMembers {
-            self.fleet.members.fetchNames {
+        fleet.fetchMembers { [weak self] in
+            self?.fleet.members.fetchNames {
                 group.leave()
             }
         }
 
         group.notify(queue: .main) {
+            self.isRefreshing = false
             self.fleet.mapMembers()
             self.fleetLayoutTable.reloadData()
             self.refreshControl.endRefreshing()
@@ -77,13 +85,11 @@ extension FleetLayoutViewController: UITableViewDataSource {
         }
 
         let composition = fleet.compositionMap[section - 1]
-        if let squads = composition.squads {
+        if composition.squads != nil {
             return composition.name
         }
 
         return "- \(composition.name)"
-
-        return "Unknown Squad/Wing: \(section)"
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,11 +126,11 @@ extension FleetLayoutViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return !isRefreshing
     }
 
     public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return !isRefreshing
     }
 
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -184,5 +190,18 @@ extension FleetLayoutViewController: UITableViewDelegate {
         }
 
         return proposedDestinationIndexPath
+    }
+
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 40
+        }
+
+        let composition = fleet.compositionMap[section]
+        if composition.squads != nil {
+            return 30
+        }
+
+        return 20
     }
 }

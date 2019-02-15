@@ -8,8 +8,24 @@ import UIKit
 class FleetCompositionViewController: UIFleetController {
     @IBOutlet weak var fleetCompositionTable: UITableView!
 
+    var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer = Timer.scheduledTimer(timeInterval: 30, target: fleet, selector: #selector(Fleet.refreshFleet), userInfo: nil, repeats: true)
+        fleet.refreshFleet() {
+            self.fleetCompositionTable.reloadData()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+        timer = nil
     }
 }
 

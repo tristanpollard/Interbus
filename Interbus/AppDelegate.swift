@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import AppSpectorSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let config = AppSpectorConfig(apiKey: AppSpectorApikey)
-        AppSpector.run(with: config)
 
         if let launchURL = launchOptions?[UIApplication.LaunchOptionsKey.url] as? URL {
             self.processOAuth(url: launchURL)

@@ -49,7 +49,7 @@ class ESIResponse {
             case 404:
                 self.error = ESIError(error: .notFound, errorMsg: "Not Found")
             default:
-                break
+                self.error = ESIError(error: .unknown, errorMsg: "Unknown Status Code")
             }
         } else {
             self.error = ESIError(error: .unknown, errorMsg: "Unknown")

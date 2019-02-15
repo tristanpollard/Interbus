@@ -15,6 +15,7 @@ import KTVJSONWebToken
 
 enum ESIError: Error {
     case invalidChallengeCode
+    case invalidChalllengeData
 }
 
 final class ESIClient {
@@ -240,10 +241,14 @@ final class ESIClient {
         }
         self.lastCodeChallenge = nil
 
+        guard let challengeData = challenge.data(using: .utf8) else {
+            throw ESIError.invalidChalllengeData
+        }
+
         var parameters: Parameters = [
             "grant_type": "authorization_code",
             "code": code, "client_id": ESIClient.client_id,
-            "code_verifier": challenge.data(using: .utf8)!.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            "code_verifier": challengeData.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         ]
         let options: [String: Any] = [
             "baseURI": ESIClient.baseURI.loginV2,
@@ -252,7 +257,6 @@ final class ESIClient {
 
         self.invoke(endPoint: "/oauth/token", httpMethod: .post, options: options) { response in
             let token = SSOToken(response: response)
-            print(response.result)
             completion(token)
         }
     }

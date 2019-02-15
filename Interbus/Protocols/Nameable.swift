@@ -1,8 +1,3 @@
-//
-// Created by Tristan Pollard on 2017-10-11.
-// Copyright (c) 2017 Sumo. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import ObjectMapper

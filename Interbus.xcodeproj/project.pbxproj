@@ -46,7 +46,6 @@
 		C0D8F50C5F7A789C1D56D4CB /* EveWalletJournalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F42F864C528B13D276C3 /* EveWalletJournalItem.swift */; };
 		C0D8F51B0CEC46A800CFDF50 /* MailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F130FF8FD81043B5DAA4 /* MailItemViewController.swift */; };
 		C0D8F52EE065FD6D547DB77B /* EveAssetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F560BD0284C2E37D957B /* EveAssetItem.swift */; };
-		C0D8F59165360216545746F4 /* Environment.Example.swift in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FF8B345B9B46E21A0102 /* Environment.Example.swift */; };
 		C0D8F5A1C8C1E3C32FF3233C /* LocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5E15B71F75E87867FB9 /* LocationType.swift */; };
 		C0D8F5E4D06FC5DC64BB1D5F /* EveMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F5148EDC033C893BA0C5 /* EveMail.swift */; };
 		C0D8F600ECEC8B978101C0EF /* characterPlaceholder64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8FD553385C3D297041FD5 /* characterPlaceholder64.jpg */; };
@@ -73,7 +72,6 @@
 		C0D8F9A86699B29E18568F3D /* EvePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FEB02EF7722E6ABD310D /* EvePosition.swift */; };
 		C0D8F9AD21E86BED2AB69390 /* TokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F0396953D7B082CA6855 /* TokenTableViewCell.swift */; };
 		C0D8F9F6E07F7AD0E670E8F9 /* MailRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F84D9961DAD2EFFFFFEC /* MailRecipientViewController.swift */; };
-		C0D8FA47488DDC436D62E4A1 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F293307CE20BE59F330C /* readme.md */; };
 		C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D8F562603CDF50B104F3BC /* characterPlaceholder512.jpg */; };
 		C0D8FA877308C205BCE85753 /* InterbusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F3965514F2CEC31321E2 /* InterbusUITests.swift */; };
 		C0D8FA8C0553400B1FE307B6 /* EveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8FFD589080AC03AB4DE23 /* EveCharacter.swift */; };
@@ -703,7 +701,6 @@
 				C0D8F87B749260C78560FF3D /* corporationPlaceholder128.png in Resources */,
 				C0D8FA6E722DCCAB09C018B8 /* characterPlaceholder512.jpg in Resources */,
 				C0D8F06637096A198BF7F061 /* .gitignore in Resources */,
-				C0D8F59165360216545746F4 /* Environment.Example.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,11 +739,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Interbus/Pods-Interbus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${PODS_ROOT}/AppSpectorSDK/AppSpectorSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
-				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
 				"${BUILT_PRODUCTS_DIR}/KTVJSONWebToken/KTVJSONWebToken.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -756,11 +752,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppSpectorSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KTVJSONWebToken.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -861,7 +856,6 @@
 				C0D8F31A967937D0DAB53339 /* FleetDetails.swift in Sources */,
 				C0D8FFC12E8A03C76729CBE9 /* EveStation.swift in Sources */,
 				C0D8FC93CA92D1E4E0EB1993 /* EvePlanet.swift in Sources */,
-				C0D8FA47488DDC436D62E4A1 /* readme.md in Sources */,
 				C0D8FBDF17CA7E851DBA2576 /* Environment.swift in Sources */,
 				C0D8F231BDFF307997E49E2B /* FleetMember.swift in Sources */,
 			);

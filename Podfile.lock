@@ -1,9 +1,8 @@
 PODS:
   - Alamofire (5.0.0.beta.1)
-  - AppSpectorSDK (1.1.5)
   - Eureka (4.3.0)
   - FLAnimatedImage (1.0.12)
-  - JWTDecode (2.1.1)
+  - KeychainAccess (3.1.2)
   - KTVJSONWebToken (2.1.0)
   - NVActivityIndicatorView (4.4.1):
     - NVActivityIndicatorView/Presenter (= 4.4.1)
@@ -15,10 +14,9 @@ PODS:
     - SDWebImage/Core
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0.beta.1)
-  - AppSpectorSDK
+  - Alamofire (~> 5.0.0-beta.1)
   - Eureka
-  - JWTDecode (~> 2.1)
+  - KeychainAccess
   - KTVJSONWebToken
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
@@ -27,10 +25,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AppSpectorSDK
     - Eureka
     - FLAnimatedImage
-    - JWTDecode
+    - KeychainAccess
     - KTVJSONWebToken
     - NVActivityIndicatorView
     - ObjectMapper
@@ -38,15 +35,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
-  AppSpectorSDK: 210091a50e4db5e7bfe58ff56289a1df0521e2ab
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   KTVJSONWebToken: c3cc06e26876d63c62a5c40c5e89939899de48cf
   NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 60f7beea7040b5a9a370e01d345c8ae6daa55834
+PODFILE CHECKSUM: f2b7c23ff5b1e12d1760dee51a70c36e1771aa16
 
 COCOAPODS: 1.5.3

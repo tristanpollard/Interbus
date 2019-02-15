@@ -1,47 +1,61 @@
-//
-// Created by Tristan Pollard on 2018-12-17.
-// Copyright (c) 2018 Tristan Pollard. All rights reserved.
-//
-
 import UIKit
 import SDWebImage
 
 class MailRecipientViewController: UIViewController {
     @IBOutlet weak var recipientTable: UITableView!
-    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     var searchResults: [EveSearchResult] = []
     var selectItem: ((EveSearchResult) -> (Void))?
 
+    let searchScopes: [[EveSearchCategory]] = [
+        [.character, .corporation, .alliance],
+        [.character],
+        [.corporation],
+        [.alliance]
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchField.autocorrectionType = .no
-        self.searchField.becomeFirstResponder()
-        self.searchField.keyboardAppearance = .default
-        self.searchField.keyboardType = .alphabet
+        searchBar.becomeFirstResponder()
+        searchBar.autocorrectionType = .no
+        searchBar.keyboardAppearance = .default
+        searchBar.keyboardType = .alphabet
     }
 
     func performSearch() {
-        if let q = self.searchField.text {
-            EveSearch.search(q) { results in
+        if let q = self.searchBar.text {
+            EveSearch.search(q, categories: searchScopes[searchBar.selectedScopeButtonIndex]) { results in
                 results.fetchNames {
                     self.searchResults = results.sorted {
                         $0.name!.name < $1.name!.name
                     }
-                    self.recipientTable.reloadData()
-                    let topIndex = IndexPath(row: 0, section: 0)
-                    self.recipientTable.scrollToRow(at: topIndex, at: .top, animated: true)
+                    DispatchQueue.main.async {
+                        self.recipientTable.reloadData()
+                        self.recipientTable.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                    }
                 }
             }
         }
     }
 }
 
-extension MailRecipientViewController: UITextFieldDelegate {
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        self.performSearch()
+extension MailRecipientViewController: UISearchBarDelegate {
+    public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.resignFirstResponder()
+        performSearch()
         return true
+    }
+
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        performSearch()
+    }
+
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        if let text = searchBar.text, text.count > 0 {
+            performSearch()
+        }
     }
 }
 

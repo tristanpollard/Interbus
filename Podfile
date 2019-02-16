@@ -10,4 +10,5 @@ target 'Interbus' do
   pod 'Eureka'
   pod 'KeychainAccess'
 #  pod 'AlamofireNetworkActivityIndicator', '~> 2.3'
+  pod 'Charts'
 end

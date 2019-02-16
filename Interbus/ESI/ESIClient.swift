@@ -221,7 +221,6 @@ final class ESIClient {
             if let tok = token {
                 headers!["Authorization"] = tok.authorizationHeader()
             }
-            print(requestURL, httpMethod, parameters, headers)
 
             let req = AF.request(requestURL, method: httpMethod, parameters: parameters, encoding: parameterEncoding, headers: headers).responseJSON { json in
                 completion(ESIResponse(rawResponse: json))
@@ -252,7 +251,7 @@ final class ESIClient {
             throw ESIError.invalidChalllengeData
         }
 
-        var parameters: Parameters = [
+        let parameters: Parameters = [
             "grant_type": "authorization_code",
             "code": code, "client_id": ESIClient.client_id,
             "code_verifier": challengeData.base64EncodedString().replacingOccurrences(of: "=", with: "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

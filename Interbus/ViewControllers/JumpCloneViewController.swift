@@ -58,8 +58,6 @@ extension JumpCloneViewController: UITableViewDataSource {
         var name: String?
         if let stationName = clone.station?.name?.name {
             name = stationName
-        } else {
-            name = clone.location_type.rawValue
         }
 
         return name

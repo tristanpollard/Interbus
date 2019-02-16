@@ -8,6 +8,7 @@ class CharacterSelectorViewController: UIViewController {
         }
     }
     var characters: [EveCharacter] = []
+    var hasLoaded: [Int64: Bool] = [:]
     var selectedCharacter: EveCharacter?
     private let refreshControl = UIRefreshControl()
 
@@ -33,6 +34,9 @@ class CharacterSelectorViewController: UIViewController {
 
         self.characters.sort {
             $0.character_name < $1.character_name
+        }
+        characters.forEach { character in
+            hasLoaded[character.id] = false
         }
 
         self.characters.refreshTokens {
@@ -61,6 +65,7 @@ class CharacterSelectorViewController: UIViewController {
 
                 group.notify(queue: .main) {
                     let indexPath = IndexPath(row: idx, section: 0)
+                    self.hasLoaded[character.id] = true
                     self.tokenTableView.reloadRows(at: [indexPath], with: .automatic)
                 }
             }
@@ -134,9 +139,7 @@ extension CharacterSelectorViewController: UITableViewDataSource {
             color = UIColor.green
         }
         cell.characterImage.roundImageWithBorder(color: color)
-
         cell.characterName.text = character.character_name
-
         cell.characterImage.fetchAndSetImage(eve: character.characterData!)
 
         var corpAllianceData: [String] = []
@@ -152,7 +155,7 @@ extension CharacterSelectorViewController: UITableViewDataSource {
             cell.accessoryView = nil
             cell.accessoryType = .detailButton
         } else {
-            if let _ = character.characterData?.corporation {
+            if let loaded = hasLoaded[character.id], loaded == true {
                 cell.accessoryView = nil
                 cell.accessoryType = .disclosureIndicator
             } else {
@@ -194,7 +197,7 @@ extension CharacterSelectorViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let character = self.characters[indexPath.row]
         self.selectedCharacter = character
-        if let _ = character.characterData?.corporation {
+        if let loaded = hasLoaded[character.id], loaded == true {
             self.performSegue(withIdentifier: "characterSelectorToSelected", sender: self)
         }
     }

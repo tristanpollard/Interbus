@@ -1,8 +1,3 @@
-//
-// Created by Tristan Pollard on 2019-02-15.
-// Copyright (c) 2019 Tristan Pollard. All rights reserved.
-//
-
 import UIKit
 
 class ContractsViewController: UIViewController {

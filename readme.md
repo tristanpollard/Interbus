@@ -28,3 +28,6 @@ Wallet
 
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [Eureka](https://github.com/xmartlabs/Eureka)
+* [KeyChainAcces](https://github.com/kishikawakatsumi/KeychainAccess)
+* [SDWebImage](https://github.com/SDWebImage/SDWebImage)
+* [JSONWebToken](https://github.com/kreactive/JSONWebToken)

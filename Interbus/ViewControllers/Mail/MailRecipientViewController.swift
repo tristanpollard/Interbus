@@ -30,7 +30,7 @@ class MailRecipientViewController: UIViewController {
             EveSearch.search(q, categories: searchScopes[searchBar.selectedScopeButtonIndex]) { results in
                 results.fetchNames {
                     var newSearchResults: [EveSearchCategory: [EveSearchResult]] = [:]
-                    let fetchedResults = results.sorted {
+                    results.sorted {
                         $0.name!.name.lowercased() < $1.name!.name.lowercased()
                     }.forEach { result in
                         if newSearchResults[result.category] != nil {

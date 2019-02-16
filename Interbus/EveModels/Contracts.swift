@@ -145,7 +145,7 @@ class Contracts {
                             self.contracts += newContracts
                             completion(newContracts, nil)
                         }
-                    } catch let error {
+                    } catch {
                         completion(nil, .decodeError)
                     }
                 }

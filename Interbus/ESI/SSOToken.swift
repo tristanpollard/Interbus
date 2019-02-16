@@ -83,12 +83,10 @@ class SSOToken {
     }
 
     init(coreData: EVESSOToken) {
-//        self.access_token = coreData.access_token
-//        self.refresh_token = coreData.refresh_token
         access_token = keychain["\(coreData.character_id)_access"]
         refresh_token = keychain["\(coreData.character_id)_refresh"]
-        self.token_type = coreData.token_type
-        self.expires = coreData.expires as! Date
+        token_type = coreData.token_type
+        expires = coreData.expires
     }
 
     func getMissingScopes() -> Set<String> {
@@ -177,7 +175,6 @@ class SSOToken {
     func refresh(completionHandler: @escaping () -> ()) {
         self.esi.refreshToken(token: self) { response in
             try! self.updateToken(response: response) { error in
-                print("Error:", error)
                 completionHandler()
             }
         }

@@ -321,6 +321,7 @@
                         <segue destination="7rt-ks-APJ" kind="show" identifier="selectedCharacterToKills" id="jS4-iF-NZu"/>
                         <segue destination="M0J-Wi-XkC" kind="show" identifier="selectedCharacterToClones" id="ajj-oq-Wx0"/>
                         <segue destination="12n-0r-jQj" kind="show" identifier="selectedCharacterToContracts" id="Ssk-i1-4bq"/>
+                        <segue destination="Vlv-h6-V4V" kind="show" identifier="selectedCharacterToStats" id="7uJ-zl-bdb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uQ-oD-O27" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -464,6 +465,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huj-Y0-3jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2226" y="780"/>
+        </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="pTR-5a-NHe">
+            <objects>
+                <viewController id="Vlv-h6-V4V" customClass="StatsViewController" customModule="Interbus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tvc-1E-Rwu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EQp-IO-b0U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9i-0V-UkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="812"/>
         </scene>
         <!--Assets-->
         <scene sceneID="o2h-Da-FU7">

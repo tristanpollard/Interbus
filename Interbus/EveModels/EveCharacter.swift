@@ -55,6 +55,8 @@ class EveCharacter: Nameable, EVEImage, Equatable {
 
     var notifications: EveNotifications!
 
+    var stats: Stats!
+
     var wallet: EveWallet?
     var walletJournal: EveWalletJournal!
 
@@ -69,6 +71,7 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.kills = EveKills(character: self)
         self.clones = EveClones(character: self)
         self.contracts = Contracts(character: self)
+        self.stats = Stats(character: self)
     }
 
     init(token: SSOToken) {
@@ -84,6 +87,7 @@ class EveCharacter: Nameable, EVEImage, Equatable {
         self.kills = EveKills(character: self)
         self.clones = EveClones(character: self)
         self.contracts = Contracts(character: self)
+        self.stats = Stats(character: self)
     }
 
     static func ==(lhs: EveCharacter, rhs: EveCharacter) -> Bool {

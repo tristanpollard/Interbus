@@ -111,7 +111,13 @@ class CharacterSelectorViewController: UIViewController {
                 }
             }
 
+            group.enter()
+            char.characterData.fetchCharacterCorpAllianceData {
+                group.leave()
+            }
+
             group.notify(queue: .main) {
+                self.hasLoaded[char.id] = true
                 self.tokenTableView.reloadData()
             }
         }
